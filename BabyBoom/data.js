@@ -1,21 +1,21 @@
 module.exports = function(){
   var data = {
-    TiposComprobantes: [
+    TiposEnfermedades: [
       {
-        IDTipoComprobante: 1,
-        nombreComprobante: "Boleta de venta electronica",
+        IDTipoEnfermedad: 1,
+        nombreEnfermedad: "Infecciones respiratorias",
       },
       {
-        IDTipoComprobante: 2,
-        nombreComprobante: "Factura electrónica",
+        IDTipoEnfermedad: 2,
+        nombreEnfermedad: "Infecciones gastrointestinales",
       },
       {
-        IDTipoComprobante: 3,
-        nombreComprobante: "Nota de crédito electrónica",
+        IDTipoEnfermedad: 3,
+        nombreEnfermedad: "Infecciones de la piel",
       },
       {
-        IDTipoComprobante: 4,
-        nombreComprobante: "Nota de débito electrónica",
+        IDTipoEnfermedad: 4,
+        nombreEnfermedad: "Problemas de oído",
       },
     ],
     Usuario: [
