@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import {environment} from 'src/environment/environment';
 import { HttpClient } from '@angular/common/http';
-import { Tipocomprobante } from '../model/TipoComprobante';
+import { Tipoenfermedad } from '../model/Tipoenfermedad';
 const base_url = environment.base
 @Injectable({
   providedIn: 'root'
 })
-export class TipocomprobanteService {
-  private url = `${base_url}/tiposcomprobantes`
+export class TipoEnfermedadeService {
+  private url = `${base_url}/tiposenfermedades`
   constructor(private http:HttpClient) { }
   list(){
-    return this.http.get<Tipocomprobante[]>(this.url);
+    return this.http.get<Tipoenfermedad[]>(this.url);
   }
 }

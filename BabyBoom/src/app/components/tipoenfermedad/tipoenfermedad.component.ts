@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-tipocomprobante',
-  templateUrl: './tipocomprobante.component.html',
-  styleUrls: ['./tipocomprobante.component.css']
+  selector: 'app-tipoenfermedad',
+  templateUrl: './tipoenfermedad.component.html',
+  styleUrls: ['./tipoenfermedad.component.css']
 })
 export class TipocomprobanteComponent implements OnInit{
   ngOnInit(): void {}
