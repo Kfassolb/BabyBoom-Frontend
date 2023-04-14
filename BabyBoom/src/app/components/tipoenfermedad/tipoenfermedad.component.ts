@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './tipoenfermedad.component.html',
   styleUrls: ['./tipoenfermedad.component.css']
 })
-export class TipocomprobanteComponent implements OnInit{
+export class TipoenfermedadComponent implements OnInit{
   ngOnInit(): void {}
 
   constructor(public route:ActivatedRoute){}

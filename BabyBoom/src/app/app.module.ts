@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { TipoenfermedadComponent } from './components/tipoenfermedad/tipoenfermedad.component';
-import { TipoenfermedadListarComponent } from './components/tipocomprobante/tipoenfermedad-listar/tipoenfermedad-listar.component';
+import { TipoenfermedadListarComponent } from './components/tipoenfermedad/tipoenfermedad-listar/tipoenfermedad-listar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
@@ -16,10 +16,10 @@ import { UsuarioListarComponent } from './components/usuario/usuario-listar/usua
 @NgModule({
   declarations: [
     AppComponent,
-    TipoenfermedadComponent,
-    TipoenfermedadListarComponent,
     UsuarioListarComponent,
     UsuarioComponent,
+    TipoenfermedadComponent,
+    TipoenfermedadListarComponent
   ],
   imports: [
     BrowserModule,

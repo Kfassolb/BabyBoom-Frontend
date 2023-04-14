@@ -4,11 +4,11 @@ import { Tipoenfermedad } from 'src/app/model/Tipoenfermedad';
 import { TipoEnfermedadeService } from 'src/app/service/tipoenfermedad.service'
 
 @Component({
-  selector: 'app-tipocomprobante-listar',
+  selector: 'app-tipoenfermedad-listar',
   templateUrl: './tipoenfermedad-listar.component.html',
   styleUrls: ['./tipoenfermedad-listar.component.css']
 })
-export class TipocomprobanteListarComponent implements OnInit{
+export class TipoenfermedadListarComponent implements OnInit{
   lista:Tipoenfermedad[] = [];
   dataSource:MatTableDataSource<Tipoenfermedad> = new MatTableDataSource();
   displayedColumns:string[] = ['id', 'tipoenfermedad']
