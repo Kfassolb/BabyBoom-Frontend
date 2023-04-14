@@ -12,7 +12,7 @@ export class TipocomprobanteListarComponent implements OnInit{
   lista:Tipoenfermedad[] = [];
   dataSource:MatTableDataSource<Tipoenfermedad> = new MatTableDataSource();
   displayedColumns:string[] = ['id', 'tipoenfermedad']
-  constructor(private tcS:TipoenfermedadService){
+  constructor(private tcS:TipoEnfermedadeService){
 
   }
   ngOnInit(): void {
