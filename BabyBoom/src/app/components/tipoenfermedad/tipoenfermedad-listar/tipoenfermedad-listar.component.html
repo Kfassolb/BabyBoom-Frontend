@@ -16,13 +16,18 @@
     <!-- Position Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.IDTipoComprobante}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.IDTipoEnfermedad}} </td>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="tipoComprobante">
-      <th mat-header-cell *matHeaderCellDef> Tipo Comprobante </th>
-      <td mat-cell *matCellDef="let element"> {{element.nombreComprobante}} </td>
+    <ng-container matColumnDef="tipoenfermedad">
+      <th mat-header-cell *matHeaderCellDef> Tipo Enfermedad </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombreEnfermedad}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Nombreenfermedad">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.TipoEnfermedad}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
