@@ -1,5 +1,5 @@
 export class Usuario {
-  IDusuario: number = 0;
+  id: number = 0;
   Username: string = "";
   Password: string = "";
 }

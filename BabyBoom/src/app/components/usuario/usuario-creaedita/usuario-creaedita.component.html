@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container text-center">
+      <div class="p-3">
+        <h1>Registro de Usuario</h1>
+      </div>
+      <form [formGroup]="form" (submit)="aceptar()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Id</mat-label>
+          <input matInput placeholder="Id" formControlName="id" />
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre de Usuario</mat-label>
+          <input matInput placeholder="username" formControlName="Username" />
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput placeholder="password" formControlName="Password" />
+        </mat-form-field>
+        <br>
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>Género</mat-label>
+          <mat-select placeholder="Placeholder" formControlName="genderPet">
+            <mat-option value="Hembra">Hembra</mat-option>
+            <mat-option value="Macho">Macho</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha de Nacimiento</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="birthDatePet"
+            placeholder="Choose a date"
+          />
+          <mat-datepicker-toggle [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field> -->
+        <button mat-raised-button color="primary" class="m-3">Aceptar</button>
+        <button mat-raised-button routerLink="/Usuario" color="warn">Cancelar</button>
+      </form>
+    </div>
+  </body>
+</html>
