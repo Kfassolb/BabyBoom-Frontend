@@ -23,6 +23,9 @@ import { ServicioCreaditaComponent } from './components/servicio/servicio-creadi
 import { ServicioCompoment } from './components/servicio/servicio.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ServicioDialogoComponent } from './components/servicio/servicio-listar/servicio-dialogo/servicio-dialogo.component'
+import { MatIconModule } from '@angular/material/icon';
+import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
+import {MatPaginatorModule} from '@angular/material/paginator'
 
 @NgModule({
   declarations: [
@@ -51,6 +54,8 @@ import { ServicioDialogoComponent } from './components/servicio/servicio-listar/
     MatDatepickerModule,
     MatButtonModule,
     MatDialogModule,
+    MatIconModule,
+    MatPaginatorModule
 
   ],
   providers: [],
