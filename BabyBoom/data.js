@@ -1,6 +1,6 @@
 module.exports = function(){
   var data = {
-    tipocomprobantes: [
+    otronombre: [
       {
         id: 1,
         nombreComprobante: "Boleta de venta electronica",

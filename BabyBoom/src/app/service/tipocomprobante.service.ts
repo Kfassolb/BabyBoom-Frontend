@@ -8,7 +8,7 @@ const base_url = environment.base
   providedIn: 'root'
 })
 export class TipocomprobanteService {
-  private url = `${base_url}/tipocomprobantes`
+  private url = `${base_url}/otronombre`
   private listCambio = new Subject<Tipocomprobante[]>();
   private confirmarEliminacion = new Subject<Boolean>()
   constructor(private http:HttpClient) { }

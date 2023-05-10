@@ -25,7 +25,7 @@ const routes: Routes = [
     ]
   },
   {
-    path:'tipocomprobantes', component:TipocomprobanteComponent, children:[
+    path:'otronombre', component:TipocomprobanteComponent, children:[
       {path:'tipocomprobanteeditar',component:TipocomprobanteCreaeditaComponent},
       {path:'edicion/:id',component:TipocomprobanteCreaeditaComponent},
     ]
