@@ -17,6 +17,7 @@ export class TipocomprobanteListarComponent implements OnInit{
   dataSource:MatTableDataSource<Tipocomprobante> = new MatTableDataSource();
   displayedColumns:string[] = ['id', 'tipoComprobante','accion1']
   private idMayor:number=0
+  refresh:number=0;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private tcS:TipocomprobanteService, private dialog:MatDialog){
 
@@ -29,6 +30,7 @@ export class TipocomprobanteListarComponent implements OnInit{
       this.tcS.getList().subscribe(data=>{
         this.dataSource= new MatTableDataSource(data);
         this.dataSource.paginator = this.paginator;
+
       });
       this.tcS.getConfirmarEliminar().subscribe(data=>{
         data == true ? this.eliminar(this.idMayor):false;
@@ -50,4 +52,10 @@ export class TipocomprobanteListarComponent implements OnInit{
   filtrar(e:any){
     this.dataSource.filter = e.target.value.trim();
   }
+
+  refreshpage(){
+    window.location.reload();
+  }
+
+
 }
