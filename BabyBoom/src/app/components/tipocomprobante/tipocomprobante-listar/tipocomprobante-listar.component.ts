@@ -53,9 +53,6 @@ export class TipocomprobanteListarComponent implements OnInit{
     this.dataSource.filter = e.target.value.trim();
   }
 
-  refreshpage(){
-    window.location.reload();
-  }
 
 
 }
