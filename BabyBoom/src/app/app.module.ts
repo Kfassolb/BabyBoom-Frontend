@@ -44,6 +44,11 @@ import { ProductoListarComponent } from './components/producto/producto-listar/p
 import { ProductoCreaeditaComponent } from './components/producto/producto-creaedita/producto-creaedita.component';
 import { ProductoDialogoComponent } from './components/producto/producto-listar/producto-dialogo/producto-dialogo.component';
 import { TiposuscripcionDialogoComponent } from './components/tiposuscripcion/tiposuscripcion-listar/tiposuscripcion-dialogo/tiposuscripcion-dialogo.component';
+import { MedicoComponent } from './components/medico/medico.component';
+import { MedicoCreaeditaComponent } from './components/medico/medico-creaedita/medico-creaedita.component';
+import { MedicoListarComponent } from './components/medico/medico-listar/medico-listar.component';
+import { MedicoDialogoComponent } from './components/medico/medico-listar/medico-dialogo/medico-dialogo.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +79,11 @@ import { TiposuscripcionDialogoComponent } from './components/tiposuscripcion/ti
     TiposuscripcionListarComponent,
     TiposuscripcionCreaeditaComponent,
     TiposuscripcionDialogoComponent,
-    TipocomprobanteDialogoComponent
+    TipocomprobanteDialogoComponent,
+    MedicoComponent,
+    MedicoCreaeditaComponent,
+    MedicoListarComponent,
+    MedicoDialogoComponent
 
   ],
   imports: [

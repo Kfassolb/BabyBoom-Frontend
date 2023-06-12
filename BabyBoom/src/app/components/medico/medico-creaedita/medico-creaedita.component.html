@@ -10,7 +10,7 @@
   <body>
     <div class="container text-center mt-4">
       <div class="p-3">
-        <h1 id="titleRegister">Registro de Usuario</h1>
+        <h1 id="titleRegister">Registro de Medico</h1>
       </div>
       <form [formGroup]="form" (submit)="aceptar()">
         <mat-form-field class="example-full-width">
@@ -19,20 +19,39 @@
         </mat-form-field>
         <br>
         <mat-form-field class="example-full-width">
-          <mat-label>Nombre de Usuario</mat-label>
-          <input matInput placeholder="username" formControlName="Username" required/>
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Ingrese un nombre" formControlName="nombre" required/>
         </mat-form-field>
         <br>
         <mat-form-field class="example-full-width">
-          <mat-label>Contraseña</mat-label>
-          <input matInput placeholder="password" formControlName="Password" required/>
+          <mat-label>Apellido</mat-label>
+          <input matInput placeholder="Ingrese un apellido" formControlName="apellido" required/>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Especialidad</mat-label>
+          <input matInput placeholder="Ingrese una Especialidad" formControlName="especialidad" required/>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Correo Electrónico</mat-label>
+          <input matInput placeholder="Ingrese un correo" formControlName="email" required/>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Usuario</mat-label>
+          <mat-select formControlName="user" [(value)]="idUsuarioSeleccionado" required>
+            <mat-option *ngFor="let u of lista" [value]="u.idUser">
+              {{u.username}}
+          </mat-option>
+          </mat-select>
         </mat-form-field>
         <br>
         <br>
         <!-- <button mat-raised-button color="primary" class="m-3"><mat-icon>done_all</mat-icon>Aceptar</button> -->
         <div class="d-flex justify-content-center">
           <button class="btn-accept"(click)="aceptar()"><mat-icon>check_circle</mat-icon></button>
-          <mat-icon routerLink="/users" class="ms-4">cancel</mat-icon>
+          <mat-icon routerLink="/medicos" class="ms-4">cancel</mat-icon>
         </div>
       </form>
     </div>

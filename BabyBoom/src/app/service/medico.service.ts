@@ -1,36 +1,35 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { User } from '../model/usuario';
-import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
-
+import { Medico } from '../model/medico';
+import { HttpClient } from '@angular/common/http';
 const base_url = environment.base;
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class UsuarioService {
-  private url = `${base_url}/users`;
-  private listCambio=new Subject<User[]>();
+export class MedicoService {
+  private url = `${base_url}/medicos`;
+  private listCambio = new Subject<Medico[]>();
   private confirmDeletion = new Subject<Boolean>();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   list() {
-    return this.http.get<User[]>(this.url);
+    return this.http.get<Medico[]>(this.url);
   }
-  insert(usuario:User){
+  insert(usuario:Medico){
     return this.http.post(this.url, usuario);
   }
-  setList(listaNueva:User[]){
+  setList(listaNueva:Medico[]){
     return this.listCambio.next(listaNueva);
   }
   getList(){
     return this.listCambio.asObservable();
   }
   listId(id:number){
-    return this.http.get<User>(`${this.url}/${id}`)
+    return this.http.get<Medico>(`${this.url}/${id}`)
   }
-  update(usuario:User){
+  update(usuario:Medico){
     //return this.http.put(this.url + "/" + usuario.idUser, usuario);
     return this.http.put(this.url, usuario);
   }

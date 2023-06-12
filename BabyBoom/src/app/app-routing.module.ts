@@ -17,11 +17,19 @@ import { TipoenfermedadListarComponent } from './components/tipoenfermedad/tipoe
 import { TipoenfermedadCreareditarComponent } from './components/tipoenfermedad/tipoenfermedad-creareditar/tipoenfermedad-creareditar.component';
 import { TiposuscripcionComponent } from './components/tiposuscripcion/tiposuscripcion.component';
 import { TiposuscripcionCreaeditaComponent } from './components/tiposuscripcion/tiposuscripcion-creaedita/tiposuscripcion-creaedita.component';
+import { MedicoComponent } from './components/medico/medico.component';
+import { MedicoCreaeditaComponent } from './components/medico/medico-creaedita/medico-creaedita.component';
 const routes: Routes = [
   {
-    path: 'Usuario', component:UsuarioComponent, children: [
+    path: 'users', component:UsuarioComponent, children: [
       {path:'agregar', component:UsuarioCreaeditaComponent},
       {path:'editar/:id', component:UsuarioCreaeditaComponent}
+    ]
+  },
+  {
+    path: 'medicos', component:MedicoComponent, children: [
+      {path:'agregar', component:MedicoCreaeditaComponent},
+      {path:'editar/:id', component:MedicoCreaeditaComponent}
     ]
   },
   {

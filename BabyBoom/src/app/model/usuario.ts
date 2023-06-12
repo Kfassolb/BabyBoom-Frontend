@@ -1,5 +1,5 @@
-export class Usuario {
-  id: number = 0;
-  Username: string = "";
-  Password: string = "";
+export class User {
+  idUser: number = 0;
+  username: string = "";
+  password: string = "";
 }
