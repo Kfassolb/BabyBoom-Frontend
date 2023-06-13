@@ -114,6 +114,28 @@ module.exports = function(){
         nombreSuscripcion: "Premium anual",
       },
     ],
+    Bebes: [
+      {
+        id: 1,
+        nombreBebe: "Pepe",
+        fechaBebe:"2000-12-06"
+      },
+      {
+        id: 2,
+        nombreBebe: "Antoni",
+        fechaBebe:"2000-12-06"
+      },
+      {
+        id: 3,
+        nombreBebe: "Rodrigo",
+        fechaBebe:"2000-12-06",
+      },
+      {
+        id: 4,
+        nombreBebe: "Gustavo",
+        fechaBebe:"2000-12-06",
+      }
+    ],
   }
   return data
 }
