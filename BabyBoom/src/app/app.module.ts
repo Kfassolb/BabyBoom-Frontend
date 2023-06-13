@@ -40,6 +40,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ProductoComponent } from './components/producto/producto.component';
 import { ProductoListarComponent } from './components/producto/producto-listar/producto-listar.component';
 import { ProductoCreaeditaComponent } from './components/producto/producto-creaedita/producto-creaedita.component';
+import { BebeComponent } from './components/bebe/bebe.component';
+import { BebeListarComponent } from './components/bebe/bebe-listar/bebe-listar.component';
+import { BebeDialogoComponent } from './components/bebe/bebe-listar/bebe-dialogo/bebe-dialogo.component';
+import { BebeCreaeditaComponent } from './components/bebe/bebe-creaedita/bebe-creaedita.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +60,6 @@ import { ProductoCreaeditaComponent } from './components/producto/producto-creae
     TipocomprobanteDialogoComponent,
     TipoenfermedadCreareditarComponent,
     TipoenfermedadDialogoComponent,
-
     UsuarioDialogoComponent,
     ProductoComponent,
     ProductoListarComponent,
@@ -68,6 +71,10 @@ import { ProductoCreaeditaComponent } from './components/producto/producto-creae
     TiposuscripcionComponent,
     TiposuscripcionListarComponent,
     TiposuscripcionCreaeditaComponent,
+    BebeComponent,
+    BebeListarComponent,
+    BebeCreaeditaComponent,
+    BebeDialogoComponent,
   ],
   imports: [
     BrowserModule,
