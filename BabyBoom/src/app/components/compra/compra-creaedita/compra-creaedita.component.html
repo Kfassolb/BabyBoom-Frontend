@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <div class="container">
+      <h1>Compras</h1>
+      <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>idCompra</mat-label>
+        <input matInput placeholder="Id" formControlName="idCompra">
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>idApoderado</mat-label>
+        <input matInput placeholder="Id" formControlName="idCompra">
+      </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+        <mat-label>idTipocomprobante</mat-label>
+        <input matInput required placeholder="idTipocomprobante" formControlName="idTipocomprobante">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="Fecha" [max]="maxFecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>ventaTotal</mat-label>
+        <input matInput placeholder="ventaTotal" formControlName="ventaTotal">
+      </mat-form-field>
+      <br>
+
+        <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+
+        <button mat-raised-button color="warn" routerLink="/compras">Cancelar</button>
+      <p>{{mensaje}}</p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+

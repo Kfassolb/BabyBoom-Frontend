@@ -17,6 +17,8 @@ import { TipoenfermedadListarComponent } from './components/tipoenfermedad/tipoe
 import { TipoenfermedadCreareditarComponent } from './components/tipoenfermedad/tipoenfermedad-creareditar/tipoenfermedad-creareditar.component';
 import { TiposuscripcionComponent } from './components/tiposuscripcion/tiposuscripcion.component';
 import { TiposuscripcionCreaeditaComponent } from './components/tiposuscripcion/tiposuscripcion-creaedita/tiposuscripcion-creaedita.component';
+import { CompraComponent } from './components/compra/compra.component';
+import { CompraCreaeditaComponent } from './components/compra/compra-creaedita/compra-creaedita.component';
 const routes: Routes = [
   {
     path: 'Usuario', component:UsuarioComponent, children: [
@@ -54,6 +56,11 @@ const routes: Routes = [
       {path:'edicion/:id', component:TiposuscripcionCreaeditaComponent},
     ],
   },
+  {
+    path: 'compras', component:CompraComponent,children:[
+      {path:'nuevo', component:CompraCreaeditaComponent},
+    ]
+  }
 ];
 
 @NgModule({

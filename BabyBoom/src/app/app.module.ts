@@ -46,6 +46,7 @@ import { ProductoDialogoComponent } from './components/producto/producto-listar/
 import { TiposuscripcionDialogoComponent } from './components/tiposuscripcion/tiposuscripcion-listar/tiposuscripcion-dialogo/tiposuscripcion-dialogo.component';
 import { CompraComponent } from './components/compra/compra.component';
 import { CompraListarComponent } from './components/compra/compra-listar/compra-listar.component';
+import { CompraCreaeditaComponent } from './components/compra/compra-creaedita/compra-creaedita.component';
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import { CompraListarComponent } from './components/compra/compra-listar/compra-
     TiposuscripcionDialogoComponent,
     TipocomprobanteDialogoComponent,
     CompraComponent,
-    CompraListarComponent
+    CompraListarComponent,
+    CompraCreaeditaComponent
 
   ],
   imports: [
