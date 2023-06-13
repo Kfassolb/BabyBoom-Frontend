@@ -44,6 +44,8 @@ import { ProductoListarComponent } from './components/producto/producto-listar/p
 import { ProductoCreaeditaComponent } from './components/producto/producto-creaedita/producto-creaedita.component';
 import { ProductoDialogoComponent } from './components/producto/producto-listar/producto-dialogo/producto-dialogo.component';
 import { TiposuscripcionDialogoComponent } from './components/tiposuscripcion/tiposuscripcion-listar/tiposuscripcion-dialogo/tiposuscripcion-dialogo.component';
+import { CompraComponent } from './components/compra/compra.component';
+import { CompraListarComponent } from './components/compra/compra-listar/compra-listar.component';
 
 
 @NgModule({
@@ -76,7 +78,9 @@ import { TiposuscripcionDialogoComponent } from './components/tiposuscripcion/ti
     TiposuscripcionListarComponent,
     TiposuscripcionCreaeditaComponent,
     TiposuscripcionDialogoComponent,
-    TipocomprobanteDialogoComponent
+    TipocomprobanteDialogoComponent,
+    CompraComponent,
+    CompraListarComponent
 
   ],
   imports: [
