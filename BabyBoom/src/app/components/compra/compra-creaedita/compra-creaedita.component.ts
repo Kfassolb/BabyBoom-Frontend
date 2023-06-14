@@ -23,9 +23,7 @@ export class CompraCreaeditaComponent implements OnInit{
 
   constructor(private cS:CompraService, private router:Router,
     private route:ActivatedRoute,
-    private aS:ApoderadoService, private tS:TipocomprobanteService){
-
-  }
+    private aS:ApoderadoService, private tS:TipocomprobanteService){}
 
   ngOnInit(): void {
     this.aS.list().subscribe(data => { this.lista = data });

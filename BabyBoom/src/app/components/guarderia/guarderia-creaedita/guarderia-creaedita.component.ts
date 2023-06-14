@@ -37,7 +37,7 @@ export class GuarderiaCreaeditaComponent implements OnInit{
     })
   }
   aceptar():void{
-    this.guarderia.idGuarderia = this.form.value['id'];
+    this.guarderia.idGuarderia = this.form.value['idGuarderia'];
     this.guarderia.Proceso = this.form.value['Proceso'];
     this.guarderia.Lugar = this.form.value['Lugar'];
     this.guarderia.Fecha = this.form.value['Fecha'];
