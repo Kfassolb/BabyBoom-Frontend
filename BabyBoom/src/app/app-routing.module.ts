@@ -58,7 +58,7 @@ const routes: Routes = [
   },
   {
     path:'Bebe', component:BebeComponent,children:[
-      {path:'Bebeeditar', component:BebeCreaeditaComponent},
+      {path:'agregar', component:BebeCreaeditaComponent},
       {path:'edicion/:id', component:BebeCreaeditaComponent},
     ],
   },

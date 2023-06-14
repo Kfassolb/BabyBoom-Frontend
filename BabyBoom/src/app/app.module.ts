@@ -44,6 +44,10 @@ import { BebeComponent } from './components/bebe/bebe.component';
 import { BebeListarComponent } from './components/bebe/bebe-listar/bebe-listar.component';
 import { BebeDialogoComponent } from './components/bebe/bebe-listar/bebe-dialogo/bebe-dialogo.component';
 import { BebeCreaeditaComponent } from './components/bebe/bebe-creaedita/bebe-creaedita.component';
+import { EnfermedadbebeComponent } from './components/enfermedadbebe/enfermedadbebe.component';
+import { EnfermedadbebeCreaeditaComponent } from './components/enfermedadbebe/enfermedadbebe-creaedita/enfermedadbebe-creaedita.component';
+import { EnfermedadbebeListarComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-listar.component';
+import { EnfermedadbebeDialogoComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-dialogo/enfermedadbebe-dialogo.component';
 @NgModule({
   declarations: [
     AppComponent,
