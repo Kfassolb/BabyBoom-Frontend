@@ -48,6 +48,9 @@ export class EnfermedadbebeCreaeditaComponent implements OnInit {
     this.form = new FormGroup({
       id: new FormControl(),
       sintomasEnfermedad_bebe: new FormControl(),
+      enfermedad: new FormControl(),
+      bebe: new FormControl(),
+
 
     });
 
@@ -56,6 +59,14 @@ export class EnfermedadbebeCreaeditaComponent implements OnInit {
   aceptar(): void {
     this.Enfermedadbebe.id = this.form.value['id'];
     this.Enfermedadbebe.sintomasEnfermedad_bebe = this.form.value['sintomasEnfermedad_bebe'];
+    this.Enfermedadbebe.tipoenfermedad.nombreEnfermedad=this.form.value['enfermedad.nombreEnfermedad'];
+    this.Enfermedadbebe.bebe.nombreBebe=this.form.value['bebe.nombreBebe'];
+    let bebeinde= new Bebe();
+    bebeinde.id = this.idBebe;
+    this.Enfermedadbebe.bebe= bebeinde;
+    let enfermedadinde= new Tipoenfermedad();
+    enfermedadinde.id = this.idEnfermedad;
+    this.Enfermedadbebe.tipoenfermedad= enfermedadinde;
 
     if (this.form.value['sintomasEnfermedad_bebe'].length > 0) {
       if (this.edicion) {
@@ -83,6 +94,9 @@ export class EnfermedadbebeCreaeditaComponent implements OnInit {
         this.form = new FormGroup({
           id: new FormControl(data.id),
           sintomasEnfermedad_bebe: new FormControl(data.sintomasEnfermedad_bebe),
+          enfermedad: new FormControl(data.tipoenfermedad),
+          bebe: new FormControl(data.bebe),
+
 
         });
 
