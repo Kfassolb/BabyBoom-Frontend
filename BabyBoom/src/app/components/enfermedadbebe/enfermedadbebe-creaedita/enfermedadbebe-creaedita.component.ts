@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Enfermedadbebe } from 'src/app/model/Enfermedadbebe';
 import * as moment from 'moment';
@@ -15,11 +15,12 @@ import { BebeService } from 'src/app/service/bebe.service';
   templateUrl: './enfermedadbebe-creaedita.component.html',
   styleUrls: ['./enfermedadbebe-creaedita.component.css']
 })
-export class EnfermedadbebeCreaeditaComponent implements OnInit {
+export class EnfermedadbebeCreaeditaComponent  {
   id: number = 0;
   edicion: boolean = false;
 
-  form: FormGroup = new FormGroup({});
+  /*form: FormGroup = new FormGroup({});*/
+  form: FormGroup = new FormGroup({})
   Enfermedadbebe: Enfermedadbebe = new Enfermedadbebe();
   mensaje: string = '';
   maxFecha: Date = moment().add(-1, 'days').toDate();

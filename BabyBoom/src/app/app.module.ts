@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import{MatInputModule} from '@angular/material/input'
 import{MatSelectModule} from '@angular/material/select'
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 import { ServicioComponent } from './components/servicio/servicio.component';
@@ -81,6 +82,11 @@ import { LoginComponent } from './components/login/login.component';
     BebeCreaeditaComponent,
     BebeDialogoComponent,
     LoginComponent,
+    EnfermedadbebeComponent,
+    EnfermedadbebeCreaeditaComponent,
+    EnfermedadbebeListarComponent,
+    EnfermedadbebeDialogoComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -100,6 +106,8 @@ import { LoginComponent } from './components/login/login.component';
     MatSlideToggleModule,
     MatDialogModule,
     MatPaginatorModule,
+    MatFormFieldModule,
+
 
   ],
   providers: [],

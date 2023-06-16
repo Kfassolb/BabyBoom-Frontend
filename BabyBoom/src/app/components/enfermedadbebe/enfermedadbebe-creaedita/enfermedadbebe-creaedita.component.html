@@ -14,7 +14,7 @@
         <h1>Registro de sintomas</h1>
       </div>
 
-      <form [formGroup]="form" (submit)="aceptar()">
+      <form [formGroup]="form"(submit)="aceptar()">
         <mat-form-field class="example-full-width">
           <mat-label>Id</mat-label>
           <input matInput placeholder="id" formControlName="id" required/>
@@ -32,7 +32,7 @@
                 <mat-label> Bebes </mat-label>
                 <mat-select formControlName="modelo" [(value)]="idBebe" required>
                   <mat-option *ngFor="let enty of listaBebe" [value]="enty.id">
-                    {{enty.nombrebebe}}
+                    {{enty.nombreBebe}}
                 </mat-option>
                 </mat-select>
             </mat-form-field>

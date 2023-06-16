@@ -1,4 +1,4 @@
 export const environment = {
-  production: false, //no está desplegado
+  production: true, //no está desplegado
   base:'http://localhost:8084'
 }
