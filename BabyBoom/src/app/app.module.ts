@@ -25,7 +25,16 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ServicioDialogoComponent } from './components/servicio/servicio-listar/servicio-dialogo/servicio-dialogo.component'
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
-import {MatPaginatorModule} from '@angular/material/paginator'
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { ControlvacunacionListarComponent } from './components/controlvacunacion/controlvacunacion-listar/controlvacunacion-listar.component';
+import { ControlvacunacionComponent } from './components/controlvacunacion/controlvacunacion.component';
+import { ControlvacunacionCreaeditaComponent } from './components/controlvacunacion/controlvacunacion-creaedita/controlvacunacion-creaedita.component';
+import { ControlvacunacionDialogoComponent } from './components/controlvacunacion/controlvacunacion-listar/controlvacunacion-dialogo/controlvacunacion-dialogo.component';
+import { GuarderiaservicioComponent } from './components/guarderiaservicio/guarderiaservicio.component';
+import { GuarderiaservicioListarComponent } from './components/guarderiaservicio/guarderiaservicio-listar/guarderiaservicio-listar.component';
+import { BebevacunaComponent } from './components/bebevacuna/bebevacuna.component';
+import { BebevacunaListarComponent } from './components/bebevacuna/bebevacuna-listar/bebevacuna-listar.component'
+
 
 @NgModule({
   declarations: [
@@ -39,6 +48,14 @@ import {MatPaginatorModule} from '@angular/material/paginator'
     ServicioCreaditaComponent,
     ServicioCompoment,
     ServicioDialogoComponent,
+    ControlvacunacionListarComponent,
+    ControlvacunacionComponent,
+    ControlvacunacionCreaeditaComponent,
+    ControlvacunacionDialogoComponent,
+    GuarderiaservicioComponent,
+    GuarderiaservicioListarComponent,
+    BebevacunaComponent,
+    BebevacunaListarComponent,
   ],
   imports: [
     BrowserModule,
