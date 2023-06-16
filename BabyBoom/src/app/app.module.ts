@@ -44,6 +44,15 @@ import { ProductoListarComponent } from './components/producto/producto-listar/p
 import { ProductoCreaeditaComponent } from './components/producto/producto-creaedita/producto-creaedita.component';
 import { ProductoDialogoComponent } from './components/producto/producto-listar/producto-dialogo/producto-dialogo.component';
 import { TiposuscripcionDialogoComponent } from './components/tiposuscripcion/tiposuscripcion-listar/tiposuscripcion-dialogo/tiposuscripcion-dialogo.component';
+import { CompraproductoComponent } from './components/compraproducto/compraproducto.component';
+import { CompraproductoCreaeditaComponent } from './components/compraproducto/compraproducto-creaedita/compraproducto-creaedita.component';
+import { CompraproductoListarComponent } from './components/compraproducto/compraproducto-listar/compraproducto-listar.component';
+import { ProblemaComponent } from './components/problema/problema.component';
+import { ProblemaCreaeditaComponent } from './components/problema/problema-creaedita/problema-creaedita.component';
+import { ProblemaListarComponent } from './components/problema/problema-listar/problema-listar.component';
+import { SoportetecnicoComponent } from './components/soportetecnico/soportetecnico.component';
+import { SoportetecnicoCreaeditaComponent } from './components/soportetecnico/soportetecnico-creaedita/soportetecnico-creaedita.component';
+import { SoportetecnicoListarComponent } from './components/soportetecnico/soportetecnico-listar/soportetecnico-listar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +83,16 @@ import { TiposuscripcionDialogoComponent } from './components/tiposuscripcion/ti
     TiposuscripcionListarComponent,
     TiposuscripcionCreaeditaComponent,
     TiposuscripcionDialogoComponent,
-    TipocomprobanteDialogoComponent
+    TipocomprobanteDialogoComponent,
+    CompraproductoComponent,
+    CompraproductoCreaeditaComponent,
+    CompraproductoListarComponent,
+    ProblemaComponent,
+    ProblemaCreaeditaComponent,
+    ProblemaListarComponent,
+    SoportetecnicoComponent,
+    SoportetecnicoCreaeditaComponent,
+    SoportetecnicoListarComponent
 
   ],
   imports: [

@@ -114,6 +114,15 @@ module.exports = function(){
         nombreSuscripcion: "Premium anual",
       },
     ],
+    Problema:[
+      {
+        id:1
+        Titulo:
+        Descripcion:
+        FechaInicio:
+        FechaFin:
+      }
+    ]
   }
   return data
 }
