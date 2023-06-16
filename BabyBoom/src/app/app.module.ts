@@ -48,6 +48,7 @@ import { EnfermedadbebeComponent } from './components/enfermedadbebe/enfermedadb
 import { EnfermedadbebeCreaeditaComponent } from './components/enfermedadbebe/enfermedadbebe-creaedita/enfermedadbebe-creaedita.component';
 import { EnfermedadbebeListarComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-listar.component';
 import { EnfermedadbebeDialogoComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-dialogo/enfermedadbebe-dialogo.component';
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,6 +80,7 @@ import { EnfermedadbebeDialogoComponent } from './components/enfermedadbebe/enfe
     BebeListarComponent,
     BebeCreaeditaComponent,
     BebeDialogoComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
