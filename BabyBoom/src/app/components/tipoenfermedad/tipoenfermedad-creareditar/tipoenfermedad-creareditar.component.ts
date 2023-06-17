@@ -25,8 +25,8 @@ export class TipoenfermedadCreareditarComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.route.params.subscribe((data:Params) => {
-      this.id = data['id'];
-      this.edicion = data['id'] != null;
+      this.id = data['idTipoEnfermedad'];
+      this.edicion = data['idTipoEnfermedad'] != null;
       this.init();
     });
     this.form = new FormGroup({
@@ -38,9 +38,9 @@ export class TipoenfermedadCreareditarComponent implements OnInit {
   }
 
   aceptar(): void {
-    this.Tipoenfermedad.id = this.form.value['id'];
+    this.Tipoenfermedad.idTipoEnfermedad = this.form.value['idTipoEnfermedad'];
     this.Tipoenfermedad.nombreEnfermedad = this.form.value['nombreEnfermedad'];
-    this.Tipoenfermedad.TipoEnfermedad = this.form.value['TipoEnfermedad'];
+    this.Tipoenfermedad.tipoTipoEnfermedad = this.form.value['tipoTipoEnfermedad'];
 
     if (this.form.value['nombreEnfermedad'].length > 0) {
       if (this.edicion) {
@@ -66,9 +66,9 @@ export class TipoenfermedadCreareditarComponent implements OnInit {
     if (this.edicion) {
       this.pS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idTipoEnfermedad),
           nombreEnfermedad: new FormControl(data.nombreEnfermedad),
-          TipoEnfermedad: new FormControl(data.TipoEnfermedad),
+          TipoEnfermedad: new FormControl(data.tipoTipoEnfermedad),
 
         });
 

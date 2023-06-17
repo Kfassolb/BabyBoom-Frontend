@@ -31,7 +31,7 @@
             <mat-form-field appearance="fill">
                 <mat-label> Bebes </mat-label>
                 <mat-select formControlName="modelo" [(value)]="idBebe" required>
-                  <mat-option *ngFor="let enty of listaBebe" [value]="enty.id">
+                  <mat-option *ngFor="let enty of listaBebe" [value]="enty.idBebe">
                     {{enty.nombreBebe}}
                 </mat-option>
                 </mat-select>

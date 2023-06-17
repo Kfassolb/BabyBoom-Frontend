@@ -32,7 +32,7 @@ export class TipoEnfermedadeService {
     return this.http.get<Tipoenfermedad>(`${this.url}/${id}`);
   }
   update(Tipoenfermedad: Tipoenfermedad) {
-    return this.http.put(this.url + '/' + Tipoenfermedad.id, Tipoenfermedad);
+    return this.http.put(this.url + '/' + Tipoenfermedad.idTipoEnfermedad, Tipoenfermedad);
   }
 
   eliminar(id: number) {

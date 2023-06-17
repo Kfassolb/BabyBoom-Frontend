@@ -32,7 +32,7 @@ export class BebeService {
     return this.http.get<Bebe>(`${this.url}/${id}`);
   }
   update(Bebe: Bebe) {
-    return this.http.put(this.url + '/' + Bebe.id, Bebe);
+    return this.http.put(this.url + '/' + Bebe.idBebe, Bebe);
   }
 
   eliminar(id: number) {
