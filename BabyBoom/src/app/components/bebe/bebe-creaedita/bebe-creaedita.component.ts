@@ -38,7 +38,7 @@ export class BebeCreaeditaComponent implements OnInit {
   }
 
   aceptar(): void {
-    this.Bebe.id = this.form.value['id'];
+    this.Bebe.idBebe = this.form.value['idBebe'];
     this.Bebe.nombreBebe = this.form.value['nombreBebe'];
     this.Bebe.fechaBebe = this.form.value['fechaBebe'];
 
@@ -66,7 +66,7 @@ export class BebeCreaeditaComponent implements OnInit {
     if (this.edicion) {
       this.pS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idBebe),
           nombreBebe: new FormControl(data.nombreBebe),
           fechaBebe: new FormControl(data.fechaBebe),
 

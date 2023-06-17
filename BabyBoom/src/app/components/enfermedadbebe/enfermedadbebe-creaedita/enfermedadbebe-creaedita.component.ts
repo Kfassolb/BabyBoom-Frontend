@@ -63,10 +63,10 @@ export class EnfermedadbebeCreaeditaComponent  {
     this.Enfermedadbebe.tipoenfermedad.nombreEnfermedad=this.form.value['enfermedad.nombreEnfermedad'];
     this.Enfermedadbebe.bebe.nombreBebe=this.form.value['bebe.nombreBebe'];
     let bebeinde= new Bebe();
-    bebeinde.id = this.idBebe;
+    bebeinde.idBebe = this.idBebe;
     this.Enfermedadbebe.bebe= bebeinde;
     let enfermedadinde= new Tipoenfermedad();
-    enfermedadinde.id = this.idEnfermedad;
+    enfermedadinde.idTipoEnfermedad = this.idEnfermedad;
     this.Enfermedadbebe.tipoenfermedad= enfermedadinde;
 
     if (this.form.value['sintomasEnfermedad_bebe'].length > 0) {
