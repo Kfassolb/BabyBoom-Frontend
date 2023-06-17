@@ -1,6 +1,7 @@
 import { Problema } from "./Problema";
 
-export class Soportetecnico{
+export class Soportetecnico {
+  IDSoporte:number=0
   nombreSoporte: string=""
-  problema:Problema=new Problema();
 }
+
