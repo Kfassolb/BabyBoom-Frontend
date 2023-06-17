@@ -1,19 +1,20 @@
 mat-form-field{
-  width:95% ;
+  width: 100%;
 }
 #titleRegister{
-  font-family: 'Alkatra',cursive;
+  font-family: 'Alkatra', cursive;
   color: #9cdfdf;
 }
 mat-icon:hover{
   cursor: pointer;
 }
 .btn-accept{
-  border:none;
+  border: none;
   background-color: transparent;
   color: #9cdfdf;
 }
-mat-icon{
+
+mat-icon {
   font-size: 2rem;
   width: auto;
   height: auto;

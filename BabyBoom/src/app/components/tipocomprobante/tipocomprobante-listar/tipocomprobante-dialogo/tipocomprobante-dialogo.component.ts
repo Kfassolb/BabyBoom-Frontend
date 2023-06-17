@@ -14,5 +14,4 @@ constructor(private tcS:TipocomprobanteService, private dialogRef:MatDialogRef<T
       this.tcS.setConfirmarEliminacion(estado);
       this.dialogRef.close();
     }
-
 }

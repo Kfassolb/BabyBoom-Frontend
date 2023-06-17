@@ -24,6 +24,10 @@ import { BebeCreaeditaComponent } from './components/bebe/bebe-creaedita/bebe-cr
 import { EnfermedadbebeComponent } from './components/enfermedadbebe/enfermedadbebe.component';
 import { EnfermedadbebeCreaeditaComponent } from './components/enfermedadbebe/enfermedadbebe-creaedita/enfermedadbebe-creaedita.component';
 import { EnfermedadbebeDialogoComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-dialogo/enfermedadbebe-dialogo.component';
+import { CompraComponent } from './components/compra/compra.component';
+import { CompraCreaeditaComponent } from './components/compra/compra-creaedita/compra-creaedita.component';
+import { ApoderadoComponent } from './components/apoderado/apoderado.component';
+import { ApoderadoCreaeditaComponent } from './components/apoderado/apoderado-creaedita/apoderado-creaedita.component';
 const routes: Routes = [
   {
     path: 'users', component:UsuarioComponent, children: [
@@ -35,6 +39,12 @@ const routes: Routes = [
     path: 'medicos', component:MedicoComponent, children: [
       {path:'agregar', component:MedicoCreaeditaComponent},
       {path:'editar/:id', component:MedicoCreaeditaComponent}
+    ]
+  },
+  {
+    path: 'apoderados', component:ApoderadoComponent, children: [
+      {path:'agregar', component:ApoderadoCreaeditaComponent},
+      {path:'editar/:id', component:ApoderadoCreaeditaComponent}
     ]
   },
   {
@@ -79,6 +89,11 @@ const routes: Routes = [
       {path:'edicion/:id', component:EnfermedadbebeDialogoComponent},
     ],
   },
+  {
+    path: 'compras', component:CompraComponent,children:[
+      {path:'nuevo', component:CompraCreaeditaComponent},
+    ]
+  }
 ];
 
 @NgModule({

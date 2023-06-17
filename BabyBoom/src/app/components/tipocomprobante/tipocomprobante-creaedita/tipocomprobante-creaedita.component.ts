@@ -12,6 +12,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class TipocomprobanteCreaeditaComponent implements OnInit{
   id:number=0;
+  contador:number=0;
   edicion:boolean=false;
   form:FormGroup = new FormGroup({});
   tipocomprobante:Tipocomprobante = new Tipocomprobante();
@@ -48,7 +49,7 @@ export class TipocomprobanteCreaeditaComponent implements OnInit{
           })
         })
       }
-      this.router.navigate(['tipocomprobantes'])
+        this.router.navigate(['tipocomprobantes'])
     }else{
       this.mensaje = "Ingrese el nombre!!";
     }

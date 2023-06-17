@@ -49,6 +49,10 @@ import { MedicoComponent } from './components/medico/medico.component';
 import { MedicoCreaeditaComponent } from './components/medico/medico-creaedita/medico-creaedita.component';
 import { MedicoListarComponent } from './components/medico/medico-listar/medico-listar.component';
 import { MedicoDialogoComponent } from './components/medico/medico-listar/medico-dialogo/medico-dialogo.component';
+import { ApoderadoComponent } from './components/apoderado/apoderado.component';
+import { ApoderadoCreaeditaComponent } from './components/apoderado/apoderado-creaedita/apoderado-creaedita.component';
+import { ApoderadoListarComponent } from './components/apoderado/apoderado-listar/apoderado-listar.component';
+import { ApoderadoDialogoComponent } from './components/apoderado/apoderado-listar/apoderado-dialogo/apoderado-dialogo.component';
 
 import { BebeComponent } from './components/bebe/bebe.component';
 import { BebeListarComponent } from './components/bebe/bebe-listar/bebe-listar.component';
@@ -59,6 +63,15 @@ import { EnfermedadbebeCreaeditaComponent } from './components/enfermedadbebe/en
 import { EnfermedadbebeListarComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-listar.component';
 import { EnfermedadbebeDialogoComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-dialogo/enfermedadbebe-dialogo.component';
 import { LoginComponent } from './components/login/login.component';
+import { CompraComponent } from './components/compra/compra.component';
+import { CompraListarComponent } from './components/compra/compra-listar/compra-listar.component';
+import { CompraCreaeditaComponent } from './components/compra/compra-creaedita/compra-creaedita.component';
+import { GuarderiaComponent } from './components/guarderia/guarderia.component';
+import { GuarderiaListarComponent } from './components/guarderia/guarderia-listar/guarderia-listar.component';
+import { GuarderiaCreaeditaComponent } from './components/guarderia/guarderia-creaedita/guarderia-creaedita.component';
+import { GuarderiaDialogoComponent } from './components/guarderia/guarderia-listar/guarderia-dialogo/guarderia-dialogo.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,6 +115,17 @@ import { LoginComponent } from './components/login/login.component';
     EnfermedadbebeCreaeditaComponent,
     EnfermedadbebeListarComponent,
     EnfermedadbebeDialogoComponent,
+    CompraComponent,
+    CompraListarComponent,
+    CompraCreaeditaComponent,
+    GuarderiaComponent,
+    GuarderiaListarComponent,
+    GuarderiaCreaeditaComponent,
+    GuarderiaDialogoComponent,
+    ApoderadoComponent,
+    ApoderadoCreaeditaComponent,
+    ApoderadoListarComponent,
+    ApoderadoDialogoComponent
 
   ],
   imports: [
