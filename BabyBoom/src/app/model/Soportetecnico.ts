@@ -1,7 +1,7 @@
 import { Problema } from "./Problema";
 
 export class Soportetecnico {
-  IDSoporte:number=0
-  nombreSoporte: string=""
+  idSoporte:number=0
+  NombreSoporte: string=""
 }
 
