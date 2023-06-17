@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TipocomprobanteService } from 'src/app/service/tipocomprobante.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { TipoEnfermedadeService } from 'src/app/service/tipoenfermedad.service';
 @Component({

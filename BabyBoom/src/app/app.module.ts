@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import{MatInputModule} from '@angular/material/input'
 import{MatSelectModule} from '@angular/material/select'
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 import { ServicioComponent } from './components/servicio/servicio.component';
@@ -49,6 +50,15 @@ import { MedicoCreaeditaComponent } from './components/medico/medico-creaedita/m
 import { MedicoListarComponent } from './components/medico/medico-listar/medico-listar.component';
 import { MedicoDialogoComponent } from './components/medico/medico-listar/medico-dialogo/medico-dialogo.component';
 
+import { BebeComponent } from './components/bebe/bebe.component';
+import { BebeListarComponent } from './components/bebe/bebe-listar/bebe-listar.component';
+import { BebeDialogoComponent } from './components/bebe/bebe-listar/bebe-dialogo/bebe-dialogo.component';
+import { BebeCreaeditaComponent } from './components/bebe/bebe-creaedita/bebe-creaedita.component';
+import { EnfermedadbebeComponent } from './components/enfermedadbebe/enfermedadbebe.component';
+import { EnfermedadbebeCreaeditaComponent } from './components/enfermedadbebe/enfermedadbebe-creaedita/enfermedadbebe-creaedita.component';
+import { EnfermedadbebeListarComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-listar.component';
+import { EnfermedadbebeDialogoComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-dialogo/enfermedadbebe-dialogo.component';
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +75,6 @@ import { MedicoDialogoComponent } from './components/medico/medico-listar/medico
     TipocomprobanteDialogoComponent,
     TipoenfermedadCreareditarComponent,
     TipoenfermedadDialogoComponent,
-
     UsuarioDialogoComponent,
     ProductoComponent,
     ProductoListarComponent,
@@ -83,7 +92,16 @@ import { MedicoDialogoComponent } from './components/medico/medico-listar/medico
     MedicoComponent,
     MedicoCreaeditaComponent,
     MedicoListarComponent,
-    MedicoDialogoComponent
+    MedicoDialogoComponent,
+    BebeComponent,
+    BebeListarComponent,
+    BebeCreaeditaComponent,
+    BebeDialogoComponent,
+    LoginComponent,
+    EnfermedadbebeComponent,
+    EnfermedadbebeCreaeditaComponent,
+    EnfermedadbebeListarComponent,
+    EnfermedadbebeDialogoComponent,
 
   ],
   imports: [
@@ -103,6 +121,7 @@ import { MedicoDialogoComponent } from './components/medico/medico-listar/medico
     MatDialogModule,
     MatPaginatorModule,
     BrowserModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
