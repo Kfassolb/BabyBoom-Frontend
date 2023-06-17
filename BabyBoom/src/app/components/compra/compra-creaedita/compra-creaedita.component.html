@@ -21,9 +21,22 @@
 
       <br>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>idApoderado</mat-label>
-        <input matInput placeholder="Id" formControlName="idCompra">
+      <mat-form-field appearance="fill">
+        <mat-label>idTipoComprobante</mat-label>
+        <mat-select formControlName="pet" [(value)]="idTipocomprobanteSeleccionado" required>
+          <mat-option *ngFor="let c of lista" [value]="c.idTipocomprobante">
+            {{c.nombreComprobante}}
+        </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>idTipoComprobante</mat-label>
+        <mat-select formControlName="pet" [(value)]="idApoderadoSeleccionado" required>
+        <mat-option *ngFor="let a of lista" [value]="a.idApoderado">
+            {{a.nombre}}
+        </mat-option>
+        </mat-select>
       </mat-form-field>
 
             <mat-form-field class="example-full-width">

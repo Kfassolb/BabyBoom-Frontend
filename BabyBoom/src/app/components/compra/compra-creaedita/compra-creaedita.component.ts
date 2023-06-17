@@ -20,6 +20,7 @@ export class CompraCreaeditaComponent implements OnInit{
   maxFecha:Date = moment().add(-1,'days').toDate();
   lista:Compra[] = [];
   idTipoComprobanteSeleccionado: number=0;
+  idApoderadoSeleccionado:number=0;
 
   constructor(private cS:CompraService, private router:Router,
     private route:ActivatedRoute,
@@ -38,13 +39,17 @@ export class CompraCreaeditaComponent implements OnInit{
   aceptar():void{
     this.compra.idCompra = this.form.value['idCompra'];
     this.compra.idApoderado.idApoderado = this.form.value['idApoderado']; // AQUI FALTA CAMBIAR
-    this.compra.idTipocomprobante.id = this.form.value['idTipocomprobante'];
+    this.compra.idTipocomprobante.idTipocomprobante = this.form.value['idTipocomprobante'];
     this.compra.Fecha = this.form.value['Fecha'];
     this.compra.ventaTotal = this.form.value['ventaTotal'];
     if(this.idTipoComprobanteSeleccionado>0){
       let c = new Tipocomprobante();
-      c.id = this.idTipoComprobanteSeleccionado;
+      c.idTipocomprobante = this.idTipoComprobanteSeleccionado;
       this.compra.idTipocomprobante = c;
+
+      let a = new Apoderado();
+      a.idApoderado = this.idApoderadoSeleccionado;
+      this.compra.idApoderado;
       this.cS.insert(this.compra).subscribe(()=>{
         this.cS.list().subscribe(data =>{
           this.cS.setList(data);
