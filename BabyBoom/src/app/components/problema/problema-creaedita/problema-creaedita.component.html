@@ -17,24 +17,26 @@
       <mat-form-field appearance="fill">
         <mat-label>idSoporte</mat-label>
         <mat-select formControlName="soportetecnico" [(value)]="idSoportetecnicoSeleccionado" required>
-          <mat-option *ngFor="let s of lista" [value]="p.idSoportetecnico">
+          <mat-option *ngFor="let s of lista" [value]="s.idSoportetecnico">
             {{s.idSoporte}}
-        </mat-option>
-        </mat-select>
-
-        <br>
-
-        <mat-form-field appearance="fill">
-          <mat-label>idApoderado</mat-label>
-          <mat-select formControlName="apoderado" [(value)]="idApoderadoSeleccionado" required>
-            <mat-option *ngFor="let a of lista" [value]="a.idApoderado">
-              {{s.idApoderado}}
           </mat-option>
-          </mat-select>
+        </mat-select>
+      </mat-form-field>
 
-          <br>
+      <br>
 
-            <mat-form-field class="example-full-width">
+      <mat-form-field appearance="fill">
+        <mat-label>idApoderado</mat-label>
+        <mat-select formControlName="apoderado" [(value)]="idApoderadoSeleccionado" required>
+          <mat-option *ngFor="let a of lista" [value]="a.idApoderado">
+            {{a.idApoderado}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
         <mat-label>Titulo</mat-label>
         <input matInput required placeholder="Titulo" formControlName="Titulo">
       </mat-form-field>
@@ -44,33 +46,33 @@
       <mat-form-field class="example-full-width">
         <mat-label>Descripcion</mat-label>
         <input matInput required placeholder="Descripcion" formControlName="Descripcion">
-        </mat-form-field>
-
-        <br>
-      <mat-form-field appearance="fill">
-        <mat-label>Fecha Inicio </mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="FechaInicio" [max]="maxFecha">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
+      </mat-form-field>
 
       <br>
 
       <mat-form-field appearance="fill">
-        <mat-label>Fecha Fin </mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="FechaFin" [max]="maxFecha">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
+        <mat-label>Fecha Inicio</mat-label>
+        <input matInput [matDatepicker]="pickerInicio" formControlName="FechaInicio" [max]="maxFecha">
+        <mat-datepicker-toggle matSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+        <mat-datepicker #pickerInicio></mat-datepicker>
+      </mat-form-field>
 
       <br>
 
-        <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha Fin</mat-label>
+        <input matInput [matDatepicker]="pickerFin" formControlName="FechaFin" [max]="maxFecha">
+        <mat-datepicker-toggle matSuffix [for]="pickerFin"></mat-datepicker-toggle>
+        <mat-datepicker #pickerFin></mat-datepicker>
+      </mat-form-field>
 
-        <button mat-raised-button color="warn" routerLink="/pets">Cancelar</button>
+      <br>
+
+      <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/problema">Cancelar</button>
+      
       <p>{{mensaje}}</p>
-      </form>
-    </div>
+    </form>
   </div>
 </body>
 </html>
