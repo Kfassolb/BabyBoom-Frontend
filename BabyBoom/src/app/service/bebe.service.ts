@@ -1,27 +1,27 @@
 import { Injectable } from '@angular/core';
 import {environment} from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Tipoenfermedad } from '../model/Tipoenfermedad';
+import { Bebe } from '../model/Bebe';
 import { Subject } from 'rxjs';
 
 const base_url = environment.base
 @Injectable({
   providedIn: 'root',
 })
-export class TipoEnfermedadeService {
-  private url = `${base_url}/tiposenfermedades`;
-  private listCambio = new Subject<Tipoenfermedad[]>();
+export class BebeService {
+  private url = `${base_url}/bebes`;
+  private listCambio = new Subject<Bebe[]>();
   private confirmaEliminacion = new Subject<Boolean>()
 
   constructor(private http:HttpClient) { }
   list(){
-    return this.http.get<Tipoenfermedad[]>(this.url);
+    return this.http.get<Bebe[]>(this.url);
   }
-  insert(Tipoenfermedad: Tipoenfermedad) {
-    return this.http.post(this.url, Tipoenfermedad);
+  insert(Bebe: Bebe) {
+    return this.http.post(this.url, Bebe);
   }
 
-  setList(listaNueva: Tipoenfermedad[]) {
+  setList(listaNueva: Bebe[]) {
     this.listCambio.next(listaNueva);
   }
 
@@ -29,10 +29,10 @@ export class TipoEnfermedadeService {
     return this.listCambio.asObservable();
   }
   listId(id: number) {
-    return this.http.get<Tipoenfermedad>(`${this.url}/${id}`);
+    return this.http.get<Bebe>(`${this.url}/${id}`);
   }
-  update(Tipoenfermedad: Tipoenfermedad) {
-    return this.http.put(this.url + '/' + Tipoenfermedad.idTipoEnfermedad, Tipoenfermedad);
+  update(Bebe: Bebe) {
+    return this.http.put(this.url + '/' + Bebe.idBebe, Bebe);
   }
 
   eliminar(id: number) {

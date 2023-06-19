@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { UsuarioComponent } from './components/usuario/usuario.component';
-
 import { UsuarioCreaeditaComponent } from './components/usuario/usuario-creaedita/usuario-creaedita.component';
 import { TipocomprobanteCreaeditaComponent } from './components/tipocomprobante/tipocomprobante-creaedita/tipocomprobante-creaedita.component'
 import { ServicioCreaditaComponent } from './components/servicio/servicio-creadita/servicio-creadita.component';
@@ -20,11 +19,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import{MatInputModule} from '@angular/material/input'
 import{MatSelectModule} from '@angular/material/select'
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 import { ServicioComponent } from './components/servicio/servicio.component';
 import { ServicioDialogoComponent } from './components/servicio/servicio-listar/servicio-dialogo/servicio-dialogo.component'
-
 import { ServicioListarComponent } from './components/servicio/servicio-listar/servicio-listar.component'
 import { MatIconModule } from '@angular/material/icon';
 import { TipoenfermedadComponent } from './components/tipoenfermedad/tipoenfermedad.component';
@@ -42,17 +41,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ProductoComponent } from './components/producto/producto.component';
 import { ProductoListarComponent } from './components/producto/producto-listar/producto-listar.component';
 import { ProductoCreaeditaComponent } from './components/producto/producto-creaedita/producto-creaedita.component';
-import { ProductoDialogoComponent } from './components/producto/producto-listar/producto-dialogo/producto-dialogo.component';
-import { TiposuscripcionDialogoComponent } from './components/tiposuscripcion/tiposuscripcion-listar/tiposuscripcion-dialogo/tiposuscripcion-dialogo.component';
-import { CompraComponent } from './components/compra/compra.component';
-import { CompraListarComponent } from './components/compra/compra-listar/compra-listar.component';
-import { CompraCreaeditaComponent } from './components/compra/compra-creaedita/compra-creaedita.component';
-import { GuarderiaComponent } from './components/guarderia/guarderia.component';
-import { GuarderiaListarComponent } from './components/guarderia/guarderia-listar/guarderia-listar.component';
-import { GuarderiaCreaeditaComponent } from './components/guarderia/guarderia-creaedita/guarderia-creaedita.component';
-import { GuarderiaDialogoComponent } from './components/guarderia/guarderia-listar/guarderia-dialogo/guarderia-dialogo.component';
-
-
+import { BebeComponent } from './components/bebe/bebe.component';
+import { BebeListarComponent } from './components/bebe/bebe-listar/bebe-listar.component';
+import { BebeDialogoComponent } from './components/bebe/bebe-listar/bebe-dialogo/bebe-dialogo.component';
+import { BebeCreaeditaComponent } from './components/bebe/bebe-creaedita/bebe-creaedita.component';
+import { EnfermedadbebeComponent } from './components/enfermedadbebe/enfermedadbebe.component';
+import { EnfermedadbebeCreaeditaComponent } from './components/enfermedadbebe/enfermedadbebe-creaedita/enfermedadbebe-creaedita.component';
+import { EnfermedadbebeListarComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-listar.component';
+import { EnfermedadbebeDialogoComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-dialogo/enfermedadbebe-dialogo.component';
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,12 +66,10 @@ import { GuarderiaDialogoComponent } from './components/guarderia/guarderia-list
     TipocomprobanteDialogoComponent,
     TipoenfermedadCreareditarComponent,
     TipoenfermedadDialogoComponent,
-
     UsuarioDialogoComponent,
     ProductoComponent,
     ProductoListarComponent,
     ProductoCreaeditaComponent,
-    ProductoDialogoComponent,
     ServicioListarComponent,
     TipocomprobanteCreaeditaComponent,
     ServicioCreaditaComponent,
@@ -82,21 +77,23 @@ import { GuarderiaDialogoComponent } from './components/guarderia/guarderia-list
     TiposuscripcionComponent,
     TiposuscripcionListarComponent,
     TiposuscripcionCreaeditaComponent,
-    TiposuscripcionDialogoComponent,
-    TipocomprobanteDialogoComponent,
-    CompraComponent,
-    CompraListarComponent,
-    CompraCreaeditaComponent,
-    GuarderiaComponent,
-    GuarderiaListarComponent,
-    GuarderiaCreaeditaComponent,
-    GuarderiaDialogoComponent
+    BebeComponent,
+    BebeListarComponent,
+    BebeCreaeditaComponent,
+    BebeDialogoComponent,
+    LoginComponent,
+    EnfermedadbebeComponent,
+    EnfermedadbebeCreaeditaComponent,
+    EnfermedadbebeListarComponent,
+    EnfermedadbebeDialogoComponent,
 
   ],
   imports: [
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatTableModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     MatNativeDateModule,
     FormsModule,
@@ -109,7 +106,9 @@ import { GuarderiaDialogoComponent } from './components/guarderia/guarderia-list
     MatSlideToggleModule,
     MatDialogModule,
     MatPaginatorModule,
-    BrowserModule,
+    MatFormFieldModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,14 +13,14 @@
 <body>
   <div class="container mt-4">
     <div class="text-center">
-      <h1 class="p-3 fw-bold" id="titleList">Lista Informativa de enfermedades registradas</h1>
+      <h1 class="p-3 fw-bold" id="titleList">Lista de Sintomas registrados</h1>
     </div>
     <div class="d-flex">
       <mat-form-field>
         <input  matInput (keyup)="filtrar($event)" placeholder="Buscar"/>
       </mat-form-field>
       <div class="ms-auto p-2">
-        <mat-icon routerLink="/Enfermedad/agregar" class="btn-add">library_add</mat-icon>
+        <mat-icon routerLink="/Sintomas/agregar" class="btn-add">library_add</mat-icon>
       </div>
     </div>
 
@@ -32,19 +32,14 @@
     <!-- Position Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.idTipoEnfermedad}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
 
     <!-- Name Column -->
 
-    <ng-container matColumnDef="nombreEnfermedad">
-      <th mat-header-cell *matHeaderCellDef> Nombre </th>
-      <td mat-cell *matCellDef="let element"> {{element.nombreEnfermedad}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="TipoEnfermedad">
-      <th mat-header-cell *matHeaderCellDef> Tipo Enfermedad </th>
-      <td mat-cell *matCellDef="let element"> {{element.tipoTipoEnfermedad}} </td>
+    <ng-container matColumnDef="sintomasEnfermedad_bebe">
+      <th mat-header-cell *matHeaderCellDef> Sintomas </th>
+      <td mat-cell *matCellDef="let element"> {{element.sintomasEnfermedad_bebe}} </td>
     </ng-container>
 
     <ng-container matColumnDef="accion01">

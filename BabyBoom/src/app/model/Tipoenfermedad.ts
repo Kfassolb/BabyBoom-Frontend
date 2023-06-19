@@ -1,5 +1,5 @@
 export class Tipoenfermedad{
-  id:number=0
+  idTipoEnfermedad:number=0
   nombreEnfermedad:string=""
-  TipoEnfermedad:string=""
+  tipoTipoEnfermedad:string=""
 }
