@@ -1,1 +1,48 @@
-<p>soportetecnico-listar works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div style="text-align:center">
+      <h1>Lista de Servicio</h1>
+    </div>
+    <div>
+      <button mat-raised-button color="warn" routerLink="/soportetecnico/soportetecnicoeditar">Registrar</button>
+    </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> idSoporte</th>
+      <td mat-cell *matCellDef="let element"> {{element.idSoporte}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="NombreSoporte">
+      <th mat-header-cell *matHeaderCellDef> NombreSoporte </th>
+      <td mat-cell *matCellDef="let element"> {{element.NombreSoporte}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef> Editar </th>
+      <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary"
+        [routerLink]="['edicion', element.id]">Actualizar</button>
+      <button mat-raised-button color="accent" (click)="confirmar(element.idSoporte)">Eliminar</button>
+
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  </div>
+</body>
+</html>
