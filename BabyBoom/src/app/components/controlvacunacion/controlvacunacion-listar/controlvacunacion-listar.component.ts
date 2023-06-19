@@ -41,7 +41,7 @@ export class ControlvacunacionListarComponent implements OnInit{
     eliminar(id: number) {
       this.CVs.eliminar(id).subscribe(() => {
         this.CVs.list().subscribe(data => {
-          this.CVs.setList(data);/* se ejecuta la línea 27 */
+          this.CVs.setList(data);
           this.dataSource= new MatTableDataSource(data);
           this.dataSource.paginator=this.paginator;
         });

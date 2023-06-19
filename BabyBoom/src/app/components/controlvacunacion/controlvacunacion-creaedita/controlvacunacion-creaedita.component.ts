@@ -71,8 +71,6 @@ init() {
     this.form = new FormGroup({
         id: new FormControl(data.id),
         NombreServicio: new FormControl(data.nombreVacunador),
-
-
       });
       console.log(data);
     });

@@ -11,9 +11,7 @@ export class ControlvacunacionService {
 private url=`${base_url}/controlvacunacion`
 private listaCambio=new Subject<ControlVacunacion[]>()
 private confirmaEliminacion = new Subject<Boolean>()
-
 constructor(private http:HttpClient) { }
-
 list() {
   return this.http.get<ControlVacunacion[]>(this.url);
 }

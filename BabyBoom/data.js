@@ -54,6 +54,24 @@ module.exports = function(){
         NombreServicio:"Siesta bebe",
       },
    ],
+   Controlvacunacion:[
+    {
+      id:1,
+      fecha:"2023-11-05",
+      tipoVacuna:"liquida",
+      estadoVacunacion:"hecho",
+      nombreVacunador:"Jose Perales",
+      lugar:"Hospital",
+    },
+    {
+      id:2,
+      fecha:"2021-11-02",
+      tipoVacuna:"polvo",
+      estadoVacunacion:"en proceso",
+      nombreVacunador:"Bernando Perales",
+      lugar:"Clinica",
+    },
+   ],
   }
   return data
 }
