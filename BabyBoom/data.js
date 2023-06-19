@@ -53,6 +53,7 @@ module.exports = function(){
         id:3,
         NombreServicio:"Siesta bebe",
       },
+<<<<<<< HEAD
     ],
     Producto: [
       {
@@ -136,6 +137,27 @@ module.exports = function(){
         fechaBebe:"2000-12-06",
       }
     ],
+=======
+   ],
+   Controlvacunacion:[
+    {
+      id:1,
+      fecha:"2023-11-05",
+      tipoVacuna:"liquida",
+      estadoVacunacion:"hecho",
+      nombreVacunador:"Jose Perales",
+      lugar:"Hospital",
+    },
+    {
+      id:2,
+      fecha:"2021-11-02",
+      tipoVacuna:"polvo",
+      estadoVacunacion:"en proceso",
+      nombreVacunador:"Bernando Perales",
+      lugar:"Clinica",
+    },
+   ],
+>>>>>>> sheyla
   }
   return data
 }

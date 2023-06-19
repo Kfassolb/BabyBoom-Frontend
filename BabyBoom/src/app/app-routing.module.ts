@@ -12,6 +12,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TipocomprobanteCreaeditaComponent } from './components/tipocomprobante/tipocomprobante-creaedita/tipocomprobante-creaedita.component';
 import { ServicioComponent } from './components/servicio/servicio.component';
 import { ServicioCreaditaComponent } from './components/servicio/servicio-creadita/servicio-creadita.component';
+<<<<<<< HEAD
 import { TipoenfermedadComponent } from './components/tipoenfermedad/tipoenfermedad.component';
 import { TipoenfermedadListarComponent } from './components/tipoenfermedad/tipoenfermedad-listar/tipoenfermedad-listar.component';
 import { TipoenfermedadCreareditarComponent } from './components/tipoenfermedad/tipoenfermedad-creareditar/tipoenfermedad-creareditar.component';
@@ -22,6 +23,11 @@ import { BebeCreaeditaComponent } from './components/bebe/bebe-creaedita/bebe-cr
 import { EnfermedadbebeComponent } from './components/enfermedadbebe/enfermedadbebe.component';
 import { EnfermedadbebeCreaeditaComponent } from './components/enfermedadbebe/enfermedadbebe-creaedita/enfermedadbebe-creaedita.component';
 import { EnfermedadbebeDialogoComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-dialogo/enfermedadbebe-dialogo.component';
+=======
+import { ControlvacunacionCreaeditaComponent } from './components/controlvacunacion/controlvacunacion-creaedita/controlvacunacion-creaedita.component';
+import { ControlvacunacionComponent } from './components/controlvacunacion/controlvacunacion.component';
+
+>>>>>>> sheyla
 const routes: Routes = [
   {
     path: 'Usuario', component:UsuarioComponent, children: [
@@ -54,6 +60,7 @@ const routes: Routes = [
     ]
   },
   {
+<<<<<<< HEAD
     path:'TiposSuscripcion', component:TiposuscripcionComponent,children:[
       {path:'Suscripcioneditar', component:TiposuscripcionCreaeditaComponent},
       {path:'edicion/:id', component:TiposuscripcionCreaeditaComponent},
@@ -71,6 +78,13 @@ const routes: Routes = [
       {path:'edicion/:id', component:EnfermedadbebeDialogoComponent},
     ],
   },
+=======
+    path:'controlvacunacion', component:ControlvacunacionComponent,children:[
+      {path:'controlvacunacioneditar',component:ControlvacunacionCreaeditaComponent},
+      { path: 'edicion/:id', component: ControlvacunacionCreaeditaComponent }
+    ]
+  }
+>>>>>>> sheyla
 ];
 
 @NgModule({

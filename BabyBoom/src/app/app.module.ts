@@ -18,8 +18,31 @@ import { TiposuscripcionListarComponent } from './components/tiposuscripcion/tip
 import { TiposuscripcionCreaeditaComponent } from './components/tiposuscripcion/tiposuscripcion-creaedita/tiposuscripcion-creaedita.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
+<<<<<<< HEAD
 import{MatInputModule} from '@angular/material/input'
 import{MatSelectModule} from '@angular/material/select'
+=======
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatButtonModule} from '@angular/material/button';
+import { ServicioCreaditaComponent } from './components/servicio/servicio-creadita/servicio-creadita.component';
+import { ServicioCompoment } from './components/servicio/servicio.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ServicioDialogoComponent } from './components/servicio/servicio-listar/servicio-dialogo/servicio-dialogo.component'
+import { MatIconModule } from '@angular/material/icon';
+import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { ControlvacunacionListarComponent } from './components/controlvacunacion/controlvacunacion-listar/controlvacunacion-listar.component';
+import { ControlvacunacionComponent } from './components/controlvacunacion/controlvacunacion.component';
+import { ControlvacunacionCreaeditaComponent } from './components/controlvacunacion/controlvacunacion-creaedita/controlvacunacion-creaedita.component';
+import { ControlvacunacionDialogoComponent } from './components/controlvacunacion/controlvacunacion-listar/controlvacunacion-dialogo/controlvacunacion-dialogo.component';
+import { GuarderiaservicioComponent } from './components/guarderiaservicio/guarderiaservicio.component';
+import { GuarderiaservicioListarComponent } from './components/guarderiaservicio/guarderiaservicio-listar/guarderiaservicio-listar.component';
+import { BebevacunaComponent } from './components/bebevacuna/bebevacuna.component';
+import { BebevacunaListarComponent } from './components/bebevacuna/bebevacuna-listar/bebevacuna-listar.component'
+
+>>>>>>> sheyla
 
 
 import { ServicioComponent } from './components/servicio/servicio.component';
@@ -79,6 +102,7 @@ import { SoportetecnicoListarComponent } from './components/soportetecnico/sopor
     TipocomprobanteCreaeditaComponent,
     ServicioCreaditaComponent,
     ServicioDialogoComponent,
+<<<<<<< HEAD
     TiposuscripcionComponent,
     TiposuscripcionListarComponent,
     TiposuscripcionCreaeditaComponent,
@@ -94,6 +118,16 @@ import { SoportetecnicoListarComponent } from './components/soportetecnico/sopor
     SoportetecnicoCreaeditaComponent,
     SoportetecnicoListarComponent
 
+=======
+    ControlvacunacionListarComponent,
+    ControlvacunacionComponent,
+    ControlvacunacionCreaeditaComponent,
+    ControlvacunacionDialogoComponent,
+    GuarderiaservicioComponent,
+    GuarderiaservicioListarComponent,
+    BebevacunaComponent,
+    BebevacunaListarComponent,
+>>>>>>> sheyla
   ],
   imports: [
     AppRoutingModule,
