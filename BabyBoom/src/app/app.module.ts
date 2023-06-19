@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { UsuarioComponent } from './components/usuario/usuario.component';
+
 import { UsuarioCreaeditaComponent } from './components/usuario/usuario-creaedita/usuario-creaedita.component';
 import { TipocomprobanteCreaeditaComponent } from './components/tipocomprobante/tipocomprobante-creaedita/tipocomprobante-creaedita.component'
 import { ServicioCreaditaComponent } from './components/servicio/servicio-creadita/servicio-creadita.component';
@@ -19,11 +20,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import{MatInputModule} from '@angular/material/input'
 import{MatSelectModule} from '@angular/material/select'
-import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 import { ServicioComponent } from './components/servicio/servicio.component';
 import { ServicioDialogoComponent } from './components/servicio/servicio-listar/servicio-dialogo/servicio-dialogo.component'
+
 import { ServicioListarComponent } from './components/servicio/servicio-listar/servicio-listar.component'
 import { MatIconModule } from '@angular/material/icon';
 import { TipoenfermedadComponent } from './components/tipoenfermedad/tipoenfermedad.component';
@@ -41,15 +42,17 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ProductoComponent } from './components/producto/producto.component';
 import { ProductoListarComponent } from './components/producto/producto-listar/producto-listar.component';
 import { ProductoCreaeditaComponent } from './components/producto/producto-creaedita/producto-creaedita.component';
-import { BebeComponent } from './components/bebe/bebe.component';
-import { BebeListarComponent } from './components/bebe/bebe-listar/bebe-listar.component';
-import { BebeDialogoComponent } from './components/bebe/bebe-listar/bebe-dialogo/bebe-dialogo.component';
-import { BebeCreaeditaComponent } from './components/bebe/bebe-creaedita/bebe-creaedita.component';
-import { EnfermedadbebeComponent } from './components/enfermedadbebe/enfermedadbebe.component';
-import { EnfermedadbebeCreaeditaComponent } from './components/enfermedadbebe/enfermedadbebe-creaedita/enfermedadbebe-creaedita.component';
-import { EnfermedadbebeListarComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-listar.component';
-import { EnfermedadbebeDialogoComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-dialogo/enfermedadbebe-dialogo.component';
-import { LoginComponent } from './components/login/login.component';
+import { ProductoDialogoComponent } from './components/producto/producto-listar/producto-dialogo/producto-dialogo.component';
+import { TiposuscripcionDialogoComponent } from './components/tiposuscripcion/tiposuscripcion-listar/tiposuscripcion-dialogo/tiposuscripcion-dialogo.component';
+import { CompraproductoComponent } from './components/compraproducto/compraproducto.component';
+import { CompraproductoCreaeditaComponent } from './components/compraproducto/compraproducto-creaedita/compraproducto-creaedita.component';
+import { CompraproductoListarComponent } from './components/compraproducto/compraproducto-listar/compraproducto-listar.component';
+import { ProblemaComponent } from './components/problema/problema.component';
+import { ProblemaCreaeditaComponent } from './components/problema/problema-creaedita/problema-creaedita.component';
+import { ProblemaListarComponent } from './components/problema/problema-listar/problema-listar.component';
+import { SoportetecnicoComponent } from './components/soportetecnico/soportetecnico.component';
+import { SoportetecnicoCreaeditaComponent } from './components/soportetecnico/soportetecnico-creaedita/soportetecnico-creaedita.component';
+import { SoportetecnicoListarComponent } from './components/soportetecnico/soportetecnico-listar/soportetecnico-listar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,10 +69,12 @@ import { LoginComponent } from './components/login/login.component';
     TipocomprobanteDialogoComponent,
     TipoenfermedadCreareditarComponent,
     TipoenfermedadDialogoComponent,
+
     UsuarioDialogoComponent,
     ProductoComponent,
     ProductoListarComponent,
     ProductoCreaeditaComponent,
+    ProductoDialogoComponent,
     ServicioListarComponent,
     TipocomprobanteCreaeditaComponent,
     ServicioCreaditaComponent,
@@ -77,23 +82,23 @@ import { LoginComponent } from './components/login/login.component';
     TiposuscripcionComponent,
     TiposuscripcionListarComponent,
     TiposuscripcionCreaeditaComponent,
-    BebeComponent,
-    BebeListarComponent,
-    BebeCreaeditaComponent,
-    BebeDialogoComponent,
-    LoginComponent,
-    EnfermedadbebeComponent,
-    EnfermedadbebeCreaeditaComponent,
-    EnfermedadbebeListarComponent,
-    EnfermedadbebeDialogoComponent,
+    TiposuscripcionDialogoComponent,
+    TipocomprobanteDialogoComponent,
+    CompraproductoComponent,
+    CompraproductoCreaeditaComponent,
+    CompraproductoListarComponent,
+    ProblemaComponent,
+    ProblemaCreaeditaComponent,
+    ProblemaListarComponent,
+    SoportetecnicoComponent,
+    SoportetecnicoCreaeditaComponent,
+    SoportetecnicoListarComponent
 
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatTableModule,
-    BrowserAnimationsModule,
     ReactiveFormsModule,
     MatNativeDateModule,
     FormsModule,
@@ -106,9 +111,7 @@ import { LoginComponent } from './components/login/login.component';
     MatSlideToggleModule,
     MatDialogModule,
     MatPaginatorModule,
-    MatFormFieldModule,
-
-
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

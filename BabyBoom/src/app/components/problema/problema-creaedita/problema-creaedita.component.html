@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container text-center mt-4">
+      <div class="p-3">
+        <h1 id="titleRegister">Problema</h1>
+      </div>
+    <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field appearance="fill">
+        <mat-label>idSoporte</mat-label>
+        <mat-select formControlName="soportetecnico" [(value)]="idSoportetecnicoSeleccionado" required>
+          <mat-option *ngFor="let s of lista" [value]="p.idSoportetecnico">
+            {{s.idSoporte}}
+        </mat-option>
+        </mat-select>
+
+        <br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>idApoderado</mat-label>
+          <mat-select formControlName="apoderado" [(value)]="idApoderadoSeleccionado" required>
+            <mat-option *ngFor="let a of lista" [value]="a.idApoderado">
+              {{s.idApoderado}}
+          </mat-option>
+          </mat-select>
+
+          <br>
+
+            <mat-form-field class="example-full-width">
+        <mat-label>Titulo</mat-label>
+        <input matInput required placeholder="Titulo" formControlName="Titulo">
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <input matInput required placeholder="Descripcion" formControlName="Descripcion">
+        </mat-form-field>
+
+        <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha Inicio </mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="FechaInicio" [max]="maxFecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha Fin </mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="FechaFin" [max]="maxFecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+      <br>
+
+        <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+
+        <button mat-raised-button color="warn" routerLink="/pets">Cancelar</button>
+      <p>{{mensaje}}</p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
