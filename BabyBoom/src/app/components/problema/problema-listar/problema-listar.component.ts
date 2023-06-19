@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource, _MatTableDataSource } from '@angular/material/table';
 import { Problema } from 'src/app/model/Problema';
+import { ProblemaService } from 'src/app/service/problema.service';
 
 
 @Component({
