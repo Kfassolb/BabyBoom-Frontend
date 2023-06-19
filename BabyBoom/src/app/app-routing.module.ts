@@ -2,7 +2,7 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { UsuarioCreaeditaComponent } from './components/usuario/usuario-creaedita/usuario-creaedita.component';
 import { TipocomprobanteComponent } from './components/tipocomprobante/tipocomprobante.component';
 import { TipocomprobanteListarComponent } from './components/tipocomprobante/tipocomprobante-listar/tipocomprobante-listar.component';
-
+import { GuardService } from './service/guard.service';
 import { ServicioListarComponent } from './components/servicio/servicio-listar/servicio-listar.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { ProductoListarComponent } from './components/producto/producto-listar/producto-listar.component';
@@ -27,49 +27,49 @@ const routes: Routes = [
     path: 'Usuario', component:UsuarioComponent, children: [
       {path:'agregar', component:UsuarioCreaeditaComponent},
       {path:'editar/:id', component:UsuarioCreaeditaComponent}
-    ]
+    ],canActivate:[GuardService]
   },
   {
     path:'tipocomprobantes', component:TipocomprobanteComponent, children:[
       {path:'tipocomprobanteeditar',component:TipocomprobanteCreaeditaComponent},
       {path:'edicion/:id',component:TipocomprobanteCreaeditaComponent},
-    ]
+    ],canActivate:[GuardService]
   },
   {
     path: 'Enfermedad', component:TipoenfermedadComponent, children: [
       {path:'agregar', component:TipoenfermedadCreareditarComponent},
       {path: 'edicion/:id',component:TipoenfermedadCreareditarComponent},
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path: 'Producto', component:ProductoComponent, children: [
       {path:'agregar', component:ProductoCreaeditaComponent},
       {path:'edicion/:id',component:ProductoCreaeditaComponent},
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path:'servicio', component:ServicioComponent,children:[
       {path:'servicioeditar',component:ServicioCreaditaComponent},
       { path: 'edicion/:id', component: ServicioCreaditaComponent }
-    ]
+    ],canActivate:[GuardService]
   },
   {
     path:'TiposSuscripcion', component:TiposuscripcionComponent,children:[
       {path:'Suscripcioneditar', component:TiposuscripcionCreaeditaComponent},
       {path:'edicion/:id', component:TiposuscripcionCreaeditaComponent},
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path:'Bebe', component:BebeComponent,children:[
       {path:'agregar', component:BebeCreaeditaComponent},
       {path:'edicion/:id', component:BebeCreaeditaComponent},
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path:'Sintomas', component:EnfermedadbebeComponent,children:[
       {path:'agregar', component:EnfermedadbebeCreaeditaComponent},
       {path:'edicion/:id', component:EnfermedadbebeDialogoComponent},
-    ],
+    ],canActivate:[GuardService]
   },
 ];
 
