@@ -53,7 +53,7 @@ import { TipocomprobanteDialogoComponent } from './components/tipocomprobante/ti
 import { TipoenfermedadCreareditarComponent } from './components/tipoenfermedad/tipoenfermedad-creareditar/tipoenfermedad-creareditar.component';
 import { TipoenfermedadDialogoComponent } from './components/tipoenfermedad/tipoenfermedad-listar/tipoenfermedad-dialogo/tipoenfermedad-dialogo.component';
 import { UsuarioDialogoComponent } from './components/usuario/usuario-listar/usuario-dialogo/usuario-dialogo.component';
-
+import { CompraListarComponent } from './components/compra/compra-listar/compra-listar.component';
 
 
 import { ProductoComponent } from './components/producto/producto.component';
@@ -120,7 +120,7 @@ import { SoportetecnicoListarComponent } from './components/soportetecnico/sopor
     GuarderiaservicioListarComponent,
     BebevacunaComponent,
     BebevacunaListarComponent,
-
+    CompraListarComponent
 
   ],
   imports: [
