@@ -92,7 +92,8 @@ import { SoportetecnicoListarComponent } from './components/soportetecnico/sopor
     ProblemaListarComponent,
     SoportetecnicoComponent,
     SoportetecnicoCreaeditaComponent,
-    SoportetecnicoListarComponent
+    SoportetecnicoListarComponent,
+
 
   ],
   imports: [

@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { Problema } from 'src/app/model/Problema';
 import { Soportetecnico } from 'src/app/model/Soportetecnico';
-
+import * as moment from 'moment';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ProblemaService } from 'src/app/service/problema.service';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-problema-creaedita',
   templateUrl: './problema-creaedita.component.html',
@@ -13,7 +16,7 @@ export class ProblemaCreaeditaComponent {
   mensaje: string = ""
   maxFecha: Date = moment().add(-1, 'days').toDate();
   lista: Soportetecnico[] = [];
-  lista: Apoderado[] = [];
+  lista1: Apoderado[] = [];
   idSoportetecnicoSeleccionado: number = 0;
   idApoderadoSeleccionado: number = 0;
 
