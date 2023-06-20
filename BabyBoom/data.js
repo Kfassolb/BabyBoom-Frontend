@@ -82,22 +82,22 @@ module.exports = function(){
       {
         id: 1,
         nombreEnfermedad: "Asma",
-        TipoEnfermedad:"Infecciones respiratorias"
+        TipoEnfermedad:"Enfermedades respiratorias"
       },
       {
         id: 2,
         nombreEnfermedad: "Gastritis",
-        TipoEnfermedad:"Infecciones gastrointestinales"
+        TipoEnfermedad:"Enfermedades gastrointestinales"
       },
       {
         id: 3,
         nombreEnfermedad: "Bitiligo",
-        TipoEnfermedad:"Infecciones de la piel",
+        TipoEnfermedad:"Enfermedades de la piel",
       },
       {
         id: 4,
         nombreEnfermedad: "Sordera parcial",
-        TipoEnfermedad:"Problemas de oído",
+        TipoEnfermedad:"Enfermedades del oído",
       }
     ],
     TiposSuscripcion: [
