@@ -22,16 +22,16 @@ ngOnInit(): void {
   this.stS.list().subscribe(data=>{
     this.dataSource = new MatTableDataSource(data);
   })
-  this.stS.getLista().subscribe(data => {
+  this.stS.getList().subscribe(data => {
     this.dataSource = new MatTableDataSource(data);
   });
-  this.stS.getConfirmaEliminacion().subscribe(data => {
+  this.stS.getConfirmarEliminar().subscribe(data => {
     data == true ? this.eliminar(this.idMayor) : false;
   });
 }
 confirmar(id: number) {
   this.idMayor = id;
-  this.dialog.open(SoportetecnicoComponent);
+  this.dialog.open(SoportetecnicoListarComponent);
 }
 eliminar(id: number) {
   this.stS.eliminar(id).subscribe(() => {

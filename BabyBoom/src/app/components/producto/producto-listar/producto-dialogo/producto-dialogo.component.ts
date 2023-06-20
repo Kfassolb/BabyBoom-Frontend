@@ -3,7 +3,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { ProductoService } from 'src/app/service/producto.service';
 
 @Component({
-  selector: 'app-tipocomprobante-dialogo',
+  selector: 'app-producto-dialogo',
   templateUrl: './producto-dialogo.component.html',
   styleUrls: ['./producto-dialogo.component.css']
 })

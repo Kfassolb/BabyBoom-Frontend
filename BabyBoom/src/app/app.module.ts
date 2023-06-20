@@ -53,6 +53,9 @@ import { ProblemaListarComponent } from './components/problema/problema-listar/p
 import { SoportetecnicoComponent } from './components/soportetecnico/soportetecnico.component';
 import { SoportetecnicoCreaeditaComponent } from './components/soportetecnico/soportetecnico-creaedita/soportetecnico-creaedita.component';
 import { SoportetecnicoListarComponent } from './components/soportetecnico/soportetecnico-listar/soportetecnico-listar.component';
+import { ProblemaDialogoComponent } from './components/problema/problema-listar/problema-dialogo/problema-dialogo.component';
+import { SoportetecnicoDialogoComponent } from './components/soportetecnico/soportetecnico-listar/soportetecnico-dialogo/soportetecnico-dialogo.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,6 +96,8 @@ import { SoportetecnicoListarComponent } from './components/soportetecnico/sopor
     SoportetecnicoComponent,
     SoportetecnicoCreaeditaComponent,
     SoportetecnicoListarComponent,
+    ProblemaDialogoComponent,
+    SoportetecnicoDialogoComponent,
 
 
   ],

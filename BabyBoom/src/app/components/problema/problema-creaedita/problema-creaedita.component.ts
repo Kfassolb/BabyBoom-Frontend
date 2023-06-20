@@ -1,19 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
 import * as moment from 'moment';
 import { Problema } from 'src/app/model/Problema';
 import { Soportetecnico } from 'src/app/model/Soportetecnico';
-<<<<<<< HEAD
-import * as moment from 'moment';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ProblemaService } from 'src/app/service/problema.service';
 import { ActivatedRoute, Router } from '@angular/router';
-=======
 import { Apoderado } from 'src/app/model/Apoderado';
-import { ProblemaService } from 'src/app/service/problema.service';
 
->>>>>>> 2c222a6006e3c63bda25193b26121de365661bea
 @Component({
   selector: 'app-problema-creaedita',
   templateUrl: './problema-creaedita.component.html',
@@ -25,11 +18,9 @@ export class ProblemaCreaeditaComponent implements OnInit {
   mensaje: string = "";
   maxFecha: Date = moment().add(-1, 'days').toDate();
   lista: Soportetecnico[] = [];
-<<<<<<< HEAD
+
   lista1: Apoderado[] = [];
-=======
   listaApoderado: Apoderado[] = [];
->>>>>>> 2c222a6006e3c63bda25193b26121de365661bea
   idSoportetecnicoSeleccionado: number = 0;
   idApoderadoSeleccionado: number = 0;
 

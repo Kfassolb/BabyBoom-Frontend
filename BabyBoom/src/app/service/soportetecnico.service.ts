@@ -1,35 +1,35 @@
 import { Injectable } from '@angular/core';
 import {environment} from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Problema } from '../model/Problema';
+import { Soportetecnico } from '../model/Soportetecnico';
 import { Subject } from 'rxjs';
 const base_url = environment.base
 @Injectable({
   providedIn: 'root'
 })
-export class ProblemaService {
+export class SoportetecnicoService {
   private url = `${base_url}/problema`
-  private listCambio = new Subject<Problema[]>();
+  private listCambio = new Subject<Soportetecnico[]>();
   private confirmarEliminacion = new Subject<Boolean>();
   constructor(private http:HttpClient) { }
   list(){
-    return this.http.get<Problema[]>(this.url);
+    return this.http.get<Soportetecnico[]>(this.url);
   }
 
-  insert(producto:Problema){
+  insert(producto:Soportetecnico){
     return this.http.post(this.url,producto);
   }
-  setList(listanueva:Problema[]){
+  setList(listanueva:Soportetecnico[]){
     this.listCambio.next(listanueva);
   }
   getList(){
     return this.listCambio.asObservable();
   }
   listId(id:number){
-    return this.http.get<Problema>(`${this.url}/${id}`);
+    return this.http.get<Soportetecnico>(`${this.url}/${id}`);
   }
-  update(problema:Problema){
-    return this.http.put(this.url+"/"+problema.apoderado,problema);
+  update(soportetecnico:Soportetecnico){
+    return this.http.put(this.url+"/"+soportetecnico.idSoporte, soportetecnico);
   }
   eliminar(id:number){
     return this.http.delete(`${this.url}/${id}`);
