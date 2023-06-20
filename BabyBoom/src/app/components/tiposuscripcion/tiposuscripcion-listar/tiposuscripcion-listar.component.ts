@@ -46,8 +46,8 @@ export class TiposuscripcionListarComponent implements OnInit {
         this.tcS.setList(data);
         this.dataSource = new MatTableDataSource(data); //THIS
         this.dataSource.paginator = this.paginator; //THIS
-      })
-    })
+      });
+    });
   }
   filtrar(e:any){
     this.dataSource.filter = e.target.value.trim();
