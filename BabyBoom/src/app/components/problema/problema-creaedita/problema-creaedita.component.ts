@@ -26,7 +26,6 @@ export class ProblemaCreaeditaComponent {
   }
   ngOnInit(): void {
     this.prS.list().subscribe(data => { this.listaSoporte = data });
-    this.prS.list().subscribe(data => { this.listaApoderado = data });
 
     this.form = new FormGroup({
       soportetecnico :new FormControl()
