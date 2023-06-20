@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource, _MatTableDataSource } from '@angular/material/table';
 import { Problema } from 'src/app/model/Problema';
 import { ProblemaService } from 'src/app/service/problema.service';
+import { ProblemaDialogoComponent } from './problema-dialogo/problema-dialogo.component';
 
 
 @Component({
@@ -24,10 +25,10 @@ ngOnInit(): void {
   this.prS.list().subscribe(data =>{
     this.dataSource = new MatTableDataSource(data);
   })
-  this.prS.getLista().subscribe(data=>{
+  this.prS.getList().subscribe(data=>{
     this.dataSource = new MatTableDataSource(data);
   });
-  this.prS.getConfirmaEliminacion().subscribe(data=>{
+  this.prS.getConfirmarEliminar().subscribe(data=>{
     data== true ? this.eliminar(this.idMayor) : false;
   });
 }

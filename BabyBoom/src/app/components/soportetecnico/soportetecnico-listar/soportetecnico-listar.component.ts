@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Soportetecnico } from 'src/app/model/Soportetecnico';
 import { SoportetecnicoService } from 'src/app/service/soportetecnico.service';
+import { SoportetecnicoDialogoComponent } from './soportetecnico-dialogo/soportetecnico-dialogo.component';
 
 @Component({
   selector: 'app-soportetecnico-listar',
@@ -36,7 +37,7 @@ confirmar(id: number) {
 eliminar(id: number) {
   this.stS.eliminar(id).subscribe(() => {
     this.stS.list().subscribe(data => {
-      this.stS.setList(data);/* se ejecuta la línea 27 */
+      this.stS.setList(data);
     });
   });
 }
