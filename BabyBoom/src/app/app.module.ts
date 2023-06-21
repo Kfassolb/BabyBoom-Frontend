@@ -44,6 +44,10 @@ import { ProductoListarComponent } from './components/producto/producto-listar/p
 import { ProductoCreaeditaComponent } from './components/producto/producto-creaedita/producto-creaedita.component';
 import { ProductoDialogoComponent } from './components/producto/producto-listar/producto-dialogo/producto-dialogo.component';
 import { TiposuscripcionDialogoComponent } from './components/tiposuscripcion/tiposuscripcion-listar/tiposuscripcion-dialogo/tiposuscripcion-dialogo.component';
+import { ComunidadComponent } from './components/comunidad/comunidad.component';
+import { ComunidadListarComponent } from './components/comunidad/comunidad-listar/comunidad-listar.component';
+import { ComunidadCreaeditaComponent } from './components/comunidad/comunidad-creaedita/comunidad-creaedita.component';
+import { ComunidadDialogoComponent } from './components/comunidad/comunidad-listar/comunidad-dialogo/comunidad-dialogo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +78,11 @@ import { TiposuscripcionDialogoComponent } from './components/tiposuscripcion/ti
     TiposuscripcionListarComponent,
     TiposuscripcionCreaeditaComponent,
     TiposuscripcionDialogoComponent,
-    TipocomprobanteDialogoComponent
+    TipocomprobanteDialogoComponent,
+    ComunidadComponent,
+    ComunidadListarComponent,
+    ComunidadCreaeditaComponent,
+    ComunidadDialogoComponent
 
   ],
   imports: [

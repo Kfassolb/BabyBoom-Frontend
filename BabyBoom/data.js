@@ -114,6 +114,27 @@ module.exports = function(){
         nombreSuscripcion: "Premium anual",
       },
     ],
+    Comunidad: [
+      {
+        idComunidad: 1,
+        NombreComunidad:"Piura",
+        Contenido:"Mayor",
+        FechaInicio:"2022-09-10",
+      },
+      {
+        idComunidad: 2,
+        NombreComunidad:"Lima",
+        Contenido:"Reservado",
+        FechaInicio:"2019-02-10",
+      },
+      {
+        idComunidad: 3,
+        NombreComunidad:"pucallpa",
+        Contenido:"Igual",
+        FechaInicio:"2015-08-12",
+      },
+    ],
+
   }
   return data
 }

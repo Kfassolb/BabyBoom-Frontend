@@ -17,7 +17,15 @@ import { TipoenfermedadListarComponent } from './components/tipoenfermedad/tipoe
 import { TipoenfermedadCreareditarComponent } from './components/tipoenfermedad/tipoenfermedad-creareditar/tipoenfermedad-creareditar.component';
 import { TiposuscripcionComponent } from './components/tiposuscripcion/tiposuscripcion.component';
 import { TiposuscripcionCreaeditaComponent } from './components/tiposuscripcion/tiposuscripcion-creaedita/tiposuscripcion-creaedita.component';
+import { ComunidadComponent } from './components/comunidad/comunidad.component';
+import { ComunidadCreaeditaComponent } from './components/comunidad/comunidad-creaedita/comunidad-creaedita.component';
 const routes: Routes = [
+  {
+    path:'Comunidad', component:ComunidadComponent, children:[
+      {path:'agregar', component:ComunidadCreaeditaComponent},
+      {path:'edicion/:idComunidad', component:ComunidadCreaeditaComponent}
+    ]
+  },
   {
     path: 'Usuario', component:UsuarioComponent, children: [
       {path:'agregar', component:UsuarioCreaeditaComponent},
