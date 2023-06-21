@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Problema } from 'src/app/model/Problema';
 import { Soportetecnico } from 'src/app/model/Soportetecnico';
 import * as moment from 'moment';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProblemaService } from 'src/app/service/problema.service';
+import { SoportetecnicoService } from 'src/app/service/soportetecnico.service';
 
 @Component({
   selector: 'app-problema-creaedita',
   templateUrl: './problema-creaedita.component.html',
   styleUrls: ['./problema-creaedita.component.css']
 })
-export class ProblemaCreaeditaComponent {
+export class ProblemaCreaeditaComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   problema: Problema = new Problema()
   mensaje: string = ""
@@ -22,14 +23,14 @@ export class ProblemaCreaeditaComponent {
   idApoderadoSeleccionado: number = 0;
 
   constructor(private router: Router,
-    private route: ActivatedRoute, private prS:ProblemaService) {
+    private route: ActivatedRoute, private prS:ProblemaService, private sS:SoportetecnicoService) {
   }
   ngOnInit(): void {
-    this.prS.list().subscribe(data => { this.listaSoporte = data });
+    this.sS.list().subscribe(data => { this.listaSoporte = data });
 
     this.form = new FormGroup({
-      soportetecnico :new FormControl()
-      apoderado :new FormControl()
+      soportetecnico :new FormControl(),
+      apoderado :new FormControl(),
       Titulo: new FormControl(),
       Descripcion: new FormControl(),
       FechaInicio: new FormControl(),
@@ -38,8 +39,8 @@ export class ProblemaCreaeditaComponent {
 
   }
   aceptar(): void {
-    this.problema.soportetecnico.idSoporte = this.form.value['soportetecnico.idSoporte'];
-    this.problema.apoderado.idApoderado = this.form.value['apoderado.idApoderado'];
+    this.problema.soportetecnico.NombreSoporte = this.form.value['soportetecnico.NombreSoporte'];
+    this.problema.apoderado.Nombre = this.form.value['apoderado.Nombre'];
     this.problema.Titulo = this.form.value['Titulo'];
     this.problema.Descripcion = this.form.value['Descripcion'];
     this.problema.FechaInicio = this.form.value['FechaInicio'];
@@ -47,11 +48,11 @@ export class ProblemaCreaeditaComponent {
 
     if (this.idSoportetecnicoSeleccionado>0 || this.idApoderadoSeleccionado>0){
       let s = new Soportetecnico();
-      s.idSoporte = this.idSoportetecnicoSeleccionado();
+      s.idSoporte = this.idSoportetecnicoSeleccionado;
       this.problema.soportetecnico=s;
 
       let a = new Apoderado();
-      a.idApoderado = this.idApoderadoSeleccionado();
+      a.idApoderado = this.idApoderadoSeleccionado;
       this.problema.idApoderado=a;
       this.prS.insert(this.problema).subscribe(() => {
         this.prS.list().subscribe(data => {
@@ -59,7 +60,7 @@ export class ProblemaCreaeditaComponent {
             })
           })
 
-      this.router.navigate(['problema']);
+      this.router.navigate(['problemas']);
 
   }
 }
