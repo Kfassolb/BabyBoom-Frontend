@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { User } from 'src/app/model/usuario';
+import { Users } from 'src/app/model/Users';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 })
 export class UsuarioCreaeditaComponent implements OnInit{
   form: FormGroup =new FormGroup({});
-  usuario: User = new User();
+  usuario: Users = new Users();
   mensaje: String = "";
 
   id:number =0;
@@ -36,6 +36,8 @@ export class UsuarioCreaeditaComponent implements OnInit{
     this.usuario.username = this.form.value['Username'];
     this.usuario.password = this.form.value['Password'];
 
+    this.usuario.enabled = true;
+
     if (this.form.value['Username'].length>0 && this.form.value['Password'].length>0) {
       if (this.edicion) {
         this.uS.update(this.usuario).subscribe(()=>{
@@ -50,7 +52,7 @@ export class UsuarioCreaeditaComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['users']);
+      this.router.navigate(['/pages/users']);
     }else{
       this.mensaje = "Ingrese los valores solicitados!";
     }

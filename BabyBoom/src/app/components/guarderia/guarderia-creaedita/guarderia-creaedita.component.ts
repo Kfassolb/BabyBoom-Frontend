@@ -38,9 +38,9 @@ export class GuarderiaCreaeditaComponent implements OnInit{
   }
   aceptar():void{
     this.guarderia.idGuarderia = this.form.value['idGuarderia'];
-    this.guarderia.Proceso = this.form.value['Proceso'];
-    this.guarderia.Lugar = this.form.value['Lugar'];
-    this.guarderia.Fecha = this.form.value['Fecha'];
+    this.guarderia.proceso = this.form.value['Proceso'];
+    this.guarderia.lugar = this.form.value['Lugar'];
+    this.guarderia.fecha = this.form.value['Fecha'];
     this.guarderia.nombreGuarderia = this.form.value['nombreGuarderia']
 
     if(this.form.value['Proceso'].length > 0 && this.form.value['nombreGuarderia'].length > 0){
@@ -57,7 +57,7 @@ export class GuarderiaCreaeditaComponent implements OnInit{
           })
         })
       }
-      this.router.navigate(['guarderias']);
+      this.router.navigate(['/pages/guarderias']);
 
     }else {
       this.mensaje = "Complete los valores requeridos";
@@ -68,9 +68,9 @@ export class GuarderiaCreaeditaComponent implements OnInit{
       this.gS.listarId(this.id).subscribe(data=>{
         this.form = new FormGroup({
           idGuarderia: new FormControl(data.idGuarderia),
-          Proceso: new FormControl(data.Proceso),
-          Lugar: new FormControl(data.Lugar),
-          Fecha: new FormControl(data.Fecha),
+          Proceso: new FormControl(data.proceso),
+          Lugar: new FormControl(data.lugar),
+          Fecha: new FormControl(data.fecha),
           nombreGuarderia: new FormControl(data.nombreGuarderia)
         });
         console.log(data);

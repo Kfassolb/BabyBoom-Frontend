@@ -1,10 +1,66 @@
-<mat-form-field class="example-full-width">
-  <mat-label>Usuario</mat-label>
-  <input matInput  placeholder="Username" [(ngModel)]="username">
-</mat-form-field>
-<mat-form-field class="example-full-width">
-  <mat-label>Password</mat-label>
-  <input type="password" matInput  placeholder="Password" [(ngModel)]="password">
-</mat-form-field>
-<br>
-<button mat-raised-button color="warn" (click)="login()">Ingresar</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- https://codepen.io/fghty/pen/PojKNEG -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form>
+        <h3>Baby Boom</h3>
+        <label for="username" class="form-label">Username
+          <i class="bi bi-person-fill"></i>
+        </label>
+        <input type="text" placeholder="Username" id="username" [(ngModel)]="username" name="something">
+
+        <label for="password">Password
+          <i class="bi bi-shield-lock-fill"></i>
+        </label>
+        <input type="password" placeholder="Password" id="password" [(ngModel)]="password" name="something">
+
+        <button (click)="login()" class="btn btn-primary mt-4">Log In
+          <i class="bi bi-box-arrow-in-right ms-2"></i>
+        </button>
+        <button class="btn btn-dark mt-4" routerLink="/pages/signUp">Sign Up
+          <i class="bi bi-person-fill-add ms-2"></i>
+        </button>
+    </form>
+</body>
+</html>
+
+<!-- <div class="form-floating mb-4">
+  <input
+    id="floatingInput"
+    class="form-control"
+    placeholder="Username"
+    [(ngModel)]="username"
+  />
+  <label for="floatingInput">Username</label>
+</div>
+
+<div class="form-floating mb-4">
+  <input
+    type="password"
+    id="floatingPassword"
+    class="form-control"
+    placeholder="Password"
+    [(ngModel)]="password"
+  />
+  <label for="floatingPassword">Password</label>
+</div>
+
+<div class="pt-1 mb-4">
+  <button class="btn btn-primary btn-lg" (click)="login()">Login</button>
+</div>
+<div class="pt-1 mb-4">
+  <button class="btn btn-primary btn-lg" routerLink="/pages/signUp">
+    Registrarse
+  </button>
+</div> -->

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Apoderado } from '../model/apoderado';
 import { Subject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 const base_url = environment.base;
 @Injectable({
   providedIn: 'root'
@@ -14,10 +14,16 @@ export class ApoderadoService {
 
   constructor(private http: HttpClient) { }
   list() {
-    return this.http.get<Apoderado[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Apoderado[]>(this.url,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(apoderado:Apoderado){
-    return this.http.post(this.url, apoderado);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, apoderado,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   setList(listaNueva:Apoderado[]){
     return this.listCambio.next(listaNueva);
@@ -26,14 +32,23 @@ export class ApoderadoService {
     return this.listCambio.asObservable();
   }
   listId(id:number){
-    return this.http.get<Apoderado>(`${this.url}/${id}`)
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Apoderado>(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    })
   }
   update(apoderado:Apoderado){
+    let token = sessionStorage.getItem("token");
     //return this.http.put(this.url + "/" + usuario.idUser, usuario);
-    return this.http.put(this.url, apoderado);
+    return this.http.put(this.url, apoderado,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   delete(id:number){
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   getConfirmDeletion(){
     return this.confirmDeletion.asObservable();

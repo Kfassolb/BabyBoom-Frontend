@@ -1,4 +1,4 @@
-import { User } from "./usuario";
+import { Users } from "./Users";
 
 export class Medico {
   idMedico: number = 0;
@@ -6,5 +6,5 @@ export class Medico {
   apellido: string = "";
   especialidad: string = "";
   email: string = "";
-  user: User = new User();
+  user: Users = new Users();
 }

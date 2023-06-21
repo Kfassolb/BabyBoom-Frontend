@@ -8,7 +8,7 @@
 }
 body{
     /* background-color: #080710; */
-    background-image: url("https://images.pexels.com/photos/4148839/pexels-photo-4148839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-image: url("https://images.pexels.com/photos/1682497/pexels-photo-1682497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -93,7 +93,6 @@ input{
     color: #e5e5e5;
 }
 button{
-    width: 100%;
     padding: 15px 0;
     font-size: 18px;
     font-weight: 600;

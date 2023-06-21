@@ -21,7 +21,7 @@
         <input  matInput (keyup)="filter($event)" placeholder="Buscar"/>
       </mat-form-field>
       <div class="ms-auto p-2">
-        <mat-icon routerLink="/users/agregar" class="btn-add">library_add</mat-icon>
+        <mat-icon routerLink="/pages/users/agregar" class="btn-add">library_add</mat-icon>
       </div>
     </div>
 
@@ -40,6 +40,11 @@
         <ng-container matColumnDef="password">
           <th mat-header-cell *matHeaderCellDef>Contaseña</th>
           <td mat-cell *matCellDef="let element">{{ element.password }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="enabled">
+          <th mat-header-cell *matHeaderCellDef>enabled</th>
+          <td mat-cell *matCellDef="let element">{{ element.enabled }}</td>
         </ng-container>
 
         <ng-container matColumnDef="actualizar">

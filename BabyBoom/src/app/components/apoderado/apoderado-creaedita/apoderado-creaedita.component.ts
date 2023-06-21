@@ -2,7 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Apoderado } from 'src/app/model/apoderado';
-import { User } from 'src/app/model/usuario';
+import { Users } from 'src/app/model/Users';
 import { Tiposuscripcion } from 'src/app/model/Tiposuscripcion';
 import { ApoderadoService } from 'src/app/service/apoderado.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
@@ -20,7 +20,7 @@ export class ApoderadoCreaeditaComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   apoderado: Apoderado = new Apoderado();
   mensaje: String = "";
-  listaUser: User[]=[];
+  listaUser: Users[]=[];
   listaBebe: Bebe[]=[];
   listaSuscripcion: Tiposuscripcion[]=[];
   listaGuarderia: Guarderia[]=[];
@@ -50,13 +50,16 @@ export class ApoderadoCreaeditaComponent implements OnInit{
       especialidad: new FormControl(),
       email: new FormControl(),
       user: new FormControl(),
+      bebe: new FormControl(),
+      tiposuscrip: new FormControl(),
+      guarderia: new FormControl(),
     })
   }
   aceptar():void {
     this.apoderado.idApoderado = this.form.value['id'];
     this.apoderado.user.idUser = this.form.value['user.idUser'];
     this.apoderado.bebe.nombreBebe = this.form.value['bebe.nombreBebe'];
-    this.apoderado.tiposuscrip.nombreSuscripcion = this.form.value['tiposuscrip.nombresuscripcion'];
+    this.apoderado.tiposuscrip.nombresuscripcion = this.form.value['tiposuscrip.nombresuscripcion'];
     this.apoderado.guarderia.nombreGuarderia = this.form.value['guarderia.nombreGuarderia'];
     this.apoderado.nombre = this.form.value['nombre']
     this.apoderado.apellido = this.form.value['apellido']
@@ -64,13 +67,13 @@ export class ApoderadoCreaeditaComponent implements OnInit{
 
     if (this.idUsuarioSeleccionado>0 && this.idBebeSeleccionado>0 && this.idTipoSuscripcionSeleccionado>0) {
       if (this.edicion) {
-        let u = new User();
+        let u = new Users();
         let b = new Bebe();
         let t = new Tiposuscripcion();
         let g = new Guarderia();
         u.idUser = this.idUsuarioSeleccionado;
-        b.id = this.idBebeSeleccionado;
-        t.id = this.idTipoSuscripcionSeleccionado;
+        b.idBebe = this.idBebeSeleccionado;
+        t.idTiposuscrip = this.idTipoSuscripcionSeleccionado;
         g.idGuarderia = this.idGuarderiaSelecccionado;
         this.apoderado.user=u;
         this.apoderado.bebe=b;
@@ -82,13 +85,13 @@ export class ApoderadoCreaeditaComponent implements OnInit{
           })
         })
       }else {
-        let u = new User();
+        let u = new Users();
         let b = new Bebe();
         let t = new Tiposuscripcion();
         let g = new Guarderia();
         u.idUser = this.idUsuarioSeleccionado;
-        b.id = this.idBebeSeleccionado;
-        t.id = this.idTipoSuscripcionSeleccionado;
+        b.idBebe = this.idBebeSeleccionado;
+        t.idTiposuscrip = this.idTipoSuscripcionSeleccionado;
         g.idGuarderia = this.idGuarderiaSelecccionado;
         this.apoderado.user=u;
         this.apoderado.bebe=b;
@@ -100,7 +103,7 @@ export class ApoderadoCreaeditaComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['apoderados']);
+      this.router.navigate(['/pages/apoderados']);
     }else{
       this.mensaje = "Ingrese los valores solicitados!";
     }

@@ -1,4 +1,4 @@
 export class Tiposuscripcion{
-  id:number=0
-  nombreSuscripcion:string=""
+  idTiposuscrip:number=0;
+  nombresuscripcion:string="";
 }

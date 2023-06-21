@@ -3,7 +3,7 @@ import { Medico } from 'src/app/model/medico';
 import { MedicoService } from 'src/app/service/medico.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
-import { User } from 'src/app/model/usuario';
+import { Users } from 'src/app/model/Users';
 import { UsuarioService } from 'src/app/service/usuario.service';
 @Component({
   selector: 'app-medico-creaedita',
@@ -14,7 +14,7 @@ export class MedicoCreaeditaComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   medico: Medico = new Medico();
   mensaje: String = "";
-  lista: User[]=[];
+  lista: Users[]=[];
   idUsuarioSeleccionado: number = 0;
 
   id: number = 0;
@@ -47,7 +47,7 @@ export class MedicoCreaeditaComponent implements OnInit{
 
     if (this.idUsuarioSeleccionado>0) {
       if (this.edicion) {
-        let u = new User();
+        let u = new Users();
         u.idUser = this.idUsuarioSeleccionado;
         this.medico.user=u;
         this.mS.update(this.medico).subscribe(()=>{
@@ -56,7 +56,7 @@ export class MedicoCreaeditaComponent implements OnInit{
           })
         })
       }else {
-        let u = new User();
+        let u = new Users();
         u.idUser = this.idUsuarioSeleccionado;
         this.medico.user=u;
         this.mS.insert(this.medico).subscribe(()=>{

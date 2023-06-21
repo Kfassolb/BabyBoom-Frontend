@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- https://codepen.io/fghty/pen/PojKNEG -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form [formGroup]="form" (submit)="guardar()">
+        <h3>Sing Up</h3>
+        <label for="username" class="form-label">Username
+          <i class="bi bi-person-fill"></i>
+        </label>
+        <input type="text" placeholder="Username" id="username" formControlName="Username" required>
+
+        <label for="password">Password
+          <i class="bi bi-shield-lock-fill"></i>
+        </label>
+        <input type="password" placeholder="Password" id="password" formControlName="Password"  required>
+
+        <button (click)="guardar()" class="btn btn-primary mt-4 ms-4 p-3">Sign Up
+          <i class="bi bi-box-arrow-in-right ms-2"></i>
+        </button>
+        <button class="btn btn-outline-danger border border-danger  mt-4 ms-4 p-3" routerLink="/login">Back
+          <i class="bi bi-arrow-left-circle ms-2"></i>
+        </button>
+    </form>
+</body>
+</html>
+
+<!-- <div class="container text-center mt-4">
+  <div class="p-3">
+    <h1 id="titleRegister">Registro de Usuario</h1>
+  </div>
+  <form [formGroup]="form" (submit)="guardar()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre de Usuario</mat-label>
+      <input matInput placeholder="username" formControlName="Username" required/>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Contraseña</mat-label>
+      <input matInput placeholder="password" formControlName="Password" required/>
+    </mat-form-field>
+    <br>
+    <br>
+    <div class="d-flex justify-content-center">
+      <button class="btn-accept"(click)="guardar()"><mat-icon>check_circle</mat-icon></button>
+      <mat-icon routerLink="/login" class="ms-4">cancel</mat-icon>
+    </div>
+  </form>
+</div>
+<p>{{ mensaje }}</p> -->
