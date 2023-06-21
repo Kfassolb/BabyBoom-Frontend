@@ -8,6 +8,8 @@ import { ControlvacunacionCreaeditaComponent } from './components/controlvacunac
 import { ControlvacunacionComponent } from './components/controlvacunacion/controlvacunacion.component';
 import { BebevacunaComponent } from './components/bebevacuna/bebevacuna.component';
 import { BebevacunaCreaditaComponent } from './components/bebevacuna/bebevacuna-creadita/bebevacuna-creadita.component';
+import { GuarderiaservicioComponent } from './components/guarderiaservicio/guarderiaservicio.component';
+import { GuarderiaservicioCreaditaComponent } from './components/guarderiaservicio/guarderiaservicio-creadita/guarderiaservicio-creadita.component';
 
 const routes: Routes = [
   {
@@ -30,6 +32,11 @@ const routes: Routes = [
   {
     path:'bebevacuna', component:BebevacunaComponent,children:[
       {path:'bebevacunaeditar',component:BebevacunaCreaditaComponent}
+    ]
+  },
+  {
+    path:'guarderiaservicio', component:GuarderiaservicioComponent,children:[
+      {path:'guarderiaservicioeditar',component:GuarderiaservicioCreaditaComponent}
     ]
   }
 ];

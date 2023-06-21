@@ -72,6 +72,26 @@ module.exports = function(){
       lugar:"Clinica",
     },
    ],
+   BebeVacuna:[
+    {
+      idBebeVacuna:1,
+      controlvacunacion:"caso1"
+    },
+    {
+      idBebeVacuna:1,
+      controlvacunacion:"caso2"
+    },
+   ],
+   GuaderiaServicio:[
+    {
+      idGuarderiaServicio:1,
+      servicio:"caso1"
+    },
+    {
+      idGuarderiaServicio:2,
+      servicio:"caso2"
+    },
+   ],
   }
   return data
 }

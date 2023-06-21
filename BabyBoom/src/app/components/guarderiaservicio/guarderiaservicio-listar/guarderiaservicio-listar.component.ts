@@ -12,7 +12,7 @@ import { GuarderiaservicioService } from 'src/app/service/guarderiaservicio.serv
 export class GuarderiaservicioListarComponent implements OnInit{
   lista: GuarderiaServicio[] = [];
   dataSource: MatTableDataSource<GuarderiaServicio> = new MatTableDataSource();
-  displayedColumns: string[] = ['guarderiaservicio']
+  displayedColumns: string[] = ['idGuarderiaServicio','servicio']
 
 
   constructor(private GSs: GuarderiaservicioService, private dialog: MatDialog) {

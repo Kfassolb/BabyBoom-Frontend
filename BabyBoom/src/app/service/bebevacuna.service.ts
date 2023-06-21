@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environment/environment';
 import { Subject } from 'rxjs';
 import { BebeVacuna } from '../model/BebeVacuna';
-
 const base_url = environment.base
 @Injectable({
   providedIn: 'root',
