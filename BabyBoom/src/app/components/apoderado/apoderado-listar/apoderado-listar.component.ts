@@ -13,7 +13,7 @@ import { ApoderadoService } from 'src/app/service/apoderado.service';
 export class ApoderadoListarComponent {
   lista:Apoderado[] = [];
   dataSource:MatTableDataSource<Apoderado> = new MatTableDataSource();
-  displayedColumns: string[] = ['idapoderado','idusuario','idbebe','tiposuscrip','guarderia','nombre','apellido','email']
+  displayedColumns: string[] = ['idapoderado','idusuario','idbebe','idtiposuscrip','guarderia','nombre','apellido','email']
 
   constructor(private aS:ApoderadoService, private dialog:MatDialog){}
 

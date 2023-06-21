@@ -1,1 +1,67 @@
-<p>apoderado-listar works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div style=" text-align: center;">
+      <h1>Lista de Apoderado</h1>
+    </div>
+    <div style="text-align: right;" class="example-button-row">
+      <button mat-raised-button color="primary" routerLink="/apoderados/agregar">Nuevo</button>
+    </div>
+    <mat-form-field>
+      <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="idapoderado">
+        <th mat-header-cell *matHeaderCellDef> No. Apoderado </th>
+        <td mat-cell *matCellDef="let element"> {{element.idApoderado}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="idusuario">
+        <th mat-header-cell *matHeaderCellDef> No. Usuario</th>
+        <td mat-cell *matCellDef="let element"> {{element.usuario.Username}} </td>
+      </ng-container>
+      <ng-container matColumnDef="idbebe">
+        <th mat-header-cell *matHeaderCellDef> No. Bebe</th>
+        <td mat-cell *matCellDef="let element"> {{element.bebe.nombreBebe}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="idtiposuscrip">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.tiposuscrip.nombreSuscripcion}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.Nombre}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="apellido">
+        <th mat-header-cell *matHeaderCellDef> Apellido </th>
+        <td mat-cell *matCellDef="let element"> {{element.Apellido}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Correo Electronico </th>
+        <td mat-cell *matCellDef="let element"> {{element.CorreoElectronico}} </td>
+      </ng-container>
+
+     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+</body>
+
+</html>

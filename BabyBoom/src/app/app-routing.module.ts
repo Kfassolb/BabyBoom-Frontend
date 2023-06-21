@@ -27,6 +27,8 @@ import { ControlvacunacionComponent } from './components/controlvacunacion/contr
 import { ControlvacunacionCreaeditaComponent } from './components/controlvacunacion/controlvacunacion-creaedita/controlvacunacion-creaedita.component';
 import { ProblemaComponent } from './components/problema/problema.component';
 import { ProblemaCreaeditaComponent } from './components/problema/problema-creaedita/problema-creaedita.component';
+import { ApoderadoComponent } from './components/apoderado/apoderado.component';
+import { ApoderadoCreaeditarComponent } from './components/apoderado/apoderado-creaeditar/apoderado-creaeditar.component';
 
 
 const routes: Routes = [
@@ -89,6 +91,12 @@ const routes: Routes = [
     path: 'problemas',component:ProblemaComponent, children:[
       {path:'agregar',component:ProblemaCreaeditaComponent},
       {path:'edicion/:id',component:ProblemaCreaeditaComponent}
+    ]
+  },
+  {
+    path: 'apoderados',component:ApoderadoComponent, children:[
+      {path:'agregar',component:ApoderadoCreaeditarComponent},
+      {path:'edicion/:id',component:ApoderadoCreaeditarComponent}
     ]
   }
 
