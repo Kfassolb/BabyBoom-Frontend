@@ -21,7 +21,7 @@
         <input  matInput (keyup)="filter($event)" placeholder="Buscar"/>
       </mat-form-field>
       <div class="ms-auto p-2">
-        <mat-icon routerLink="/Usuario/agregar" class="btn-add">library_add</mat-icon>
+        <mat-icon routerLink="/pages/users/agregar" class="btn-add">library_add</mat-icon>
       </div>
     </div>
 
@@ -29,31 +29,36 @@
 
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef>No.</th>
-          <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+          <td mat-cell *matCellDef="let element"> {{ element.idUser }} </td>
         </ng-container>
 
         <ng-container matColumnDef="username">
           <th mat-header-cell *matHeaderCellDef>Nombre de usuario</th>
-          <td mat-cell *matCellDef="let element">{{ element.Username }}</td>
+          <td mat-cell *matCellDef="let element">{{ element.username }}</td>
         </ng-container>
 
         <ng-container matColumnDef="password">
           <th mat-header-cell *matHeaderCellDef>Contaseña</th>
-          <td mat-cell *matCellDef="let element">{{ element.Password }}</td>
+          <td mat-cell *matCellDef="let element">{{ element.password }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="enabled">
+          <th mat-header-cell *matHeaderCellDef>enabled</th>
+          <td mat-cell *matCellDef="let element">{{ element.enabled }}</td>
         </ng-container>
 
         <ng-container matColumnDef="actualizar">
           <th mat-header-cell *matHeaderCellDef class="text-center">Acción</th>
           <td mat-cell *matCellDef="let element" class="text-center">
             <!-- <button mat-stroked-button [routerLink]="['editar',element.id]" color="basic" class="me-2">Actualizar<mat-icon>update</mat-icon></button> -->
-            <mat-icon [routerLink]="['editar',element.id]">edit</mat-icon>
+            <mat-icon [routerLink]="['editar',element.idUser]">edit</mat-icon>
             <!-- <button mat-stroked-button color="warn" (click)="confirm(element.id)">Eliminar<mat-icon>delete_forever</mat-icon></button> -->
-            <mat-icon class="delete-icon" (click)="confirm(element.id)">delete_forever</mat-icon>
+            <mat-icon class="delete-icon" (click)="confirm(element.idUser)">delete_forever</mat-icon>
           </td>
         </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
     <mat-paginator [pageSize]="3" [pageSizeOptions]="[3]"></mat-paginator>
   </div>

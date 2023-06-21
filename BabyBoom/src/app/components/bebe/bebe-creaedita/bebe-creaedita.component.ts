@@ -30,7 +30,7 @@ export class BebeCreaeditaComponent implements OnInit {
       this.init();
     });
     this.form = new FormGroup({
-      id: new FormControl(),
+      idBebe: new FormControl(),
       nombreBebe: new FormControl(),
       fechaBebe: new FormControl(),
 
@@ -56,7 +56,7 @@ export class BebeCreaeditaComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['Bebe']);
+      this.router.navigate(['/pages/Bebe']);
     } else {
       this.mensaje = 'Ingrese el nombre del Bebe!!!';
     }
@@ -66,7 +66,7 @@ export class BebeCreaeditaComponent implements OnInit {
     if (this.edicion) {
       this.pS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.idBebe),
+          idBebe: new FormControl(data.idBebe),
           nombreBebe: new FormControl(data.nombreBebe),
           fechaBebe: new FormControl(data.fechaBebe),
 

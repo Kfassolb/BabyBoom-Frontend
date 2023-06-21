@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@angular/material-moment-adapter": "^15.2.8"
+    "@angular/material-moment-adapter": "^15.2.8",
+    "@auth0/angular-jwt": "^5.1.2"
   }
 }

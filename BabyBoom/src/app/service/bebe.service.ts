@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {environment} from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Bebe } from '../model/Bebe';
 import { Subject } from 'rxjs';
 
@@ -15,10 +15,16 @@ export class BebeService {
 
   constructor(private http:HttpClient) { }
   list(){
-    return this.http.get<Bebe[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Bebe[]>(this.url,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(Bebe: Bebe) {
-    return this.http.post(this.url, Bebe);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, Bebe,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   setList(listaNueva: Bebe[]) {
@@ -29,15 +35,23 @@ export class BebeService {
     return this.listCambio.asObservable();
   }
   listId(id: number) {
-    return this.http.get<Bebe>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Bebe>(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   update(Bebe: Bebe) {
-    return this.http.put(this.url + '/' + Bebe.idBebe, Bebe);
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url, Bebe, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   eliminar(id: number) {
-
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   getConfirmaEliminacion() {

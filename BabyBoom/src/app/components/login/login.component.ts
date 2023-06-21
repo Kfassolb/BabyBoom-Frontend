@@ -9,11 +9,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
+
 export class LoginComponent implements OnInit {
+
   constructor(private loginService: LoginService, private router: Router, private snackBar: MatSnackBar) { }
   username: string = ""
   password: string = ""
   mensaje: string = ""
+
   ngOnInit(): void {
   }
   login() {
@@ -22,7 +26,7 @@ export class LoginComponent implements OnInit {
     request.password = this.password;
     this.loginService.login(request).subscribe((data: any) => {
       sessionStorage.setItem("token", data.jwttoken);
-      this.router.navigate(['/pages/pets']);
+      this.router.navigate(['/pages/users']);
     }, error => {
       this.mensaje = "Credenciales incorrectas!!!"
       this.snackBar.open(this.mensaje, "Aviso",{duration:2000});
@@ -30,4 +34,3 @@ export class LoginComponent implements OnInit {
   }
 
 }
-

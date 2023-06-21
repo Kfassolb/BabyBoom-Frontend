@@ -1,48 +1,59 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
-import { Apoderado } from '../model/Apoderado';
 import { environment } from 'src/environments/environment';
-const base_url = environment.base
+import { Apoderado } from '../model/apoderado';
+import { Subject } from 'rxjs';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
+const base_url = environment.base;
 @Injectable({
   providedIn: 'root'
 })
 export class ApoderadoService {
   private url = `${base_url}/apoderados`;
   private listCambio = new Subject<Apoderado[]>();
-  private confirmaEliminacion = new Subject<Boolean>()
-  constructor(private http:HttpClient) { }
+  private confirmDeletion = new Subject<Boolean>();
 
-  list(){
-    return this.http.get<Apoderado[]>(this.url);
+  constructor(private http: HttpClient) { }
+  list() {
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Apoderado[]>(this.url,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
-  insert(apoderado: Apoderado) {
-    return this.http.post(this.url, apoderado);
+  insert(apoderado:Apoderado){
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, apoderado,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
-
-  setList(listaNueva: Apoderado[]) {
-    this.listCambio.next(listaNueva);
+  setList(listaNueva:Apoderado[]){
+    return this.listCambio.next(listaNueva);
   }
-
-  getList() {
+  getList(){
     return this.listCambio.asObservable();
   }
-  listId(id: number) {
-    return this.http.get<Apoderado>(`${this.url}/${id}`);
+  listId(id:number){
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Apoderado>(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    })
   }
-  update(apoderado: Apoderado) {
-    return this.http.put(this.url + '/' + apoderado.idApoderado, Apoderado);
+  update(apoderado:Apoderado){
+    let token = sessionStorage.getItem("token");
+    //return this.http.put(this.url + "/" + usuario.idUser, usuario);
+    return this.http.put(this.url, apoderado,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
-
-  eliminar(id: number) {
-
-    return this.http.delete(`${this.url}/${id}`);
+  delete(id:number){
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
-
-  getConfirmaEliminacion() {
-    return this.confirmaEliminacion.asObservable();
+  getConfirmDeletion(){
+    return this.confirmDeletion.asObservable();
   }
-  setConfirmaEliminacion(estado: Boolean) {
-    this.confirmaEliminacion.next(estado);
+  setConfirmDeletion(estado:boolean){
+    return this.confirmDeletion.next(estado);
   }
 }

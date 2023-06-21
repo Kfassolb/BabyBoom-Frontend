@@ -7,6 +7,8 @@ import { CompraService } from 'src/app/service/compra.service';
 import { TipocomprobanteComponent } from '../../tipocomprobante/tipocomprobante.component';
 import { Tipocomprobante } from 'src/app/model/TipoComprobante';
 import { TipocomprobanteService } from 'src/app/service/tipocomprobante.service';
+import { ApoderadoService } from 'src/app/service/apoderado.service';
+import { Apoderado } from 'src/app/model/apoderado';
 
 @Component({
   selector: 'app-compra-creaedita',
@@ -18,7 +20,7 @@ export class CompraCreaeditaComponent implements OnInit{
   compra:Compra = new Compra()
   mensaje:string=""
   maxFecha:Date = moment().add(-1,'days').toDate();
-  lista:Compra[] = [];
+  lista:Apoderado[] = [];
   idTipoComprobanteSeleccionado: number=0;
   idApoderadoSeleccionado:number=0;
 

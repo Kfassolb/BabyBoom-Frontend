@@ -7,7 +7,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./apoderado.component.css']
 })
 export class ApoderadoComponent implements OnInit{
-  ngOnInit(): void {}
+  ngOnInit(): void {
 
-  constructor(public route:ActivatedRoute){}
+  }
+  constructor(public route: ActivatedRoute){}
 }

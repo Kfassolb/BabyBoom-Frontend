@@ -1,0 +1,23 @@
+nav{
+  background-color: #9cdfdf;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+#logo {
+  color: #000000;
+  font-weight: 1000;
+}
+
+nav li>a{
+  color: #f9f9f9;
+}
+
+#navbarNav {
+  margin-left: 22rem;
+}
+.navbar-nav a:hover{
+  color: #000000;
+}
+.navbar-nav a:active{
+  color: #f9f9f9;
+}

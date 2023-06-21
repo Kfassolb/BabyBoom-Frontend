@@ -1,4 +1,5 @@
 import { Tipocomprobante } from "./TipoComprobante";
+import { Apoderado } from "./apoderado";
 
 export class Compra{
   idCompra: number=0
