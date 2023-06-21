@@ -17,9 +17,9 @@ export class BebevacunaCreaditaComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   bebevacuna: BebeVacuna = new BebeVacuna()
   mensaje: string = ""
-  maxFecha: Date = moment().add(-1, 'days').toDate();
-  lista: BebeVacuna[] = [];
-  idcontrolvacunacion: number = 0;
+  //maxFecha: Date = moment().add(-1, 'days').toDate();
+  lista: ControlVacunacion[] = [];
+  idcontrolvacunacionseleccionado: number = 0;
 
 
   constructor(private BVs: BebevacunaService,
@@ -27,20 +27,20 @@ export class BebevacunaCreaditaComponent implements OnInit {
     private route: ActivatedRoute, private CVs:ControlvacunacionService) {
   }
   ngOnInit(): void {
-    this.BVs.list().subscribe(data => { this.lista = data });
+    this.CVs.list().subscribe(data => { this.lista = data });
 
     this.form = new FormGroup({
-    idControlVacunacion:new FormControl(),
-    ControlVacunacion :new FormControl()
+    idBebeVacuna:new FormControl(),
+    controlvacunacion :new FormControl()
     });
 
   }
   aceptar(): void {
     this.bebevacuna.idBebeVacuna=this.form.value['idBebeVacuna'];
-    this.bebevacuna.controlvacunacion.id=this.form.value['bebevacuna.id'];
-    if (this.idcontrolvacunacion>0) {
+    this.bebevacuna.controlvacunacion.id=this.form.value['controlvacunacion.id'];
+    if (this.idcontrolvacunacionseleccionado>0) {
       let cv = new ControlVacunacion();
-      cv.id = this.idcontrolvacunacion;
+      cv.id = this.idcontrolvacunacionseleccionado;
       this.bebevacuna.controlvacunacion=cv;
       this.BVs.insert(this.bebevacuna).subscribe(() => {
       this.BVs.list().subscribe(data => {

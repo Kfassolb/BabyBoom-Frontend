@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 @Component({
   selector: 'app-guarderiaservicio',
   templateUrl: './guarderiaservicio.component.html',
@@ -7,7 +8,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GuarderiaservicioComponent implements OnInit {
   ngOnInit(): void {}
-
   constructor(public route:ActivatedRoute){}
-
 }
+

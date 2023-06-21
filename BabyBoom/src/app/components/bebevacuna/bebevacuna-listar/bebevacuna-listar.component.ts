@@ -12,7 +12,7 @@ import { BebevacunaService } from 'src/app/service/bebevacuna.service';
 export class BebeVacunaListarcomponent implements OnInit {
   lista: BebeVacuna[] = [];
   dataSource: MatTableDataSource<BebeVacuna> = new MatTableDataSource();
-  displayedColumns: string[] = ['controlvacuna']
+  displayedColumns: string[] = ['id','controlvacuna']
 
 
   constructor(private BVs: BebevacunaService, private dialog: MatDialog) {
