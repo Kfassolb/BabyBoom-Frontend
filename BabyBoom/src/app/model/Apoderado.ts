@@ -1,15 +1,15 @@
-import { Bebe } from "./Bebe"
-import { Guarderia } from "./Guarderia"
-import { Tiposuscripcion } from "./Tiposuscripcion"
-import { Usuario } from "./usuario"
+import { Bebe } from "./Bebe";
+import { Guarderia } from "./Guarderia";
+import { Tiposuscripcion } from "./Tiposuscripcion";
+import { Users } from "./Users";
 
 export class Apoderado {
-  idApoderado: number = 0
-  usuario:Usuario = new Usuario()
-  bebe:Bebe = new Bebe()
-  tiposuscrip:Tiposuscripcion = new Tiposuscripcion()
-  guarderia:Guarderia = new Guarderia()
-  Nombre:String = ""
-  Apellido: String = ""
-  CorreoElectronico:String = ""
+  idApoderado: number = 0;
+  user: Users = new Users();
+  bebe: Bebe = new Bebe();
+  tiposuscrip: Tiposuscripcion = new Tiposuscripcion();
+  guarderia: Guarderia = new Guarderia();
+  nombre: string = "";
+  apellido: string = "";
+  email: string = "";
 }
