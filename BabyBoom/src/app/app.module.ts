@@ -166,8 +166,6 @@ import { ApoderadoDialogoComponent } from './components/apoderado/apoderado-list
     MatIconModule,
     MatPaginatorModule,
     MatDialogModule,
-
-    MatPaginatorIntl,
   ],
   providers: [],
   bootstrap: [AppComponent]
