@@ -1,3 +1,5 @@
+import { ApoderadoCreaeditarComponent } from './components/apoderado/apoderado-creaeditar/apoderado-creaeditar.component';
+import { ApoderadoListarComponent } from './components/apoderado/apoderado-listar/apoderado-listar.component';
 import { EnfermedadbebeCreaeditaComponent } from './components/enfermedadbebe/enfermedadbebe-creaedita/enfermedadbebe-creaedita.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -40,12 +42,12 @@ import { GuarderiaservicioComponent } from './components/guarderiaservicio/guard
 import { GuarderiaservicioListarComponent } from './components/guarderiaservicio/guarderiaservicio-listar/guarderiaservicio-listar.component';
 import { BebevacunaComponent } from './components/bebevacuna/bebevacuna.component';
 import { BebevacunaListarComponent } from './components/bebevacuna/bebevacuna-listar/bebevacuna-listar.component'
-
-
+import { CompraComponent } from './components/compra/compra.component';
+import { EnfermedadbebeDialogoComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-dialogo/enfermedadbebe-dialogo.component';
 import { ServicioComponent } from './components/servicio/servicio.component';
-
+import { GuarderiaComponent } from './components/guarderia/guarderia.component';
 import { ServicioListarComponent } from './components/servicio/servicio-listar/servicio-listar.component'
-
+import { GuarderiaCreaeditaComponent } from './components/guarderia/guarderia-creaedita/guarderia-creaedita.component';
 import { TipoenfermedadComponent } from './components/tipoenfermedad/tipoenfermedad.component';
 import { TipoenfermedadListarComponent } from './components/tipoenfermedad/tipoenfermedad-listar/tipoenfermedad-listar.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -71,6 +73,9 @@ import { ProblemaListarComponent } from './components/problema/problema-listar/p
 import { SoportetecnicoComponent } from './components/soportetecnico/soportetecnico.component';
 import { SoportetecnicoCreaeditaComponent } from './components/soportetecnico/soportetecnico-creaedita/soportetecnico-creaedita.component';
 import { SoportetecnicoListarComponent } from './components/soportetecnico/soportetecnico-listar/soportetecnico-listar.component';
+import { ApoderadoComponent } from './components/apoderado/apoderado.component';
+
+import { ApoderadoDialogoComponent } from './components/apoderado/apoderado-listar/apoderado-dialogo/apoderado-dialogo.component';
 
 
 @NgModule({
@@ -91,11 +96,15 @@ import { SoportetecnicoListarComponent } from './components/soportetecnico/sopor
     TipoenfermedadCreareditarComponent,
     EnfermedadbebeCreaeditaComponent,
     TipoenfermedadDialogoComponent,
+    ApoderadoListarComponent,
+    GuarderiaCreaeditaComponent,
     EnfermedadbebeListarComponent,
+    EnfermedadbebeDialogoComponent,
     UsuarioDialogoComponent,
     BebeCreaeditaComponent,
     ProductoComponent,
     ProductoListarComponent,
+    ApoderadoCreaeditarComponent,
     ProductoCreaeditaComponent,
     ProductoDialogoComponent,
     ServicioListarComponent,
@@ -103,6 +112,7 @@ import { SoportetecnicoListarComponent } from './components/soportetecnico/sopor
     ServicioCreaditaComponent,
     ServicioDialogoComponent,
     EnfermedadbebeComponent,
+    GuarderiaComponent,
     TiposuscripcionComponent,
     TiposuscripcionListarComponent,
     TiposuscripcionCreaeditaComponent,
@@ -130,6 +140,9 @@ import { SoportetecnicoListarComponent } from './components/soportetecnico/sopor
     BebevacunaComponent,
     BebevacunaListarComponent,
     CompraListarComponent,
+    CompraComponent,
+    ApoderadoComponent,
+    ApoderadoDialogoComponent
 
   ],
   imports: [
@@ -153,6 +166,7 @@ import { SoportetecnicoListarComponent } from './components/soportetecnico/sopor
     MatIconModule,
     MatPaginatorModule,
     MatDialogModule,
+
     MatPaginatorIntl,
   ],
   providers: [],
