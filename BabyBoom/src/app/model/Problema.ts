@@ -1,7 +1,8 @@
 import { Soportetecnico } from "./Soportetecnico";
+import { Apoderado } from "./apoderado";
 
   export class Problema{
-  idProblema:numero = 0;
+  idProblema:number = 0;
   soportetecnico:Soportetecnico=new Soportetecnico();
   apoderado:Apoderado=new Apoderado();
   Titulo: string=""

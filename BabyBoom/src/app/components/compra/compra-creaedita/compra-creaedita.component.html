@@ -22,27 +22,25 @@
       <br>
 
       <mat-form-field appearance="fill">
-        <mat-label>idTipoComprobante</mat-label>
-        <mat-select formControlName="pet" [(value)]="idTipocomprobanteSeleccionado" required>
-          <mat-option *ngFor="let c of lista" [value]="c.idTipocomprobante">
-            {{c.nombreComprobante}}
-        </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>idTipoComprobante</mat-label>
-        <mat-select formControlName="pet" [(value)]="idApoderadoSeleccionado" required>
-        <mat-option *ngFor="let a of lista" [value]="a.idApoderado">
+        <mat-label>Apoderado</mat-label>
+        <mat-select formControlName="apoderado" [(value)]="idApoderadoSeleccionado" required>
+          <mat-option *ngFor="let a of listaApoderado" [value]="a.idApoderado">
             {{a.nombre}}
         </mat-option>
         </mat-select>
       </mat-form-field>
 
-            <mat-form-field class="example-full-width">
-        <mat-label>idTipocomprobante</mat-label>
-        <input matInput required placeholder="idTipocomprobante" formControlName="idTipocomprobante">
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo Comprobante</mat-label>
+        <mat-select formControlName="tipo comprobante" [(value)]="idApoderadoSeleccionado" required>
+          <mat-option *ngFor="let t of listaComprobante" [value]="t.idTipocomprobante">
+            {{t.nombreComprobante}}
+        </mat-option>
+        </mat-select>
       </mat-form-field>
+
       <br>
       <mat-form-field appearance="fill">
         <mat-label>Fecha</mat-label>

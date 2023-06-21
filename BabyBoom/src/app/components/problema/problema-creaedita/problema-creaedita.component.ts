@@ -6,6 +6,7 @@ import * as moment from 'moment';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProblemaService } from 'src/app/service/problema.service';
 import { SoportetecnicoService } from 'src/app/service/soportetecnico.service';
+import { Apoderado } from 'src/app/model/apoderado';
 
 @Component({
   selector: 'app-problema-creaedita',
@@ -40,20 +41,20 @@ export class ProblemaCreaeditaComponent implements OnInit{
   }
   aceptar(): void {
     this.problema.soportetecnico.NombreSoporte = this.form.value['soportetecnico.NombreSoporte'];
-    this.problema.apoderado.Nombre = this.form.value['apoderado.Nombre'];
+    this.problema.apoderado.nombre = this.form.value['apoderado.nombre'];
     this.problema.Titulo = this.form.value['Titulo'];
     this.problema.Descripcion = this.form.value['Descripcion'];
     this.problema.FechaInicio = this.form.value['FechaInicio'];
     this.problema.FechaFin = this.form.value['FechaFin'];
 
-    if (this.idSoportetecnicoSeleccionado>0 || this.idApoderadoSeleccionado>0){
+    if (this.idSoportetecnicoSeleccionado>0 && this.idApoderadoSeleccionado>0){
       let s = new Soportetecnico();
       s.idSoporte = this.idSoportetecnicoSeleccionado;
       this.problema.soportetecnico=s;
 
       let a = new Apoderado();
       a.idApoderado = this.idApoderadoSeleccionado;
-      this.problema.idApoderado=a;
+      this.problema.apoderado=a;
       this.prS.insert(this.problema).subscribe(() => {
         this.prS.list().subscribe(data => {
               this.prS.setList(data);

@@ -31,12 +31,12 @@
 
       <ng-container matColumnDef="idapoderado">
         <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.idApoderado.idApoderado}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.apoderado.nombre}} </td>
       </ng-container>
 
       <ng-container matColumnDef="idtipocomprobante">
         <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.idTipoComprobante.idTipocomprobante}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.tipocomprobante.nombreComprobante}} </td>
       </ng-container>
 
       <!-- Weight Column -->
@@ -46,7 +46,7 @@
       </ng-container>
 
       <ng-container matColumnDef="ventatotal">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <th mat-header-cell *matHeaderCellDef> Venta Total</th>
         <td mat-cell *matCellDef="let element"> {{element.ventaTotal}} </td>
       </ng-container>
 

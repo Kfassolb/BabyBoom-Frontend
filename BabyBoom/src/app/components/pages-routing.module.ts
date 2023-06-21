@@ -28,6 +28,14 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { GuarderiaComponent } from './guarderia/guarderia.component';
 import { GuarderiaCreaeditaComponent } from './guarderia/guarderia-creaedita/guarderia-creaedita.component';
+import { BebevacunaComponent } from './bebevacuna/bebevacuna.component';
+import { BebevacunaCreaeditaComponent } from './bebevacuna/bebevacuna-creaedita/bebevacuna-creaedita.component';
+import { ProblemaComponent } from './problema/problema.component';
+import { ProblemaCreaeditaComponent } from './problema/problema-creaedita/problema-creaedita.component';
+import { ControlvacunacionComponent } from './controlvacunacion/controlvacunacion.component';
+import { ControlvacunacionCreaeditaComponent } from './controlvacunacion/controlvacunacion-creaedita/controlvacunacion-creaedita.component';
+import { CompraproductoComponent } from './compraproducto/compraproducto.component';
+import { CompraproductoCreaeditaComponent } from './compraproducto/compraproducto-creaedita/compraproducto-creaedita.component';
 
 const routes: Routes = [
   {
@@ -108,6 +116,27 @@ const routes: Routes = [
       {path:'editar/:id', component:GuarderiaCreaeditaComponent}
     ],canActivate:[GuardService]
   },
+  {
+    path:'bebevacunas', component:BebevacunaComponent, children: [
+      {path: 'agregar', component:BebevacunaCreaeditaComponent }
+    ]
+  },
+  {
+    path: 'problemas',component:ProblemaComponent,children:[
+      {path:'agregar',component:ProblemaCreaeditaComponent}
+    ]
+  },
+  {
+    path: 'controlvacunas',component:ControlvacunacionComponent,children:[
+      {path: 'agregar',component:ControlvacunacionCreaeditaComponent}
+    ]
+  },
+  {
+    path:'compraproductos',component:CompraproductoComponent,children:[
+      {path: 'agregar', component:CompraproductoCreaeditaComponent}
+    ]
+  }
+
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

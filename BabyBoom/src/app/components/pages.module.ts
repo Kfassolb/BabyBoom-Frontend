@@ -1,3 +1,5 @@
+import { CompraproductoCreaeditaComponent } from './compraproducto/compraproducto-creaedita/compraproducto-creaedita.component';
+import { CompraproductoListarComponent } from './compraproducto/compraproducto-listar/compraproducto-listar.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 //import { AppRoutingModule } from './app-routing.module';
@@ -75,8 +77,14 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { BebevacunaCreaeditaComponent } from './bebevacuna/bebevacuna-creaedita/bebevacuna-creaedita.component';
 //import { ToolbarComponent } from './toolbar/toolbar.component';
-
+import { BebevacunaComponent } from './bebevacuna/bebevacuna.component';
+import { BebevacunaListarComponent } from './bebevacuna/bebevacuna-listar/bebevacuna-listar.component';
+import { ProblemaComponent } from './problema/problema.component';
+import { ProblemaCreaeditaComponent } from './problema/problema-creaedita/problema-creaedita.component';
+import { ProblemaListarComponent } from './problema/problema-listar/problema-listar.component';
+import { CompraproductoComponent } from './compraproducto/compraproducto.component';
 
 @NgModule({
   declarations: [
@@ -133,6 +141,17 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     ApoderadoListarComponent,
     ApoderadoDialogoComponent,
     SignUpComponent,
+    BebevacunaCreaeditaComponent,
+    BebevacunaComponent,
+    BebevacunaListarComponent,
+
+    ProblemaComponent,
+    ProblemaListarComponent,
+    ProblemaCreaeditaComponent,
+
+    CompraproductoComponent,
+    CompraproductoCreaeditaComponent,
+    CompraproductoListarComponent
     //ToolbarComponent
 
   ],
