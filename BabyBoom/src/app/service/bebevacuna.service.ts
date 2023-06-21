@@ -10,11 +10,20 @@ const base_url = environment.base
 })
 export class BebevacunaService {
 private url=`${base_url}/bebevacuna`
-//private listaCambio=new Subject<BebeVacuna[]>()
+private listaCambio=new Subject<BebeVacuna[]>()
 
 constructor(private http:HttpClient) { }
 
 list() {
   return this.http.get<BebeVacuna[]>(this.url);
+}
+setList(listaNueva: BebeVacuna[]) {
+  this.listaCambio.next(listaNueva);
+}
+getLista() {
+  return this.listaCambio.asObservable();
+}
+insert(bebevacuna: BebeVacuna) {
+  return this.http.post(this.url, bebevacuna);
 }
 }

@@ -33,7 +33,9 @@ import { ControlvacunacionDialogoComponent } from './components/controlvacunacio
 import { GuarderiaservicioComponent } from './components/guarderiaservicio/guarderiaservicio.component';
 import { GuarderiaservicioListarComponent } from './components/guarderiaservicio/guarderiaservicio-listar/guarderiaservicio-listar.component';
 import { BebevacunaComponent } from './components/bebevacuna/bebevacuna.component';
-import { BebevacunaListarComponent } from './components/bebevacuna/bebevacuna-listar/bebevacuna-listar.component'
+import { BebevacunaCreaditaComponent } from './components/bebevacuna/bebevacuna-creadita/bebevacuna-creadita.component';
+import { GuarderiaservicioCreaditaComponent } from './components/guarderiaservicio/guarderiaservicio-creadita/guarderiaservicio-creadita.component'
+import { BebeVacunaListarcomponent } from './components/bebevacuna/bebevacuna-listar/bebevacuna-listar.component';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { BebevacunaListarComponent } from './components/bebevacuna/bebevacuna-li
     GuarderiaservicioComponent,
     GuarderiaservicioListarComponent,
     BebevacunaComponent,
-    BebevacunaListarComponent,
+    BebeVacunaListarcomponent,
+    BebevacunaCreaditaComponent,
+    GuarderiaservicioCreaditaComponent,
   ],
   imports: [
     BrowserModule,

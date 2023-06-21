@@ -46,7 +46,7 @@ aceptar(): void {
   this.controlvacunacion.estadoVacunacion=this.form.value['estadoVacunacion'];
   this.controlvacunacion.nombreVacunador=this.form.value['nombreVacunador'];
   this.controlvacunacion.lugar=this.form.value['lugar'];
- if (this.form.value['nombreVacunador'].length>0){
+ if (this.form.value['tipoVacuna'].length>0){
   if(this.edicion){
     this.CVs.modificar(this.controlvacunacion).subscribe(()=>{
       this.CVs.list().subscribe(data=>{
@@ -69,8 +69,12 @@ init() {
   if (this.edicion) {
     this.CVs.listarId(this.id).subscribe(data => {
     this.form = new FormGroup({
-        id: new FormControl(data.id),
-        NombreServicio: new FormControl(data.nombreVacunador),
+    id: new FormControl(data.id),
+    fecha:new FormControl(data.fecha),
+    tipoVacuna:new FormControl(data.tipoVacuna),
+    estadoVacunacion:new FormControl(data.estadoVacunacion),
+    nombreVacunador:new FormControl(data.nombreVacunador),
+    lugar:new FormControl(data.lugar),
       });
       console.log(data);
     });

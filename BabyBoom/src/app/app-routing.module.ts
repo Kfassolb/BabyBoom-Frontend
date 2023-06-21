@@ -6,6 +6,8 @@ import { ServicioCompoment } from './components/servicio/servicio.component';
 import { ServicioCreaditaComponent } from './components/servicio/servicio-creadita/servicio-creadita.component';
 import { ControlvacunacionCreaeditaComponent } from './components/controlvacunacion/controlvacunacion-creaedita/controlvacunacion-creaedita.component';
 import { ControlvacunacionComponent } from './components/controlvacunacion/controlvacunacion.component';
+import { BebevacunaComponent } from './components/bebevacuna/bebevacuna.component';
+import { BebevacunaCreaditaComponent } from './components/bebevacuna/bebevacuna-creadita/bebevacuna-creadita.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,11 @@ const routes: Routes = [
     path:'controlvacunacion', component:ControlvacunacionComponent,children:[
       {path:'controlvacunacioneditar',component:ControlvacunacionCreaeditaComponent},
       { path: 'edicion/:id', component: ControlvacunacionCreaeditaComponent }
+    ]
+  },
+  {
+    path:'bebevacuna', component:BebevacunaComponent,children:[
+      {path:'bebevacunaeditar',component:BebevacunaCreaditaComponent}
     ]
   }
 ];

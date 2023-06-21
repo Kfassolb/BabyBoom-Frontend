@@ -19,15 +19,19 @@
             <br>
             <mat-form-field class="example-full-width">
               <mat-label>Id</mat-label>
-              <input matInput placeholder="id" formControlName="id">
+              <input matInput placeholder="idBebeVacuna" formControlName="idBebeVacuna">
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
-                <mat-label>Nombre Servicio</mat-label>
-                <input matInput placeholder="NombreServicio" formControlName="NombreServicio">
-            </mat-form-field>
-
-            <br>
+          <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Género</mat-label>
+        <mat-select formControlName="pet" [(value)]="idcontrolvacunacion" required>
+          <mat-option *ngFor="let cv of lista" [value]="cv.id">
+            {{cv.idControlVacunacion}}
+        </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
             <div style="text-align: center;">
                 <button class="btn-accept"><mat-icon>check_circle</mat-icon></button>
                 <mat-icon routerLink="/servicio"class="ms-4">cancel</mat-icon>
