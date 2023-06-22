@@ -32,6 +32,15 @@
         </mat-select>
       </mat-form-field>
       <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre Guarderia</mat-label>
+        <mat-select formControlName="guarderia" [(value)]="idGuarderia" required>
+          <mat-option *ngFor="let g of lista" [value]="g.id">
+            {{s.nombreGuarderia}}
+        </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
             <div style="text-align: center;">
                 <button class="btn-accept"><mat-icon>check_circle</mat-icon></button>
                 <mat-icon routerLink="/servicio"class="ms-4">cancel</mat-icon>
