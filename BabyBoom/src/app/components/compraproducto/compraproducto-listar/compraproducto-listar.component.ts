@@ -13,20 +13,20 @@ export class CompraproductoListarComponent implements OnInit{
 
   lista: Compraproducto[] = [];
   dataSource:MatTableDataSource<Compraproducto> = new MatTableDataSource();
-  displayedColumns: string[] = ['idcompra','idapoderado','idtipocomprobante','fecha','ventatotal']
+  displayedColumns: string[] = ['idcompraproducto','apoderado','producto','cantidad']
 
   constructor(private cS:CompraproductoService, private dialog:MatDialog){}
 
   ngOnInit(): void {
-    this.cS.listar().subscribe(data => {
+    this.cS.list().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
     })
-    this.cS.getLista().subscribe(data => {
+    this.cS.getList().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
     });
 
   }
-  filtrar(e: any) {
+  filter(e: any) {
     this.dataSource.filter = e.target.value.trim();
   }
 }

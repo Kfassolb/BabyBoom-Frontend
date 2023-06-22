@@ -1,3 +1,8 @@
+import { GuarderiaservicioListarComponent } from './guarderiaservicio/guarderiaservicio-listar/guarderiaservicio-listar.component';
+import { GuarderiaservicioComponent } from './guarderiaservicio/guarderiaservicio.component';
+import { ControlvacunacionCreaeditaComponent } from './controlvacunacion/controlvacunacion-creaedita/controlvacunacion-creaedita.component';
+import { ControlvacunacionListarComponent } from './controlvacunacion/controlvacunacion-listar/controlvacunacion-listar.component';
+import { ControlvacunacionComponent } from './controlvacunacion/controlvacunacion.component';
 import { CompraproductoCreaeditaComponent } from './compraproducto/compraproducto-creaedita/compraproducto-creaedita.component';
 import { CompraproductoListarComponent } from './compraproducto/compraproducto-listar/compraproducto-listar.component';
 import { NgModule } from '@angular/core';
@@ -151,7 +156,15 @@ import { CompraproductoComponent } from './compraproducto/compraproducto.compone
 
     CompraproductoComponent,
     CompraproductoCreaeditaComponent,
-    CompraproductoListarComponent
+    CompraproductoListarComponent,
+
+    ControlvacunacionComponent,
+    ControlvacunacionListarComponent,
+    ControlvacunacionCreaeditaComponent,
+
+    GuarderiaservicioComponent,
+    GuarderiaListarComponent,
+    GuarderiaservicioListarComponent
     //ToolbarComponent
 
   ],

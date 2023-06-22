@@ -39,7 +39,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Fecha</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="Fecha" [max]="maxFecha">
+        <input matInput [matDatepicker]="picker" formControlName="fecha" [max]="maxFecha">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
@@ -48,7 +48,7 @@
 
       <mat-form-field class="example-full-width">
         <mat-label>Nombre</mat-label>
-        <input matInput required placeholder="Nombre guarderia" formControlName="nombreGuarderia">
+        <input matInput required placeholder="Nombre guarderia" formControlName="NombreGuarderia">
       </mat-form-field>
 
       <br>

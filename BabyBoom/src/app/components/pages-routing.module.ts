@@ -34,8 +34,10 @@ import { ProblemaComponent } from './problema/problema.component';
 import { ProblemaCreaeditaComponent } from './problema/problema-creaedita/problema-creaedita.component';
 import { ControlvacunacionComponent } from './controlvacunacion/controlvacunacion.component';
 import { ControlvacunacionCreaeditaComponent } from './controlvacunacion/controlvacunacion-creaedita/controlvacunacion-creaedita.component';
+import { ControlvacunacionListarComponent } from './controlvacunacion/controlvacunacion-listar/controlvacunacion-listar.component';
 import { CompraproductoComponent } from './compraproducto/compraproducto.component';
 import { CompraproductoCreaeditaComponent } from './compraproducto/compraproducto-creaedita/compraproducto-creaedita.component';
+
 
 const routes: Routes = [
   {
