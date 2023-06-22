@@ -30,20 +30,5 @@ export class PublicacionService {
   getList() {
     return this.listCambio.asObservable();
   }
-  listId(id: number) {
-    return this.http.get<Publicacion>(`${this.url}/${id}`);
-  }
-  update(publicacion:Publicacion) {
-    return this.http.put(this.url + '/' + publicacion.id, publicacion);
-  }
-  eliminar(id:number){
-    return this.http.delete(`${this.url}/${id}`);
-  }
-  getConfirmarEliminar(){
-    return this.confirmarEliminacion.asObservable();
-  }
-  setConfirmarEliminacion(estado: Boolean){
-    this.confirmarEliminacion.next(estado);
-  }
 
 }
