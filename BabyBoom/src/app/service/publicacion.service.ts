@@ -13,14 +13,14 @@ export class PublicacionService {
 
   private url = `${base_url}/Publicacion`;
   private listCambio = new Subject<Publicacion[]>();
-  private confirmaEliminacion = new Subject<Boolean>()
+  private confirmarEliminacion =new Subject<Boolean>()
 
   constructor(private http:HttpClient) { }
   list(){
     return this.http.get<Publicacion[]>(this.url);
   }
   insert(publicacion:Publicacion) {
-    return this.http.post(this.url, publicacion);
+    return this.http.post(this.url,publicacion);
   }
 
   setList(listaNueva: Publicacion[]) {
@@ -36,16 +36,14 @@ export class PublicacionService {
   update(publicacion:Publicacion) {
     return this.http.put(this.url + '/' + publicacion.id, publicacion);
   }
-
-  eliminar(id: number) {
-
+  eliminar(id:number){
     return this.http.delete(`${this.url}/${id}`);
   }
+  getConfirmarEliminar(){
+    return this.confirmarEliminacion.asObservable();
+  }
+  setConfirmarEliminacion(estado: Boolean){
+    this.confirmarEliminacion.next(estado);
+  }
 
-  getConfirmaEliminacion() {
-    return this.confirmaEliminacion.asObservable();
-  }
-  setConfirmaEliminacion(estado: Boolean) {
-    this.confirmaEliminacion.next(estado);
-  }
 }

@@ -14,7 +14,7 @@ import { PublicacionDialogoComponent } from './publicacion-dialogo/publicacion-d
 export class PublicacionListarComponent implements OnInit{
   lista:Publicacion[] = [];
   dataSource:MatTableDataSource<Publicacion> = new MatTableDataSource();
-  displayedColumns:string[] = ['id', 'sintomasEnfermedad_bebe','accion01'];
+  displayedColumns:string[] = ['id', 'tituloPublicacion', 'comentarioPublicacion','accion01'];
   @ViewChild(MatPaginator) paginator!: MatPaginator; //THIS
   private idMayor: number = 0;
 
