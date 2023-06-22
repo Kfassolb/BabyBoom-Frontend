@@ -49,6 +49,9 @@ import { ComunidadListarComponent } from './components/comunidad/comunidad-lista
 import { ComunidadCreaeditaComponent } from './components/comunidad/comunidad-creaedita/comunidad-creaedita.component';
 import { ComunidadDialogoComponent } from './components/comunidad/comunidad-listar/comunidad-dialogo/comunidad-dialogo.component';
 import { PublicacionComponent } from './components/publicacion/publicacion.component';
+import { PublicacionListarComponent } from './components/publicacion/publicacion-listar/publicacion-listar.component';
+import { PublicacionCreaeditaComponent } from './components/publicacion/publicacion-creaedita/publicacion-creaedita.component';
+import { PublicacionDialogoComponent } from './components/publicacion/publicacion-listar/publicacion-dialogo/publicacion-dialogo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,7 +87,10 @@ import { PublicacionComponent } from './components/publicacion/publicacion.compo
     ComunidadListarComponent,
     ComunidadCreaeditaComponent,
     ComunidadDialogoComponent,
-    PublicacionComponent
+    PublicacionComponent,
+    PublicacionListarComponent,
+    PublicacionCreaeditaComponent,
+    PublicacionDialogoComponent
 
   ],
   imports: [
