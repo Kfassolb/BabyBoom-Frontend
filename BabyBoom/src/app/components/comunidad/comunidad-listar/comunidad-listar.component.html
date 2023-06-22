@@ -33,21 +33,23 @@
     <!-- Position Column -->
     <ng-container matColumnDef="idComunidad">
       <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.idComunidad}} </td>
+      <td mat-cell *matCellDef="let element">{{element.idComunidad}} </td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="NombreComunidad">
       <th mat-header-cell *matHeaderCellDef> Nombre Comunidad </th>
-      <td mat-cell *matCellDef="let element"> {{element.NombreComunidad}} </td>
+      <td mat-cell *matCellDef="let element">{{element.NombreComunidad}} </td>
     </ng-container>
+
     <ng-container matColumnDef="Contenido">
-      <th mat-header-cell *matHeaderCellDef> Contenido </th>
-      <td mat-cell *matCellDef="let element"> {{element.Contenido}} </td>
+      <th mat-header-cell *matHeaderCellDef>Contenido </th>
+      <td mat-cell *matCellDef="let element">{{element.Contenido}} </td>
     </ng-container>
+
     <ng-container matColumnDef="FechaInicio">
-      <th mat-header-cell *matHeaderCellDef>  Fecha Inicio </th>
-      <td mat-cell *matCellDef="let element"> {{element.FechaInicio|date:'dd/mm/yyyy'}} </td>
+      <th mat-header-cell *matHeaderCellDef>Fecha Inicio </th>
+      <td mat-cell *matCellDef="let element">{{element.FechaInicio|date:'dd/mm/yyyy'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="accion01">

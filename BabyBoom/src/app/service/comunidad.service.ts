@@ -17,7 +17,7 @@ export class ComunidadService {
     return this.http.get<Comunidad[]>(this.url);
   }
   insert(comunidad:Comunidad) {
-    return this.http.post(this.url, comunidad);
+    return this.http.post(this.url,comunidad);
   }
 
   setList(listaNueva: Comunidad[]) {

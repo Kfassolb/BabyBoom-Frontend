@@ -48,6 +48,7 @@ import { ComunidadComponent } from './components/comunidad/comunidad.component';
 import { ComunidadListarComponent } from './components/comunidad/comunidad-listar/comunidad-listar.component';
 import { ComunidadCreaeditaComponent } from './components/comunidad/comunidad-creaedita/comunidad-creaedita.component';
 import { ComunidadDialogoComponent } from './components/comunidad/comunidad-listar/comunidad-dialogo/comunidad-dialogo.component';
+import { PublicacionComponent } from './components/publicacion/publicacion.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,7 +83,8 @@ import { ComunidadDialogoComponent } from './components/comunidad/comunidad-list
     ComunidadComponent,
     ComunidadListarComponent,
     ComunidadCreaeditaComponent,
-    ComunidadDialogoComponent
+    ComunidadDialogoComponent,
+    PublicacionComponent
 
   ],
   imports: [
