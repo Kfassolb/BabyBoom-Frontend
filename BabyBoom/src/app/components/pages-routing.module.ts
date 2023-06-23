@@ -45,6 +45,8 @@ import { PublicacionComponent } from './publicacion/publicacion.component';
 import { PublicacionCreaeditarComponent } from './publicacion/publicacion-creaeditar/publicacion-creaeditar.component';
 import { ComunidadComponent } from './comunidad/comunidad.component';
 import { ComunidadCreaeditarComponent } from './comunidad/comunidad-creaeditar/comunidad-creaeditar.component';
+import { CitamedicaComponent } from './citamedica/citamedica.component';
+import { CitamedicaCreaeditarComponent } from './citamedica/citamedica-creaeditar/citamedica-creaeditar.component';
 
 
 const routes: Routes = [
@@ -168,6 +170,11 @@ const routes: Routes = [
     path: 'comunidades',component:ComunidadComponent,children:[
       {path: 'agregar', component:ComunidadCreaeditarComponent},
       {path: 'editar/:id', component:ComunidadCreaeditarComponent},
+    ],canActivate:[GuardService]
+  },
+  {
+    path: 'citamedicas',component:CitamedicaComponent,children:[
+      {path: 'agregar',component:CitamedicaCreaeditarComponent}
     ],canActivate:[GuardService]
   }
 
