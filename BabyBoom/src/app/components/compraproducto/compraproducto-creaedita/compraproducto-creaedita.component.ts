@@ -34,15 +34,10 @@ export class CompraproductoCreaeditaComponent implements OnInit{
     this.pS.list().subscribe(data => { this.listaProducto = data });
 
     this.form = new FormGroup({
-      id: new FormControl(),
-      nombre: new FormControl(),
-      apellido: new FormControl(),
-      especialidad: new FormControl(),
-      email: new FormControl(),
-      user: new FormControl(),
-      bebe: new FormControl(),
-      tiposuscrip: new FormControl(),
-      guarderia: new FormControl(),
+      idCompraproducto: new FormControl(),
+      apoderado: new FormControl(),
+      producto: new FormControl(),
+      Cantidad: new FormControl(),
     })
   }
   aceptar():void {

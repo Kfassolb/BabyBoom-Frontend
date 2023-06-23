@@ -30,9 +30,9 @@ export class TipoenfermedadCreareditarComponent implements OnInit {
       this.init();
     });
     this.form = new FormGroup({
-      id: new FormControl(),
+      idTipoEnfermedad: new FormControl(),
       nombreEnfermedad: new FormControl(),
-      TipoEnfermedad: new FormControl(),
+      tipoTipoEnfermedad: new FormControl(),
 
     });
   }

@@ -9,7 +9,7 @@ const base_url = environment.base
 })
 export class CompraService {
 
-  private url = `${base_url}/vaccines`
+  private url = `${base_url}/compras`
   private listaCambio = new Subject<Compra[]>()
   constructor(private http:HttpClient) { }
 

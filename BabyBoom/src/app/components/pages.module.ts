@@ -1,3 +1,4 @@
+import { SoportetecnicoCreaeditaComponent } from './soportetecnico/soportetecnico-creaedita/soportetecnico-creaedita.component';
 import { GuarderiaservicioListarComponent } from './guarderiaservicio/guarderiaservicio-listar/guarderiaservicio-listar.component';
 import { GuarderiaservicioComponent } from './guarderiaservicio/guarderiaservicio.component';
 import { ControlvacunacionCreaeditaComponent } from './controlvacunacion/controlvacunacion-creaedita/controlvacunacion-creaedita.component';
@@ -90,6 +91,20 @@ import { ProblemaComponent } from './problema/problema.component';
 import { ProblemaCreaeditaComponent } from './problema/problema-creaedita/problema-creaedita.component';
 import { ProblemaListarComponent } from './problema/problema-listar/problema-listar.component';
 import { CompraproductoComponent } from './compraproducto/compraproducto.component';
+import { SoportetecnicoComponent } from './soportetecnico/soportetecnico.component';
+import { SoportetecnicoListarComponent } from './soportetecnico/soportetecnico-listar/soportetecnico-listar.component';
+import { PublicacionComponent } from './publicacion/publicacion.component';
+import { PublicacionListarComponent } from './publicacion/publicacion-listar/publicacion-listar.component';
+import { PublicacionCreaeditarComponent } from './publicacion/publicacion-creaeditar/publicacion-creaeditar.component';
+import { ComunidadComponent } from './comunidad/comunidad.component';
+import { ComunidadListarComponent } from './comunidad/comunidad-listar/comunidad-listar.component';
+import { ComunidadCreaeditarComponent } from './comunidad/comunidad-creaeditar/comunidad-creaeditar.component';
+import { ComunidadDialogoComponent } from './comunidad/comunidad-listar/comunidad-dialogo/comunidad-dialogo.component';
+import { CitamedicaComponent } from './citamedica/citamedica.component';
+import { CitamedicaListarComponent } from './citamedica/citamedica-listar/citamedica-listar.component';
+import { CitamedicaCreaeditarComponent } from './citamedica/citamedica-creaeditar/citamedica-creaeditar.component';
+import { CitamedicaDialogoComponent } from './citamedica/citamedica-listar/citamedica-dialogo/citamedica-dialogo.component';
+
 
 @NgModule({
   declarations: [
@@ -164,7 +179,22 @@ import { CompraproductoComponent } from './compraproducto/compraproducto.compone
 
     GuarderiaservicioComponent,
     GuarderiaListarComponent,
-    GuarderiaservicioListarComponent
+    GuarderiaservicioListarComponent,
+
+    SoportetecnicoCreaeditaComponent,
+    SoportetecnicoListarComponent,
+    SoportetecnicoComponent,
+    PublicacionComponent,
+    PublicacionListarComponent,
+    PublicacionCreaeditarComponent,
+    ComunidadComponent,
+    ComunidadListarComponent,
+    ComunidadCreaeditarComponent,
+    ComunidadDialogoComponent,
+    CitamedicaComponent,
+    CitamedicaListarComponent,
+    CitamedicaCreaeditarComponent,
+    CitamedicaDialogoComponent
     //ToolbarComponent
 
   ],

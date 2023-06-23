@@ -1,6 +1,8 @@
+import { Guarderia } from "./Guarderia";
 import { Servicio } from "./Servicio";
 
 export class GuarderiaServicio{
-  servicio:Servicio=new Servicio();
-
+  idGuarderiaServicio: number = 0
+  servicio:Servicio=new Servicio()
+  guarderia:Guarderia = new Guarderia()
 }

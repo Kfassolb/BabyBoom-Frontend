@@ -31,7 +31,7 @@ export class ProductoCreaeditaComponent implements OnInit{
       Nombre:new FormControl(),
       Tipo:new FormControl(),
       Cantidad:new FormControl(),
-      PrecioUnitario:new FormControl(),
+      PrecioU:new FormControl(),
 
     })
   }
@@ -40,7 +40,7 @@ export class ProductoCreaeditaComponent implements OnInit{
     this.producto.Nombre = this.form.value['Nombre'];
     this.producto.Tipo = this.form.value['Tipo'];
     this.producto.Cantidad = this.form.value['Cantidad'];
-    this.producto.PrecioUnitario = this.form.value['PrecioUnitario'];
+    this.producto.PrecioU = this.form.value['PrecioU'];
     if(this.form.value['Nombre'].length>0){
       if(this.edicion){
         this.pS.update(this.producto).subscribe(()=>{
@@ -69,7 +69,7 @@ export class ProductoCreaeditaComponent implements OnInit{
           Nombre:new FormControl(data.Nombre),
           Tipo:new FormControl(data.Tipo),
           Cantidad:new FormControl(data.Cantidad),
-          PrecioUnitario:new FormControl(data.PrecioUnitario),
+          PrecioU:new FormControl(data.PrecioU),
 
         });
       });

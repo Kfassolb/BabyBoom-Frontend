@@ -17,4 +17,10 @@ constructor(private http:HttpClient) { }
 list() {
   return this.http.get<GuarderiaServicio[]>(this.url);
 }
+setList(listaNueva: GuarderiaServicio[]) {
+  this.listaCambio.next(listaNueva);
+}
+getLista() {
+  return this.listaCambio.asObservable();
+}
 }

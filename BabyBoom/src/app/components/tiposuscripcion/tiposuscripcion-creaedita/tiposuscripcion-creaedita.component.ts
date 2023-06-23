@@ -25,7 +25,7 @@ export class TiposuscripcionCreaeditaComponent implements OnInit {
       this.init();
     })
     this.form=new FormGroup({
-      id:new FormControl(),
+      idTiposuscrip:new FormControl(),
       nombreSuscripcion: new FormControl(),
     })
   }
@@ -56,7 +56,7 @@ export class TiposuscripcionCreaeditaComponent implements OnInit {
     if (this.edicion) {
       this.tcS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.idTiposuscrip),
+          idTiposuscrip: new FormControl(data.idTiposuscrip),
           nombreSuscripcion: new FormControl(data.nombresuscripcion),
         });
 

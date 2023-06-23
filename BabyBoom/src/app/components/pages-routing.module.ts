@@ -37,6 +37,14 @@ import { ControlvacunacionCreaeditaComponent } from './controlvacunacion/control
 import { ControlvacunacionListarComponent } from './controlvacunacion/controlvacunacion-listar/controlvacunacion-listar.component';
 import { CompraproductoComponent } from './compraproducto/compraproducto.component';
 import { CompraproductoCreaeditaComponent } from './compraproducto/compraproducto-creaedita/compraproducto-creaedita.component';
+import { GuarderiaservicioComponent } from './guarderiaservicio/guarderiaservicio.component';
+import { compileClassMetadata } from '@angular/compiler';
+import { SoportetecnicoComponent } from './soportetecnico/soportetecnico.component';
+import { SoportetecnicoCreaeditaComponent } from './soportetecnico/soportetecnico-creaedita/soportetecnico-creaedita.component';
+import { PublicacionComponent } from './publicacion/publicacion.component';
+import { PublicacionCreaeditarComponent } from './publicacion/publicacion-creaeditar/publicacion-creaeditar.component';
+import { ComunidadComponent } from './comunidad/comunidad.component';
+import { ComunidadCreaeditarComponent } from './comunidad/comunidad-creaeditar/comunidad-creaeditar.component';
 
 
 const routes: Routes = [
@@ -78,7 +86,7 @@ const routes: Routes = [
     ],canActivate:[GuardService]
   },
   {
-    path: 'Producto', component:ProductoComponent, children: [
+    path: 'productos', component:ProductoComponent, children: [
       {path:'agregar', component:ProductoCreaeditaComponent},
       {path:'edicion/:id',component:ProductoCreaeditaComponent},
     ],canActivate:[GuardService]
@@ -93,7 +101,7 @@ const routes: Routes = [
     path:'TiposSuscripcion', component:TiposuscripcionComponent,children:[
       {path:'Suscripcioneditar', component:TiposuscripcionCreaeditaComponent},
       {path:'edicion/:id', component:TiposuscripcionCreaeditaComponent},
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path:'Bebe', component:BebeComponent,children:[
@@ -120,23 +128,47 @@ const routes: Routes = [
   },
   {
     path:'bebevacunas', component:BebevacunaComponent, children: [
-      {path: 'agregar', component:BebevacunaCreaeditaComponent }
-    ]
+      {path: 'agregar', component:BebevacunaCreaeditaComponent },
+    ],canActivate:[GuardService]
+
   },
   {
     path: 'problemas',component:ProblemaComponent,children:[
-      {path:'agregar',component:ProblemaCreaeditaComponent}
-    ]
+      {path:'agregar',component:ProblemaCreaeditaComponent},
+    ],canActivate:[GuardService]
+
   },
   {
     path: 'controlvacunas',component:ControlvacunacionComponent,children:[
-      {path: 'agregar',component:ControlvacunacionCreaeditaComponent}
-    ]
+      {path: 'agregar',component:ControlvacunacionCreaeditaComponent},
+    ],canActivate:[GuardService]
   },
   {
     path:'compraproductos',component:CompraproductoComponent,children:[
-      {path: 'agregar', component:CompraproductoCreaeditaComponent}
-    ]
+      {path: 'agregar', component:CompraproductoCreaeditaComponent},
+    ],canActivate:[GuardService]
+  },
+  {
+    path:'guarderiaservicios', component:GuarderiaservicioComponent, children:[
+    ],canActivate:[GuardService]
+  },
+  {
+    path: 'soportetecnicos',component:SoportetecnicoComponent,children:[
+      {path: 'agregar', component:SoportetecnicoCreaeditaComponent},
+      {path: 'editar/:id', component:SoportetecnicoCreaeditaComponent},
+    ],canActivate:[GuardService]
+  }
+  ,
+  {
+    path: 'publicaciones',component:PublicacionComponent,children:[
+      {path: 'agregar', component:PublicacionCreaeditarComponent},
+    ],canActivate:[GuardService]
+  },
+  {
+    path: 'comunidades',component:ComunidadComponent,children:[
+      {path: 'agregar', component:ComunidadCreaeditarComponent},
+      {path: 'editar/:id', component:ComunidadCreaeditarComponent},
+    ],canActivate:[GuardService]
   }
 
 ];

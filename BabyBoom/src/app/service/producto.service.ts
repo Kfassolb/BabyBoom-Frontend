@@ -8,7 +8,7 @@ const base_url = environment.base
   providedIn: 'root'
 })
 export class ProductoService {
-  private url = `${base_url}/producto`
+  private url = `${base_url}/productos`
   private listCambio = new Subject<Producto[]>();
   private confirmarEliminacion = new Subject<Boolean>();
   constructor(private http:HttpClient) { }

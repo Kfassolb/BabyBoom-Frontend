@@ -20,7 +20,7 @@
         <input  matInput (keyup)="filtrar($event)" placeholder="Buscar"/>
       </mat-form-field>
       <div class="ms-auto p-2">
-        <mat-icon routerLink="/Producto/agregar" class="btn-add">library_add</mat-icon>
+        <mat-icon routerLink="/productos/agregar" class="btn-add">library_add</mat-icon>
       </div>
     </div>
 
@@ -56,7 +56,7 @@
  <!-- Name Column -->
  <ng-container matColumnDef="preciounitario">
   <th mat-header-cell *matHeaderCellDef> Precio Unitario</th>
-  <td mat-cell *matCellDef="let element"> {{element.PrecioUnitario}} </td>
+  <td mat-cell *matCellDef="let element"> {{element.PrecioU}} </td>
 </ng-container>
 
 <ng-container matColumnDef="accion1">

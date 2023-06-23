@@ -29,10 +29,7 @@ ngOnInit(): void {
     this.dataSource = new MatTableDataSource(data);
   });
 }
-confirm(id: number){
-  this.idHigh = id;
-  this.dialog.open(ApoderadoDialogoComponent)
-}
+
 delete(id:number){
   this.prS.delete(id).subscribe(()=>{
     this.prS.list().subscribe(data=>{

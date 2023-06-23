@@ -33,7 +33,7 @@ export class TipocomprobanteCreaeditaComponent implements OnInit{
     })
   }
   aceptar():void{
-    this.tipocomprobante.id = this.form.value['id'];
+    this.tipocomprobante.idTipocomprobante = this.form.value['id'];
     this.tipocomprobante.nombreComprobante = this.form.value['nombreComprobante']
     if(this.form.value['nombreComprobante'].length>0){
       if(this.edicion){
@@ -59,7 +59,7 @@ export class TipocomprobanteCreaeditaComponent implements OnInit{
     if(this.edicion){
       this.tcS.listId(this.id).subscribe((data)=>{
         this.form = new FormGroup({
-          id:new FormControl(data.id),
+          idTipocomprobante:new FormControl(data.idTipocomprobante),
           nombreComprobante:new FormControl(data.nombreComprobante)
         });
       });
