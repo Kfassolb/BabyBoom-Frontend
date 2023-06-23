@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Usuario } from 'src/app/model/usuario';
+import { Users } from 'src/app/model/Users';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { MatDialog } from '@angular/material/dialog'
 import { UsuarioDialogoComponent } from './usuario-dialogo/usuario-dialogo.component';
@@ -12,9 +12,9 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./usuario-listar.component.css']
 })
 export class UsuarioListarComponent implements OnInit{
-  lista: Usuario[]=[];
-  dataSource: MatTableDataSource<Usuario>=new MatTableDataSource();
-  displayedColumns: string[]=['id', 'username', 'password','actualizar'];
+  lista: Users[]=[];
+  dataSource: MatTableDataSource<Users>=new MatTableDataSource();
+  displayedColumns: string[]=['id', 'username', 'password','actualizar','enabled'];
   @ViewChild(MatPaginator) paginator!: MatPaginator; //THIS
   private idHigh:number=0;
 

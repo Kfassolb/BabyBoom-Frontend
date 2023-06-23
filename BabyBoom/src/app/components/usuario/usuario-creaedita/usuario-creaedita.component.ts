@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Usuario } from 'src/app/model/usuario';
+import { Users } from 'src/app/model/Users';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 })
 export class UsuarioCreaeditaComponent implements OnInit{
   form: FormGroup =new FormGroup({});
-  usuario: Usuario = new Usuario();
+  usuario: Users = new Users();
   mensaje: String = "";
 
   id:number =0;
@@ -32,9 +32,11 @@ export class UsuarioCreaeditaComponent implements OnInit{
     })
   }
   aceptar():void {
-    this.usuario.id = this.form.value['id'];
-    this.usuario.Username = this.form.value['Username'];
-    this.usuario.Password = this.form.value['Password'];
+    this.usuario.idUser = this.form.value['id'];
+    this.usuario.username = this.form.value['Username'];
+    this.usuario.password = this.form.value['Password'];
+
+    this.usuario.enabled = true;
 
     if (this.form.value['Username'].length>0 && this.form.value['Password'].length>0) {
       if (this.edicion) {
@@ -44,13 +46,13 @@ export class UsuarioCreaeditaComponent implements OnInit{
           })
         })
       }else {
-        this.uS.insert(this.usuario).subscribe(data=>{
+        this.uS.insert(this.usuario).subscribe(()=>{
           this.uS.list().subscribe (data=>{
             this.uS.setList(data);
           });
         });
       }
-      this.router.navigate(['Usuario']);
+      this.router.navigate(['/pages/users']);
     }else{
       this.mensaje = "Ingrese los valores solicitados!";
     }
@@ -60,9 +62,9 @@ export class UsuarioCreaeditaComponent implements OnInit{
     if(this.edicion){
       this.uS.listId(this.id).subscribe(data=>{
         this.form=new FormGroup({
-          id:new FormControl(data.id),
-          Username:new FormControl(data.Username),
-          Password:new FormControl(data.Password),
+          id:new FormControl(data.idUser),
+          Username:new FormControl(data.username),
+          Password:new FormControl(data.password),
         });
       });
     }

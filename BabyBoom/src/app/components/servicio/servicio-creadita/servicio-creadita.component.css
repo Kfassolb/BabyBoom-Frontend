@@ -1,3 +1,20 @@
 mat-form-field{
   width:95% ;
 }
+#titleRegister{
+  font-family: 'Alkatra',cursive;
+  color: #9cdfdf;
+}
+mat-icon:hover{
+  cursor: pointer;
+}
+.btn-accept{
+  border:none;
+  background-color: transparent;
+  color: #9cdfdf;
+}
+mat-icon{
+  font-size: 2rem;
+  width: auto;
+  height: auto;
+}

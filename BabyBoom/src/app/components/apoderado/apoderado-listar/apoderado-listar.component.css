@@ -1,0 +1,13 @@
+#titleList {
+  font-family: 'Alkatra', cursive;
+  color: #9cdfdf;
+}
+mat-icon:hover{
+  cursor: pointer;
+}
+.delete-icon{
+  color: #9cdfdf;
+}
+.btn-add{
+  color: #9cdfdf;
+}

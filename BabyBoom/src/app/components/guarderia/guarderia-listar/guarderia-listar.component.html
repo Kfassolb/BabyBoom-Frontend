@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <div style=" text-align: center;">
+      <h1 class="p-3 fw-bold" id="titleList">Lista de Guarderia</h1>
+    </div>
+
+    <div class="d-flex">
+      <mat-form-field>
+        <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
+      </mat-form-field>
+      <div class="ms-auto p-2">
+      <mat-icon routerLink="/pages/guarderias/agregar" class="btn-add">library_add</mat-icon>
+      </div>
+    </div>
+
+
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="idguarderia">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.idGuarderia}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="proceso">
+        <th mat-header-cell *matHeaderCellDef> proceso </th>
+        <td mat-cell *matCellDef="let element"> {{element.proceso }} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="lugar">
+        <th mat-header-cell *matHeaderCellDef> lugar </th>
+        <td mat-cell *matCellDef="let element"> {{element.lugar}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef> Fecha </th>
+        <td mat-cell *matCellDef="let element"> {{element.fecha|date:'dd/MM/yyyy'}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="nombreguarderia">
+        <th mat-header-cell *matHeaderCellDef> Género </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombreGuarderia}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary"
+            [routerLink]="['editar', element.idGuarderia]">Actualizar</button>
+          <mat-icon class="delete-icon" (click)="confirmar(element.idGuarderia)" id="refresh">delete_forever</mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSize]="3" [pageSizeOptions]="[3]"></mat-paginator>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </div>
+</body>
+
+</html>
