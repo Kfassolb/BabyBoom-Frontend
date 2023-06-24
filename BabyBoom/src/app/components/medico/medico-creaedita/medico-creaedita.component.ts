@@ -65,7 +65,7 @@ export class MedicoCreaeditaComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['medicos']);
+      this.router.navigate(['/pages/medicos']);
     }else{
       this.mensaje = "Ingrese los valores solicitados!";
     }
