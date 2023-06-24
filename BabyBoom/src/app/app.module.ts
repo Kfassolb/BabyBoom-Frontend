@@ -50,6 +50,8 @@ import { EnfermedadbebeCreaeditaComponent } from './components/enfermedadbebe/en
 import { EnfermedadbebeListarComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-listar.component';
 import { EnfermedadbebeDialogoComponent } from './components/enfermedadbebe/enfermedadbebe-listar/enfermedadbebe-dialogo/enfermedadbebe-dialogo.component';
 import { LoginComponent } from './components/login/login.component';
+import { ReportesComponent } from './componentss/reportes/reportes.component';
+import { ReporteEnfermedadComponent } from './components/reportes/reporte-enfermedad/reporte-enfermedad.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,6 +88,8 @@ import { LoginComponent } from './components/login/login.component';
     EnfermedadbebeCreaeditaComponent,
     EnfermedadbebeListarComponent,
     EnfermedadbebeDialogoComponent,
+    ReportesComponent,
+    ReporteEnfermedadComponent,
 
   ],
   imports: [
