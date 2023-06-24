@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource, _MatTableDataSource } from '@angular/material/table';
 import { Problema } from 'src/app/model/Problema';
+import { ProblemaService } from 'src/app/service/problema.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ displayedColumns: string[] = ['id','Titulo','Descripcion','FechaInicio','FechaFi
 
 private idMayor:number=0;
 
-constructor(private prS:ProblemaService, private dialog: MatDialog) {
+constructor(private prS:ProblemaService , private dialog: MatDialog) {
 
 }
 ngOnInit(): void {

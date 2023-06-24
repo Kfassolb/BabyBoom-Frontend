@@ -5,6 +5,7 @@ import { Soportetecnico } from 'src/app/model/Soportetecnico';
 import * as moment from 'moment';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProblemaService } from 'src/app/service/problema.service';
+import { Apoderado } from 'src/app/model/Apoderado';
 
 @Component({
   selector: 'app-problema-creaedita',
@@ -22,7 +23,7 @@ export class ProblemaCreaeditaComponent {
   idApoderadoSeleccionado: number = 0;
 
   constructor(private router: Router,
-    private route: ActivatedRoute, private prS:ProblemaService) {
+    private route: ActivatedRoute, private prS:ProblemaService, private sS:) {
   }
   ngOnInit(): void {
     this.prS.list().subscribe(data => { this.listaSoporte = data });
