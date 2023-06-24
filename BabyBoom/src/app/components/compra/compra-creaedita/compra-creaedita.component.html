@@ -34,7 +34,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Tipo Comprobante</mat-label>
-        <mat-select formControlName="tipo comprobante" [(value)]="idApoderadoSeleccionado" required>
+        <mat-select formControlName="tipocomprobante" [(value)]="idTipoComprobanteSeleccionado" required>
           <mat-option *ngFor="let t of listaComprobante" [value]="t.idTipocomprobante">
             {{t.nombreComprobante}}
         </mat-option>
@@ -59,7 +59,7 @@
       <br>
       <div class="d-flex justify-content-center">
         <button class="btn-accept"><mat-icon>check_circle</mat-icon></button>
-        <mat-icon class="ms-4" routerLink="/compras">Cancelar</mat-icon>
+        <mat-icon class="ms-4" routerLink="/pages/compras">Cancelar</mat-icon>
       </div>
     </form>
   </div>

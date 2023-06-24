@@ -30,20 +30,20 @@ export class GuarderiaCreaeditaComponent implements OnInit{
     });
     this.form = new FormGroup({
       idGuarderia: new FormControl(),
-      Proceso: new FormControl(),
-      Lugar: new FormControl(),
+      proceso: new FormControl(),
+      lugar: new FormControl(),
       fecha: new FormControl(),
       nombreGuarderia: new FormControl()
     })
   }
   aceptar():void{
     this.guarderia.idGuarderia = this.form.value['idGuarderia'];
-    this.guarderia.Proceso = this.form.value['Proceso'];
-    this.guarderia.Lugar = this.form.value['Lugar'];
+    this.guarderia.proceso = this.form.value['proceso'];
+    this.guarderia.lugar = this.form.value['lugar'];
     this.guarderia.fecha = this.form.value['fecha'];
-    this.guarderia.NombreGuarderia = this.form.value['NombreGuarderia']
+    this.guarderia.nombreGuarderia = this.form.value['nombreGuarderia']
 
-    if(this.form.value['Proceso'].length > 0 && this.form.value['NombreGuarderia'].length > 0){
+    if(this.form.value['proceso'].length > 0 && this.form.value['nombreGuarderia'].length > 0){
       if(this.edicion){
         this.gS.modificar(this.guarderia).subscribe(()=>{
           this.gS.list().subscribe(data=>{
@@ -68,10 +68,10 @@ export class GuarderiaCreaeditaComponent implements OnInit{
       this.gS.listarId(this.id).subscribe(data=>{
         this.form = new FormGroup({
           idGuarderia: new FormControl(data.idGuarderia),
-          Proceso: new FormControl(data.Proceso),
-          Lugar: new FormControl(data.Lugar),
+          proceso: new FormControl(data.proceso),
+          lugar: new FormControl(data.lugar),
           fecha: new FormControl(data.fecha),
-          NombreGuarderia: new FormControl(data.NombreGuarderia)
+          nombreGuarderia: new FormControl(data.nombreGuarderia)
         });
         console.log(data);
       })

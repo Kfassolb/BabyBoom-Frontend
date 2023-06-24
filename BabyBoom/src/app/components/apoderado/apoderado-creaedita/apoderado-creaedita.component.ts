@@ -60,7 +60,7 @@ export class ApoderadoCreaeditaComponent implements OnInit{
     this.apoderado.user.idUser = this.form.value['user.idUser'];
     this.apoderado.bebe.nombreBebe = this.form.value['bebe.nombreBebe'];
     this.apoderado.tiposuscrip.nombresuscripcion = this.form.value['tiposuscrip.nombresuscripcion'];
-    this.apoderado.guarderia.NombreGuarderia = this.form.value['guarderia.nombreGuarderia'];
+    this.apoderado.guarderia.nombreGuarderia = this.form.value['guarderia.nombreGuarderia'];
     this.apoderado.nombre = this.form.value['nombre']
     this.apoderado.apellido = this.form.value['apellido']
     this.apoderado.email = this.form.value['email']

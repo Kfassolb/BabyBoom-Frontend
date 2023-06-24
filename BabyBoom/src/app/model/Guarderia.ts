@@ -1,7 +1,7 @@
 export class Guarderia{
   idGuarderia: number=0;
-  Proceso:string = "";
-  Lugar:string = "";
+  proceso:string = "";
+  lugar:string = "";
   fecha: Date = new Date(Date.now());
-  NombreGuarderia: string = "";
+  nombreGuarderia: string = "";
 }

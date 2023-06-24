@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environment/environment';
+import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
 import { GuarderiaServicio } from '../model/GuarderiaServicio';
 

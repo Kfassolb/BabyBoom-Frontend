@@ -3,8 +3,8 @@ import { Apoderado } from "./apoderado";
 
 export class Compra{
   idCompra: number=0
-  apoderado:Apoderado = new Apoderado()
-  tipocomprobante:Tipocomprobante = new Tipocomprobante();
+  idApoderado:Apoderado = new Apoderado()
+  idTipoComprobante:Tipocomprobante = new Tipocomprobante();
   Fecha: Date = new Date(Date.now())
   ventaTotal:number=0
 }
