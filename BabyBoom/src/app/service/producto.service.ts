@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {environment} from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Producto } from '../model/Producto';
 import { Subject } from 'rxjs';
 const base_url = environment.base
@@ -13,12 +13,18 @@ export class ProductoService {
   private confirmarEliminacion = new Subject<Boolean>();
   constructor(private http:HttpClient) { }
   list(){
-    return this.http.get<Producto[]>(this.url);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Producto[]>(this.url,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
 
   insert(producto:Producto){
-    return this.http.post(this.url,producto);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url,producto,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
   setList(listanueva:Producto[]){
     this.listCambio.next(listanueva);
   }
@@ -26,14 +32,24 @@ export class ProductoService {
     return this.listCambio.asObservable();
   }
   listId(id:number){
-    return this.http.get<Producto>(`${this.url}/${id}`);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Producto>(`${this.url}/${id}`,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
   update(producto:Producto){
-    return this.http.put(this.url+"/"+producto.id,producto);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url+"/"+producto.id,producto,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
   eliminar(id:number){
-    return this.http.delete(`${this.url}/${id}`);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
+
   getConfirmarEliminar(){
     return this.confirmarEliminacion.asObservable();
   }

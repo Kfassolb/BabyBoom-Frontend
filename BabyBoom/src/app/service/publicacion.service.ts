@@ -1,5 +1,5 @@
 import { Subject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Publicacion } from '../model/Publicacion';
@@ -14,12 +14,18 @@ export class PublicacionService {
   private confirmarEliminacion = new Subject<Boolean>();
   constructor(private http:HttpClient) { }
   list(){
-    return this.http.get<Publicacion[]>(this.url);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Publicacion[]>(this.url,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
 
   insert(publicacion:Publicacion){
-    return this.http.post(this.url,publicacion);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url,publicacion,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
   setList(listanueva:Publicacion[]){
     this.listCambio.next(listanueva);
   }
@@ -27,14 +33,24 @@ export class PublicacionService {
     return this.listCambio.asObservable();
   }
   listId(id:number){
-    return this.http.get<Publicacion>(`${this.url}/${id}`);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Publicacion>(`${this.url}/${id}`,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
+
   update(publicacion:Publicacion){
-    return this.http.put(this.url+"/"+publicacion.idPublicacion,publicacion);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url+"/"+publicacion.idPublicacion,publicacion,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
   eliminar(id:number){
-    return this.http.delete(`${this.url}/${id}`);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
   getConfirmarEliminar(){
     return this.confirmarEliminacion.asObservable();
   }

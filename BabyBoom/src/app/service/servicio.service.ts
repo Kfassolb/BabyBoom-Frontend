@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Servicio } from '../model/Servicio';
@@ -15,10 +15,15 @@ private confirmaEliminacion = new Subject<Boolean>()
 constructor(private http:HttpClient) { }
 
 list() {
+  let token = sessionStorage.getItem("token");
   return this.http.get<Servicio[]>(this.url);
+  headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
 }
 insert(servicio: Servicio) {
-  return this.http.post(this.url, servicio);
+  let token = sessionStorage.getItem("token");
+  return this.http.post(this.url, servicio,{
+  headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+})
 }
 setList(listaNueva: Servicio[]) {
   this.listaCambio.next(listaNueva);
@@ -27,14 +32,22 @@ getLista() {
   return this.listaCambio.asObservable();
 }
 modificar(servicio: Servicio) {
-  return this.http.put(this.url + "/" + servicio.id, servicio);
+  let token = sessionStorage.getItem("token");
+  return this.http.put(this.url + "/" + servicio.id, servicio,{
+  headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
 }
 listarId(id: number) {
-  return this.http.get<Servicio>(`${this.url}/${id}`);
+  let token = sessionStorage.getItem("token");
+  return this.http.get<Servicio>(`${this.url}/${id}`,{
+  headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+})
 }
 eliminar(id: number) {
-
-  return this.http.delete(`${this.url}/${id}`);
+  let token = sessionStorage.getItem("token");
+  return this.http.delete(`${this.url}/${id}`,{
+  headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+})
 }
 getConfirmaEliminacion() {
   return this.confirmaEliminacion.asObservable();

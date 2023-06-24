@@ -11,5 +11,5 @@ export class CitamedicaComponent implements OnInit{
   ngOnInit(): void {
 
   }
-  constructor(private route:ActivatedRoute){}
+  constructor(public route:ActivatedRoute){}
 }

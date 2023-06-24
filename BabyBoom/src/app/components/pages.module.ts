@@ -1,3 +1,4 @@
+
 import { SoportetecnicoCreaeditaComponent } from './soportetecnico/soportetecnico-creaedita/soportetecnico-creaedita.component';
 import { GuarderiaservicioListarComponent } from './guarderiaservicio/guarderiaservicio-listar/guarderiaservicio-listar.component';
 import { GuarderiaservicioComponent } from './guarderiaservicio/guarderiaservicio.component';
@@ -104,6 +105,8 @@ import { CitamedicaComponent } from './citamedica/citamedica.component';
 import { CitamedicaListarComponent } from './citamedica/citamedica-listar/citamedica-listar.component';
 import { CitamedicaCreaeditarComponent } from './citamedica/citamedica-creaeditar/citamedica-creaeditar.component';
 import { CitamedicaDialogoComponent } from './citamedica/citamedica-listar/citamedica-dialogo/citamedica-dialogo.component';
+import { ControlvacunacionDialogoComponent } from './controlvacunacion/controlvacunacion-listar/controlvacunacion-dialogo/controlvacunacion-dialogo.component';
+
 
 
 @NgModule({
@@ -176,6 +179,7 @@ import { CitamedicaDialogoComponent } from './citamedica/citamedica-listar/citam
     ControlvacunacionComponent,
     ControlvacunacionListarComponent,
     ControlvacunacionCreaeditaComponent,
+    ControlvacunacionDialogoComponent,
 
     GuarderiaservicioComponent,
     GuarderiaListarComponent,
@@ -194,7 +198,7 @@ import { CitamedicaDialogoComponent } from './citamedica/citamedica-listar/citam
     CitamedicaComponent,
     CitamedicaListarComponent,
     CitamedicaCreaeditarComponent,
-    CitamedicaDialogoComponent
+    CitamedicaDialogoComponent,
     //ToolbarComponent
 
   ],
@@ -216,6 +220,7 @@ import { CitamedicaDialogoComponent } from './citamedica/citamedica-listar/citam
     MatNativeDateModule,
     MatSnackBarModule,
     ReactiveFormsModule,
+
     // MatInputModule,
     // BrowserAnimationsModule,
     // MatIconModule,

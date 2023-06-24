@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {environment} from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Tipocomprobante } from '../model/TipoComprobante';
 import { Subject } from 'rxjs';
 const base_url = environment.base
@@ -13,12 +13,18 @@ export class TipocomprobanteService {
   private confirmarEliminacion = new Subject<Boolean>()
   constructor(private http:HttpClient) { }
   list(){
-    return this.http.get<Tipocomprobante[]>(this.url);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Tipocomprobante[]>(this.url,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
 
   insert(tipocomprobante:Tipocomprobante){
-    return this.http.post(this.url,tipocomprobante);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url,tipocomprobante,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
   setList(listanueva:Tipocomprobante[]){
     this.listCambio.next(listanueva);
   }
@@ -26,15 +32,24 @@ export class TipocomprobanteService {
     return this.listCambio.asObservable();
   }
   listId(id:number){
-    return this.http.get<Tipocomprobante>(`${this.url}/${id}`);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Tipocomprobante>(`${this.url}/${id}`,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
   update(tipocomprobante:Tipocomprobante){
-    return this.http.put(this.url+"/"+tipocomprobante.id,tipocomprobante);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url+"/"+tipocomprobante.idTipocomprobante,tipocomprobante,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
 
   eliminar(id:number){
-    return this.http.delete(`${this.url}/${id}`);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
   getConfirmarEliminar(){
     return this.confirmarEliminacion.asObservable();
   }

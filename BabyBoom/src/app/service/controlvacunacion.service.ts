@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environment/environment';
 import { Subject } from 'rxjs';
@@ -13,10 +13,16 @@ private listaCambio=new Subject<ControlVacunacion[]>()
 private confirmaEliminacion = new Subject<Boolean>()
 constructor(private http:HttpClient) { }
 list() {
-  return this.http.get<ControlVacunacion[]>(this.url);
+  let token = sessionStorage.getItem("token");
+  return this.http.get<ControlVacunacion[]>(this.url,{
+  headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+})
 }
 insert(controlvacunacion: ControlVacunacion) {
-  return this.http.post(this.url, controlvacunacion);
+  let token = sessionStorage.getItem("token");
+  return this.http.post(this.url, controlvacunacion,{
+  headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+})
 }
 setList(listaNueva: ControlVacunacion[]) {
   this.listaCambio.next(listaNueva);
@@ -25,14 +31,22 @@ getLista() {
   return this.listaCambio.asObservable();
 }
 modificar(controlvacunacion: ControlVacunacion) {
-  return this.http.put(this.url + "/" + controlvacunacion.id, controlvacunacion);
+  let token = sessionStorage.getItem("token");
+  return this.http.put(this.url + "/" + controlvacunacion.id, controlvacunacion,{
+  headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+})
 }
 listarId(id: number) {
-  return this.http.get<ControlVacunacion>(`${this.url}/${id}`);
+  let token = sessionStorage.getItem("token");
+  return this.http.get<ControlVacunacion>(`${this.url}/${id}`,{
+  headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+})
 }
 eliminar(id: number) {
-
-  return this.http.delete(`${this.url}/${id}`);
+  let token = sessionStorage.getItem("token");
+  return this.http.delete(`${this.url}/${id}`,{
+  headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+})
 }
 getConfirmaEliminacion() {
   return this.confirmaEliminacion.asObservable();

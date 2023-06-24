@@ -2,7 +2,7 @@ import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Compra } from '../model/Compra';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 const base_url = environment.base
 @Injectable({
   providedIn: 'root'
@@ -14,11 +14,17 @@ export class CompraService {
   constructor(private http:HttpClient) { }
 
   list() {
-    return this.http.get<Compra[]>(this.url);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Compra[]>(this.url,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+}
   insert(compra: Compra) {
-    return this.http.post(this.url, compra);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, compra,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+}
   setList(listaNueva: Compra[]) {
     this.listaCambio.next(listaNueva);
   }

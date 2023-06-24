@@ -14,11 +14,17 @@ export class ProblemaService {
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http:HttpClient) { }
   list(){
-    return this.http.get<Problema[]>(this.url)
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Problema[]>(this.url,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
   insert(problema: Problema) {
-    return this.http.post(this.url, problema);
-  }
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, problema,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
   setList(listaNueva: Problema[]) {
     this.listaCambio.next(listaNueva);
   }

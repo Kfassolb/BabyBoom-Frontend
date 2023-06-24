@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environment/environment';
 import { Subject } from 'rxjs';
@@ -15,7 +15,10 @@ private listaCambio=new Subject<GuarderiaServicio[]>()
 constructor(private http:HttpClient) { }
 
 list() {
-  return this.http.get<GuarderiaServicio[]>(this.url);
+  let token = sessionStorage.getItem("token");
+  return this.http.get<GuarderiaServicio[]>(this.url,{
+  headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+})
 }
 setList(listaNueva: GuarderiaServicio[]) {
   this.listaCambio.next(listaNueva);
