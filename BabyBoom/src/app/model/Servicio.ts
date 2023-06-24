@@ -1,4 +1,4 @@
- export class Servicio{
-    id:number=0
-    NombreServicio:string=""
+export class Servicio{
+    idServicio:number=0
+    nameServicio:string=""
 }

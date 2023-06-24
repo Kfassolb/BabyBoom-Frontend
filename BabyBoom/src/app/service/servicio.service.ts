@@ -8,7 +8,7 @@ const base_url = environment.base
   providedIn: 'root',
 })
 export class ServicioService {
-private url=`${base_url}/servicio`
+private url=`${base_url}/servicios`
 private listaCambio=new Subject<Servicio[]>()
 private confirmaEliminacion = new Subject<Boolean>()
 
@@ -16,8 +16,9 @@ constructor(private http:HttpClient) { }
 
 list() {
   let token = sessionStorage.getItem("token");
-  return this.http.get<Servicio[]>(this.url);
-  headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  return this.http.get<Servicio[]>(this.url,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
 }
 insert(servicio: Servicio) {
   let token = sessionStorage.getItem("token");
@@ -33,7 +34,7 @@ getLista() {
 }
 modificar(servicio: Servicio) {
   let token = sessionStorage.getItem("token");
-  return this.http.put(this.url + "/" + servicio.id, servicio,{
+  return this.http.put(this.url + "/" + servicio.idServicio, servicio,{
   headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
   })
 }
