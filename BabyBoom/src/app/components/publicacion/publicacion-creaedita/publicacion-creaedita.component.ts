@@ -1,11 +1,14 @@
 import { Component,OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router,Route } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Comunidad } from 'src/app/model/Comunidad';
 import { Publicacion } from 'src/app/model/Publicacion';
 import { ComunidadService } from 'src/app/service/comunidad.service';
 import { PublicacionService } from 'src/app/service/publicacion.service';
 import { ComunidadComponent } from '../../comunidad/comunidad.component';
+import { Apoderado } from 'src/app/model/apoderado';
+import { ApoderadoService } from 'src/app/service/apoderado.service';
+
 
 @Component({
   selector: 'app-publicacion-creaedita',
@@ -25,7 +28,7 @@ export class PublicacionCreaeditaComponent implements OnInit{
     private aS:ApoderadoService, private cS:ComunidadService){}
 
   ngOnInit(): void {
-    this.aS.list().subscribe(data => { this.lista = data });
+    this.pS.list().subscribe(data => { this.lista = data });
     this.form = new FormGroup({
       idCompra:new FormControl(),
       idApoderado:new FormControl(),
@@ -36,18 +39,18 @@ export class PublicacionCreaeditaComponent implements OnInit{
   }
   aceptar():void{
     this.publicacion.idPublicacion = this.form.value['idPublicacion'];
-    this.publicacion.idApoderado.idApoderado = this.form.value['idApoderado'];
-    this.publicacion.idComunidad.idComunidad = this.form.value['idComunidad'];
+    this.publicacion.apoderado.idApoderado = this.form.value['idApoderado'];
+    this.publicacion.comunidad.idComunidad = this.form.value['idComunidad'];
     this.publicacion.tituloPublicacion = this.form.value['tituloPublicacion'];
     this.publicacion.comentarioPublicacion = this.form.value['comentarioPublicacion'];
     if(this.idComunidadSelecionado>0){
       let c = new Comunidad();
       c.idComunidad = this.idComunidadSelecionado;
-      this.publicacion.idComunidad = c;
+      this.publicacion.comunidad = c;
 
       let a = new Apoderado();
       a.idApoderado = this.idApoderadoSeleccionado;
-      this.publicacion.idApoderado;
+      this.publicacion.apoderado = a;
       this.pS.insert(this.publicacion).subscribe(()=>{
         this.pS.list().subscribe(data =>{
           this.pS.setList(data);

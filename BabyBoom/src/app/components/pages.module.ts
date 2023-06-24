@@ -76,6 +76,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SignUpComponent } from './sign-up/sign-up.component';
 //import { ToolbarComponent } from './toolbar/toolbar.component';
+import { PublicacionComponent } from './publicacion/publicacion.component';
+import { PublicacionListarComponent } from './publicacion/publicacion-listar/publicacion-listar.component';
+import { PublicacionCreaeditaComponent } from './publicacion/publicacion-creaedita/publicacion-creaedita.component';
 
 
 @NgModule({
@@ -133,6 +136,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     ApoderadoListarComponent,
     ApoderadoDialogoComponent,
     SignUpComponent,
+    PublicacionListarComponent,
+    PublicacionCreaeditaComponent,
+    PublicacionComponent,
     //ToolbarComponent
 
   ],
