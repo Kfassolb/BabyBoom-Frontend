@@ -57,7 +57,7 @@ export class GuarderiaCreaeditaComponent implements OnInit{
           })
         })
       }
-      this.router.navigate(['/components/guarderias']);
+      this.router.navigate(['/pages/guarderias']);
 
     }else {
       this.mensaje = "Complete los valores requeridos";

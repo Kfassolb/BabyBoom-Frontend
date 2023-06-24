@@ -49,7 +49,7 @@ export class TipocomprobanteCreaeditaComponent implements OnInit{
           })
         })
       }
-        this.router.navigate(['tipocomprobantes'])
+        this.router.navigate(['/pages/tipocomprobantes'])
     }else{
       this.mensaje = "Ingrese el nombre!!";
     }

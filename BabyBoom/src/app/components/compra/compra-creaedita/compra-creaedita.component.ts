@@ -24,8 +24,9 @@ export class CompraCreaeditaComponent implements OnInit{
   listaComprobante:Tipocomprobante[] = [];
   idTipoComprobanteSeleccionado: number=0;
   idApoderadoSeleccionado:number=0;
+  id: number = 0;
+  edicion:boolean = false;
 
-  id: number=0;
   constructor(private cS:CompraService, private router:Router,
     private route:ActivatedRoute, private tcS:TipocomprobanteService,
     private aS:ApoderadoService){}
@@ -35,20 +36,22 @@ export class CompraCreaeditaComponent implements OnInit{
     this.tcS.list().subscribe(data => { this.listaComprobante = data });
     this.route.params.subscribe((data:Params)=>{
       this.id = data['id'];
+      this.edicion = data['id']!=null;
+      this.init();
       })
     this.form = new FormGroup({
       idCompra:new FormControl(),
       apoderado:new FormControl(),
       tipocomprobante:new FormControl(),
-      Fecha:new FormControl(),
+      fecha:new FormControl(),
       ventaTotal:new FormControl()
     });
   }
   aceptar():void{
     this.compra.idCompra = this.form.value['idCompra'];
-    this.compra.idApoderado.nombre = this.form.value['apoderado.nombre']; // AQUI FALTA CAMBIAR
+    this.compra.idApoderado.nombre = this.form.value['idApoderado.nombre']; // AQUI FALTA CAMBIAR
     this.compra.idTipoComprobante.nombreComprobante = this.form.value['tipocomprobante.nombreComprobante'];
-    this.compra.Fecha = this.form.value['Fecha'];
+    this.compra.fecha = this.form.value['fecha'];
     this.compra.ventaTotal = this.form.value['ventaTotal'];
     if(this.idTipoComprobanteSeleccionado>0 && this.idApoderadoSeleccionado>0){
       let c = new Tipocomprobante();
@@ -65,6 +68,19 @@ export class CompraCreaeditaComponent implements OnInit{
       this.router.navigate(['pages/compras']);
     }else{
       this.mensaje = "Ingrese los valores solicitados!";
+    }
+  }
+  init(){
+    if(this.edicion){
+      this.cS.listId(this.id).subscribe(data=>{
+        this.form=new FormGroup({
+          id:new FormControl(data.idCompra),
+          apoderado:new FormControl(data.idApoderado),
+          tipocomprobante:new FormControl(data.idTipoComprobante),
+          fecha:new FormControl(data.fecha),
+          ventaTotal:new FormControl(data.ventaTotal)
+        });
+      });
     }
   }
 }

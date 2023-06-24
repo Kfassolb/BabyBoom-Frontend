@@ -19,6 +19,12 @@ export class CompraService {
     headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
   });
 }
+listId(id:number){
+  let token = sessionStorage.getItem("token");
+  return this.http.get<Compra>(`${this.url}/${id}`,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  })
+}
   insert(compra: Compra) {
     let token = sessionStorage.getItem("token");
     return this.http.post(this.url, compra,{
