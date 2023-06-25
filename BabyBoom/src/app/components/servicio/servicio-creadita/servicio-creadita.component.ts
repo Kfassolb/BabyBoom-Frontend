@@ -29,15 +29,15 @@ ngOnInit(): void {
     this.init();
   })
   this.form = new FormGroup({
-    id:new FormControl(),
-    NombreServicio:new FormControl()
+    idServicio:new FormControl(),
+    nameServicio:new FormControl()
   });
 }
 aceptar(): void {
-  this.servicio.id = this.form.value['id'];
-  this.servicio.NombreServicio = this.form.value['NombreServicio'];
+  this.servicio.idServicio = this.form.value['idServicio'];
+  this.servicio.nameServicio = this.form.value['nameServicio'];
 
- if (this.form.value['NombreServicio'].length>0){
+ if (this.form.value['nameServicio'].length>0){
   if(this.edicion){
     this.sS.modificar(this.servicio).subscribe(()=>{
       this.sS.list().subscribe(data=>{
@@ -51,7 +51,7 @@ aceptar(): void {
       })
     })
   }
-  this.router.navigate(['servicio']);
+  this.router.navigate(['pages/servicios']);
  }else{
   this.mensaje="Complete los valores requeridos";
  }
@@ -60,10 +60,8 @@ init() {
   if (this.edicion) {
     this.sS.listarId(this.id).subscribe(data => {
     this.form = new FormGroup({
-        id: new FormControl(data.id),
-        NombreServicio: new FormControl(data.NombreServicio),
-
-
+      idServicio: new FormControl(data.idServicio),
+      nameServicio: new FormControl(data.nameServicio),
       });
       console.log(data);
     });

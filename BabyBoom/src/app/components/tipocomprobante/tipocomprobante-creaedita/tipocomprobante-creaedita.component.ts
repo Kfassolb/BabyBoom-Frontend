@@ -28,12 +28,12 @@ export class TipocomprobanteCreaeditaComponent implements OnInit{
     });
 
     this.form = new FormGroup({
-      id:new FormControl(),
-      nombreComprobante:new FormControl(),
+      idTipocomprobante:new FormControl(),
+      nombreComprobante:new FormControl()
     })
   }
   aceptar():void{
-    this.tipocomprobante.idTipocomprobante = this.form.value['id'];
+    this.tipocomprobante.idTipocomprobante = this.form.value['idTipocomprobante'];
     this.tipocomprobante.nombreComprobante = this.form.value['nombreComprobante']
     if(this.form.value['nombreComprobante'].length>0){
       if(this.edicion){
@@ -43,13 +43,13 @@ export class TipocomprobanteCreaeditaComponent implements OnInit{
           });
         });
       }else{
-        this.tcS.insert(this.tipocomprobante).subscribe(data=>{
+        this.tcS.insert(this.tipocomprobante).subscribe(()=>{
           this.tcS.list().subscribe(data=>{
             this.tcS.setList(data);
           })
         })
       }
-        this.router.navigate(['tipocomprobantes'])
+        this.router.navigate(['pages/tipocomprobantes'])
     }else{
       this.mensaje = "Ingrese el nombre!!";
     }

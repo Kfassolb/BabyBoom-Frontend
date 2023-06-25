@@ -94,7 +94,7 @@ const routes: Routes = [
     ],canActivate:[GuardService]
   },
   {
-    path:'servicio', component:ServicioComponent,children:[
+    path:'servicios', component:ServicioComponent,children:[
       {path:'servicioeditar',component:ServicioCreaditaComponent},
       { path: 'edicion/:id', component: ServicioCreaditaComponent }
     ],canActivate:[GuardService]
