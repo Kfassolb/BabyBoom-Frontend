@@ -37,6 +37,7 @@ export class TipocomprobanteService {
     headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
   })
 }
+
   update(tipocomprobante:Tipocomprobante){
     let token = sessionStorage.getItem("token");
     return this.http.put(this.url+"/"+tipocomprobante.idTipocomprobante,tipocomprobante,{
