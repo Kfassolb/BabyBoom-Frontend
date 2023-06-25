@@ -10,6 +10,7 @@ const base_url = environment.base
 export class ProductoService {
   private url = `${base_url}/producto`
   private listCambio = new Subject<Producto[]>();
+  private confirmarEliminacion = new Subject<Boolean>();
   constructor(private http:HttpClient) { }
   list(){
     return this.http.get<Producto[]>(this.url);
@@ -30,5 +31,13 @@ export class ProductoService {
   update(producto:Producto){
     return this.http.put(this.url+"/"+producto.id,producto);
   }
-
+  eliminar(id:number){
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  getConfirmarEliminar(){
+    return this.confirmarEliminacion.asObservable();
+  }
+  setConfirmarEliminacion(estado: Boolean){
+    this.confirmarEliminacion.next(estado);
+  }
 }

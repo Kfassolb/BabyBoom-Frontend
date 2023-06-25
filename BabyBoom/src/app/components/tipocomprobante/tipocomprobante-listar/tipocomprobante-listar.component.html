@@ -8,15 +8,21 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container mt-4">
     <div class="text-center">
-      <h1>Lista de Tipo Comprobante</h1>
-    </div>
-    <div class="text-end">
-      <button mat-fab routerLink="/tipocomprobantes/tipocomprobanteeditar" color="warn">Nuevo</button>
+      <h1 class="p-3 fw-bold" id = "titleList">Lista de Tipo Comprobante</h1>
     </div>
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <div class="d-flex">
+      <mat-form-field>
+        <input matInput (keyup)="filtrar($event)" placeholder="Buscar"/>
+      </mat-form-field>
+      <div class="ms-auto p-2">
+        <mat-icon routerLink="/tipocomprobantes/tipocomprobanteeditar" class="btn-add">library_add</mat-icon>
+      </div>
+    </div>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table table-striped table-hover">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -34,16 +40,17 @@
     </ng-container>
 
     <ng-container matColumnDef="accion1">
-      <th mat-header-cell *matHeaderCellDef>Acción01</th>
+      <th mat-header-cell *matHeaderCellDef>Acción</th>
       <td mat-cell *matCellDef="let element">
-        <button mat-raised-button color="warn" [routerLink]="['edicion',element.id]">Actualizar</button>
-        <button mat-raised-button color="accent" (click)="confirmar(element.id)">Eliminar</button>
+        <mat-icon [routerLink]="['edicion',element.id]">edit</mat-icon>
+        <mat-icon class="delete-icon" (click)="confirmar(element.id)">delete_forever</mat-icon>
       </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
+  <mat-paginator [pageSize]="3" [pageSizeOptions]="[3]"></mat-paginator>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

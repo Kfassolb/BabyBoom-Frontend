@@ -10,6 +10,7 @@ import { TiposuscripcionService } from 'src/app/service/tiposuscripcion.service'
   templateUrl: './tiposuscripcion-creaedita.component.html',
   styleUrls: ['./tiposuscripcion-creaedita.component.css']
 })
+
 export class TiposuscripcionCreaeditaComponent implements OnInit {
   id: number=0;
   edicion:boolean=false;
@@ -31,6 +32,7 @@ export class TiposuscripcionCreaeditaComponent implements OnInit {
   aceptar(): void{
     this.tiposuscripcion.id=this.form.value['id'];
     this.tiposuscripcion.nombreSuscripcion=this.form.value['nombreSuscripcion'];
+
     if(this.form.value['nombreSuscripcion'].length>0){
       if (this.edicion){
         this.tcS.update(this.tiposuscripcion).subscribe(() => {

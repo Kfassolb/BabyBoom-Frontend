@@ -11,6 +11,7 @@ const base_url = environment.base;
 export class TiposuscripcionService{
   private url = `${base_url}/TiposSuscripcion`;
   private listCambio = new Subject<Tiposuscripcion[]>();
+  private confirmarEliminacion =new Subject<Boolean>()
   constructor(private http:HttpClient) { }
   list(){
     return this.http.get<Tiposuscripcion[]>(this.url);
@@ -31,6 +32,15 @@ export class TiposuscripcionService{
   }
   update(tipoSuscripcion: Tiposuscripcion) {
     return this.http.put(this.url + '/' + tipoSuscripcion.id, tipoSuscripcion);
+  }
+  eliminar(id:number){
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  getConfirmarEliminar(){
+    return this.confirmarEliminacion.asObservable();
+  }
+  setConfirmarEliminacion(estado: Boolean){
+    this.confirmarEliminacion.next(estado);
   }
 }
 
