@@ -52,6 +52,7 @@ import { EnfermedadbebeDialogoComponent } from './components/enfermedadbebe/enfe
 import { LoginComponent } from './components/login/login.component';
 import { ReportesComponent } from './componentss/reportes/reportes.component';
 import { ReporteEnfermedadComponent } from './components/reportes/reporte-enfermedad/reporte-enfermedad.component';
+import { ReporteenfermedadbebesComponent } from './components/reportes/reporteenfermedadbebes/reporteenfermedadbebes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,6 +91,7 @@ import { ReporteEnfermedadComponent } from './components/reportes/reporte-enferm
     EnfermedadbebeDialogoComponent,
     ReportesComponent,
     ReporteEnfermedadComponent,
+    ReporteenfermedadbebesComponent,
 
   ],
   imports: [

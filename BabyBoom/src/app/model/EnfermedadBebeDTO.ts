@@ -1,5 +1,6 @@
 export interface EnfermedadBebeDTO {
-  EnfermedadName: string;
-  bebeCount: number;
+    enfermedad: string;
+    cantidadBebes: number;
+
 }
 

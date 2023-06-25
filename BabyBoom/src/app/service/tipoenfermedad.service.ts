@@ -3,6 +3,7 @@ import {environment} from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Tipoenfermedad } from '../model/Tipoenfermedad';
 import { Subject } from 'rxjs';
+import { HttpParams } from '@angular/common/http';
 
 const base_url = environment.base
 @Injectable({
@@ -51,5 +52,16 @@ export class TipoEnfermedadeService {
   }
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
+  }
+
+  listTipo(categoriaEnfermedad: string) {
+    let token = sessionStorage.getItem("token");
+    let headers = new HttpHeaders()
+      .set('Authorization', 'Bearer' + token)
+      .set('Content-Type', 'application/json');
+
+    let params = new HttpParams().set('tipoTipoEnfermedad', categoriaEnfermedad);
+
+    return this.http.get<Tipoenfermedad[]>('${this.url}, { headers,params }');
   }
 }
