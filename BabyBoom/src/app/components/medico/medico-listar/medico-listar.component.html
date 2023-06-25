@@ -14,12 +14,12 @@
 <body>
   <div class="container mt-4">
     <div class="text-center">
-      <h1 class="p-3 fw-bold" id="titleList">Lista Medicos</h1>
+      <h1 class="p-3 fw-bold" id="titleList">Lista de Medicos</h1>
     </div>
     <div class="d-flex">
-      <mat-form-field>
-        <input  matInput (keyup)="filter($event)" placeholder="BuscarPorEspecialidad"/>
-      </mat-form-field>
+      <div class="mb-3">
+        <input type="text" class="form-control" matInput (keyup)="filter($event)" placeholder="Buscar"/>
+      </div>
       <div class="ms-auto p-2">
         <mat-icon routerLink="/pages/medicos/agregar" class="btn-add">library_add</mat-icon>
       </div>

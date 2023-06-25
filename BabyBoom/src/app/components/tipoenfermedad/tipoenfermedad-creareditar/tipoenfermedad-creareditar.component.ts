@@ -39,7 +39,7 @@ export class TipoenfermedadCreareditarComponent implements OnInit {
 
   aceptar(): void {
     this.Tipoenfermedad.idTipoEnfermedad = this.form.value['idTipoEnfermedad'];
-    this.Tipoenfermedad.nombreEnfermedad = this.form.value['nombreEnfermedad'];
+    this.Tipoenfermedad.nombreTipoEnfermedad = this.form.value['nombreEnfermedad'];
     this.Tipoenfermedad.tipoTipoEnfermedad = this.form.value['tipoTipoEnfermedad'];
 
     if (this.form.value['nombreEnfermedad'].length > 0) {
@@ -56,7 +56,7 @@ export class TipoenfermedadCreareditarComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['Enfermedad']);
+      this.router.navigate(['pages/Enfermedad']);
     } else {
       this.mensaje = 'Ingrese el nombre de la enfermedad!!!';
     }
@@ -67,7 +67,7 @@ export class TipoenfermedadCreareditarComponent implements OnInit {
       this.pS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
           id: new FormControl(data.idTipoEnfermedad),
-          nombreEnfermedad: new FormControl(data.nombreEnfermedad),
+          nombreEnfermedad: new FormControl(data.nombreTipoEnfermedad),
           TipoEnfermedad: new FormControl(data.tipoTipoEnfermedad),
 
         });

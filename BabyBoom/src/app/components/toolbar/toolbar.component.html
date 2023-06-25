@@ -29,6 +29,25 @@
           </div>
           <!-- logo -->
           <div class="logo">Baby Boom</div>
+          <!--btn for reports-->
+          <div class="DropDown-reportes">
+            <li>
+              <a href="#">Reportes</a>
+              <ul>
+                <li><a href="#">Themes</a></li>
+                <li><a href="#">Plugins</a></li>
+                <li><a href="#">Tutorials</a></li>
+              </ul>
+            </li>
+          </div>
+          <!--logo - leave-->
+          <a
+            (click)="cerrar()"
+            routerLink="/login"
+            class="leave btn btn-sm btn-outline-danger"
+          >
+            <span><i class="bi bi-box-arrow-right"></i></span>
+          </a>
         </div>
         <!-- Sidebar -->
         <div class="sidebar">
@@ -43,7 +62,9 @@
 
               <li>
                 <a routerLink="/pages/tipocomprobantes">
-                  <span class="icon"><i class="bi bi-credit-card-2-front"></i></span>
+                  <span class="icon"
+                    ><i class="bi bi-credit-card-2-front"></i
+                  ></span>
                   <span class="text">Comprobante</span>
                 </a>
               </li>
@@ -55,51 +76,56 @@
               </li>
               <li>
                 <a routerLink="/pages/Enfermedad">
-                  <span class="icon"><i class="bi bi-file-earmark-ruled-fill"></i></span>
+                  <span class="icon"
+                    ><i class="bi bi-file-earmark-ruled-fill"></i
+                  ></span>
                   <span class="text">Enfermedad</span>
                 </a>
               </li>
               <li>
                 <a routerLink="/pages/Producto">
-                  <span class="icon"
-                    ><i class="bi bi-bag"></i></span>
+                  <span class="icon"><i class="bi bi-bag"></i></span>
                   <span class="text">Producto</span>
                 </a>
               </li>
               <li>
                 <a routerLink="/pages/TiposSuscripcion">
-                  <span class="icon"><i class="fa fa-pen"></i></span>
+                  <span class="icon"><i class="bi bi-gem"></i></span>
                   <span class="text">Suscripción</span>
                 </a>
               </li>
               <li>
                 <a routerLink="/pages/Bebe">
-                  <span class="icon"><i class="fa fa-id-card"></i></span>
+                  <span class="icon"
+                    ><i class="bi bi-emoji-smile-fill"></i
+                  ></span>
                   <span class="text">Bebe</span>
                 </a>
               </li>
               <li>
-                <a routerLink="/pages/Bebe">
-                  <span class="icon"><i class="fa fa-id-card"></i></span>
-                  <span class="text">Bebe</span>
+                <a routerLink="/pages/apoderados">
+                  <span class="icon"><i class="bi bi-bezier"></i></span>
+                  <span class="text">Apoderados</span>
                 </a>
               </li>
               <li>
-                <a routerLink="/pages/Bebe">
-                  <span class="icon"><i class="fa fa-id-card"></i></span>
-                  <span class="text">Bebe</span>
+                <a routerLink="/pages/medicos">
+                  <span class="icon"><i class="bi bi-incognito"></i></span>
+                  <span class="text">Medicos</span>
                 </a>
               </li>
               <li>
-                <a routerLink="/pages/Bebe">
-                  <span class="icon"><i class="fa fa-id-card"></i></span>
-                  <span class="text">Bebe</span>
+                <a routerLink="/pages/citamedicas">
+                  <span class="icon"
+                    ><i class="bi bi-clipboard2-plus"></i
+                  ></span>
+                  <span class="text">Citas</span>
                 </a>
               </li>
               <li>
-                <a routerLink="/pages/Bebe">
-                  <span class="icon"><i class="fa fa-id-card"></i></span>
-                  <span class="text">Bebe</span>
+                <a routerLink="/pages/Enfermedad">
+                  <span class="icon"><i class="bi bi-list-columns"></i></span>
+                  <span class="text">Enfermedades</span>
                 </a>
               </li>
               <li>

@@ -47,6 +47,8 @@ import { ComunidadComponent } from './comunidad/comunidad.component';
 import { ComunidadCreaeditarComponent } from './comunidad/comunidad-creaeditar/comunidad-creaeditar.component';
 import { CitamedicaComponent } from './citamedica/citamedica.component';
 import { CitamedicaCreaeditarComponent } from './citamedica/citamedica-creaeditar/citamedica-creaeditar.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { Reportellb1Component } from './reportes/reportellb1/reportellb1.component';
 
 
 const routes: Routes = [
@@ -174,8 +176,14 @@ const routes: Routes = [
   },
   {
     path: 'citamedicas',component:CitamedicaComponent,children:[
-      {path: 'agregar',component:CitamedicaCreaeditarComponent}
+      {path: 'agregar',component:CitamedicaCreaeditarComponent},
+      {path: 'editar/:id', component:CitamedicaCreaeditarComponent},
     ],canActivate:[GuardService]
+  },
+  {
+    path:'reportes',component:ReportesComponent,children:[
+    { path: 'reportellb1', component: Reportellb1Component },
+  ]
   }
 
 ];

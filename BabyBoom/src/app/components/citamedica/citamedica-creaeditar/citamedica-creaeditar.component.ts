@@ -2,6 +2,7 @@ import { Citamedica } from './../../../model/Citamedica';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import * as moment from 'moment';
 import { Apoderado } from 'src/app/model/apoderado';
 import { Medico } from 'src/app/model/medico';
 import { ApoderadoService } from 'src/app/service/apoderado.service';
@@ -18,9 +19,10 @@ export class CitamedicaCreaeditarComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   citamedica: Citamedica = new Citamedica();
   mensaje: String = "";
-  listaMedica: Medico[]=[];
+  minFecha:Date = moment().add('days').toDate();
+  listaMedico: Medico[]=[];
   listaApoderado: Apoderado[]=[];
-  idMedicaSeleccionado: number = 0;
+  idMedicoSeleccionado: number = 0;
   idApoderadoSeleccionado: number = 0;
 
   id: number = 0;
@@ -28,7 +30,7 @@ export class CitamedicaCreaeditarComponent implements OnInit{
 
   constructor(private cmS:CitamedicaService, private router:Router, private route:ActivatedRoute, private mS: MedicoService, private aS: ApoderadoService){};
   ngOnInit(): void {
-    this.mS.list().subscribe(data => { this.listaMedica = data });
+    this.mS.list().subscribe(data => { this.listaMedico = data });
     this.aS.list().subscribe(data => { this.listaApoderado = data });
 
 
@@ -55,12 +57,12 @@ export class CitamedicaCreaeditarComponent implements OnInit{
     this.citamedica.fecha = this.form.value['fecha'];
     this.citamedica.lugar = this.form.value['lugar']
     this.citamedica.nombreClinica = this.form.value['nombreClinica']
-    if (this.idMedicaSeleccionado>0 && this.idApoderadoSeleccionado>0) {
+    if (this.idMedicoSeleccionado>0 && this.idApoderadoSeleccionado>0) {
       if (this.edicion) {
         let m = new Medico();
         let a = new Apoderado();
 
-        m.idMedico = this.idMedicaSeleccionado;
+        m.idMedico = this.idMedicoSeleccionado;
         a.idApoderado = this.idApoderadoSeleccionado;
         this.citamedica.medico=m;
         this.citamedica.apoderado=a;
@@ -74,7 +76,7 @@ export class CitamedicaCreaeditarComponent implements OnInit{
         let m = new Medico();
         let a = new Apoderado();
 
-        m.idMedico = this.idMedicaSeleccionado;
+        m.idMedico = this.idMedicoSeleccionado;
         a.idApoderado = this.idApoderadoSeleccionado;
         this.citamedica.medico=m;
         this.citamedica.apoderado=a;

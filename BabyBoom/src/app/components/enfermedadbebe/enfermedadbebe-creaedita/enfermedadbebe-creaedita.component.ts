@@ -60,7 +60,7 @@ export class EnfermedadbebeCreaeditaComponent  {
   aceptar(): void {
     this.Enfermedadbebe.id = this.form.value['id'];
     this.Enfermedadbebe.sintomasEnfermedad_bebe = this.form.value['sintomasEnfermedad_bebe'];
-    this.Enfermedadbebe.tipoenfermedad.nombreEnfermedad=this.form.value['enfermedad.nombreEnfermedad'];
+    this.Enfermedadbebe.tipoenfermedad.nombreTipoEnfermedad=this.form.value['enfermedad.nombreTipoEnfermedad'];
     this.Enfermedadbebe.bebe.nombreBebe=this.form.value['bebe.nombreBebe'];
     let bebeinde= new Bebe();
     bebeinde.idBebe = this.idBebe;
@@ -83,7 +83,7 @@ export class EnfermedadbebeCreaeditaComponent  {
           });
         });
       }
-      this.router.navigate(['Enfermedadbebe']);
+      this.router.navigate(['pages/Enfermedadbebe']);
     } else {
       this.mensaje = 'Ingrese los sintomas!!!';
     }

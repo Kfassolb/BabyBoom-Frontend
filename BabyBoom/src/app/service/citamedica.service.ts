@@ -3,13 +3,15 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Citamedica } from '../model/Citamedica';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Reportellb1 } from '../model/Reportellb1';
 const base_url = environment.base
 @Injectable({
   providedIn: 'root'
 })
 export class CitamedicaService {
 
-  private url = `${base_url}/citamedicas`;
+  private url = `${base_url}/citas`;
   private listCambio = new Subject<Citamedica[]>();
   private confirmDeletion = new Subject<Boolean>();
 
@@ -56,5 +58,12 @@ export class CitamedicaService {
   }
   setConfirmDeletion(estado:boolean){
     return this.confirmDeletion.next(estado);
+  }
+
+  getCountByplace(): Observable<Reportellb1[]> {
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Reportellb1[]>(`${this.url}/place-count`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    } );
   }
 }
