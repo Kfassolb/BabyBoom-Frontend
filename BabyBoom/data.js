@@ -53,7 +53,6 @@ module.exports = function(){
         id:3,
         NombreServicio:"Siesta bebe",
       },
-<<<<<<< HEAD
     ],
     Producto: [
       {
@@ -137,8 +136,6 @@ module.exports = function(){
         fechaBebe:"2000-12-06",
       }
     ],
-=======
-   ],
    Controlvacunacion:[
     {
       id:1,
@@ -157,7 +154,6 @@ module.exports = function(){
       lugar:"Clinica",
     },
    ],
->>>>>>> sheyla
   }
   return data
 }
