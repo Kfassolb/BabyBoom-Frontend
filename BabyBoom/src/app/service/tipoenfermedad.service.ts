@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import {environment} from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Tipoenfermedad } from '../model/Tipoenfermedad';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { ReporteEnfermedad } from '../model/reporteenfermedad';
+import { ReporteEnfermedadBebe } from '../model/reporteenfermedadbebe';
 
 const base_url = environment.base
 @Injectable({
@@ -59,5 +61,19 @@ export class TipoEnfermedadeService {
   }
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
+  }
+
+  getEnefermedadbyTipo():Observable<ReporteEnfermedad[]>{
+    let token = sessionStorage.getItem("token");
+    return this.http.get<ReporteEnfermedad[]>(`${this.url}/buscarTipo`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+  }
+
+  getBebebyNombreEnfermedad():Observable<ReporteEnfermedadBebe[]>{
+    let token = sessionStorage.getItem("token");
+    return this.http.get<ReporteEnfermedadBebe[]>(`${this.url}/bebes/{nombreTipoEnfermedad}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 }

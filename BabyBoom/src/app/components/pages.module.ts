@@ -108,6 +108,8 @@ import { CitamedicaDialogoComponent } from './citamedica/citamedica-listar/citam
 import { ControlvacunacionDialogoComponent } from './controlvacunacion/controlvacunacion-listar/controlvacunacion-dialogo/controlvacunacion-dialogo.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { Reportellb1Component } from './reportes/reportellb1/reportellb1.component';
+import { ReporteenfermedadComponent } from './reportes/reporteenfermedad/reporteenfermedad.component';
+import { ReporteenfermedadbebeComponent } from './reportes/reporteenfermedadbebe/reporteenfermedadbebe.component';
 
 
 
@@ -203,6 +205,8 @@ import { Reportellb1Component } from './reportes/reportellb1/reportellb1.compone
     CitamedicaDialogoComponent,
     ReportesComponent,
     Reportellb1Component,
+    ReporteenfermedadComponent,
+    ReporteenfermedadbebeComponent,
     //ToolbarComponent
 
   ],
