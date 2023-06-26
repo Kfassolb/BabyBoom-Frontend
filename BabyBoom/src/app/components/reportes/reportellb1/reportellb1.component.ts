@@ -22,7 +22,7 @@ export class Reportellb1Component implements OnInit{
     })
   }
 
-  getPetCountByVaccine(): void {
+  getCountByplace(): void {
     this.cmS.getCountByplace()
       .subscribe((data: Reportellb1[]) => {
         this.reportllb1 = data;

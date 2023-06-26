@@ -49,6 +49,7 @@ import { CitamedicaComponent } from './citamedica/citamedica.component';
 import { CitamedicaCreaeditarComponent } from './citamedica/citamedica-creaeditar/citamedica-creaeditar.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { Reportellb1Component } from './reportes/reportellb1/reportellb1.component';
+import { Reportergr1Component } from './reportes/reportergr1/reportergr1.component';
 
 
 const routes: Routes = [
@@ -184,6 +185,11 @@ const routes: Routes = [
     path:'reportes',component:ReportesComponent,children:[
     { path: 'reportellb1', component: Reportellb1Component },
   ]
+  },
+  {
+    path:'reportes',component:ReportesComponent,children:[
+      { path: 'reportergr1', component: Reportergr1Component },
+    ]
   }
 
 ];
