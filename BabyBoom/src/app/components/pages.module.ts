@@ -79,6 +79,10 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { PublicacionComponent } from './publicacion/publicacion.component';
 import { PublicacionListarComponent } from './publicacion/publicacion-listar/publicacion-listar.component';
 import { PublicacionCreaeditaComponent } from './publicacion/publicacion-creaedita/publicacion-creaedita.component';
+import { ComunidadComponent } from './comunidad/comunidad.component';
+import { ComunidadCreaeditaComponent } from './comunidad/comunidad-creaedita/comunidad-creaedita.component';
+import { ComunidadDialogoComponent } from './comunidad/comunidad-listar/comunidad-dialogo/comunidad-dialogo.component';
+import { ComunidadListarComponent } from './comunidad/comunidad-listar/comunidad-listar.component';
 
 
 @NgModule({
@@ -139,6 +143,10 @@ import { PublicacionCreaeditaComponent } from './publicacion/publicacion-creaedi
     PublicacionListarComponent,
     PublicacionCreaeditaComponent,
     PublicacionComponent,
+    ComunidadComponent,
+    ComunidadCreaeditaComponent,
+    ComunidadDialogoComponent,
+    ComunidadListarComponent,
     //ToolbarComponent
 
   ],

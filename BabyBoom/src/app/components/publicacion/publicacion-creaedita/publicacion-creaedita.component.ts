@@ -19,18 +19,18 @@ export class PublicacionCreaeditaComponent implements OnInit{
   form:FormGroup = new FormGroup({});
   publicacion:Publicacion = new Publicacion()
   mensaje:string=""
-  lista:Publicacion[] = [];
+  lista:Apoderado[] = [];
   idComunidadSelecionado: number=0;
-  idApoderadoSeleccionado:number=0;
+
 
   constructor(private pS:PublicacionService, private router:Router,
     private route:ActivatedRoute,
     private aS:ApoderadoService, private cS:ComunidadService){}
 
   ngOnInit(): void {
-    this.pS.list().subscribe(data => { this.lista = data });
+    this.aS.list().subscribe(data => { this.lista = data });
     this.form = new FormGroup({
-      idCompra:new FormControl(),
+      idPublicacion:new FormControl(),
       idApoderado:new FormControl(),
       idComunidad:new FormControl(),
       tituloPublicacion:new FormControl(),
@@ -47,16 +47,12 @@ export class PublicacionCreaeditaComponent implements OnInit{
       let c = new Comunidad();
       c.idComunidad = this.idComunidadSelecionado;
       this.publicacion.comunidad = c;
-
-      let a = new Apoderado();
-      a.idApoderado = this.idApoderadoSeleccionado;
-      this.publicacion.apoderado = a;
       this.pS.insert(this.publicacion).subscribe(()=>{
         this.pS.list().subscribe(data =>{
           this.pS.setList(data);
         })
       })
-      this.router.navigate(['publicacion']);
+      this.router.navigate(['publicaciones']);
     }
   }
 

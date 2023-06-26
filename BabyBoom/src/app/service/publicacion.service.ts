@@ -11,7 +11,7 @@ const base_url = environment.base
 })
 export class PublicacionService {
 
-  private url = `${base_url}/Publicacion`;
+  private url = `${base_url}/publicaciones`;
   private listCambio = new Subject<Publicacion[]>();
   private confirmarEliminacion =new Subject<Boolean>()
 

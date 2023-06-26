@@ -15,7 +15,7 @@ import { ComunidadDialogoComponent } from './comunidad-dialogo/comunidad-dialogo
 export class ComunidadListarComponent implements OnInit{
   lista:Comunidad[] = [];
   dataSource:MatTableDataSource<Comunidad> = new MatTableDataSource();
-  displayedColumns:string[] = ['idComunidad', 'NombreComunidad','Contenido','FechaInicio','accion01']
+  displayedColumns:string[] = ['idComunidad', 'nameComunidad','Contenido','FechaInicio','accion01']
   @ViewChild(MatPaginator) paginator!: MatPaginator; //THIS
   private idMayor:number=0
 

@@ -28,6 +28,10 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { GuarderiaComponent } from './guarderia/guarderia.component';
 import { GuarderiaCreaeditaComponent } from './guarderia/guarderia-creaedita/guarderia-creaedita.component';
+import { PublicacionComponent } from './publicacion/publicacion.component';
+import { PublicacionCreaeditaComponent } from './publicacion/publicacion-creaedita/publicacion-creaedita.component';
+import { ComunidadComponent } from './comunidad/comunidad.component';
+import { ComunidadCreaeditaComponent } from './comunidad/comunidad-creaedita/comunidad-creaedita.component';
 
 const routes: Routes = [
   {
@@ -40,6 +44,12 @@ const routes: Routes = [
     path: 'users', component:UsuarioComponent, children: [
       {path:'agregar', component:UsuarioCreaeditaComponent},
       {path:'editar/:id', component:UsuarioCreaeditaComponent}
+    ],canActivate:[GuardService]
+  },
+  {
+    path: 'Comunidad', component:ComunidadComponent, children: [
+      {path:'agregar', component:ComunidadCreaeditaComponent},
+      {path:'editar/:id', component:ComunidadCreaeditaComponent}
     ],canActivate:[GuardService]
   },
 
@@ -100,6 +110,11 @@ const routes: Routes = [
   {
     path: 'compras', component:CompraComponent,children:[
       {path:'nuevo', component:CompraCreaeditaComponent},
+    ],canActivate:[GuardService]
+  },
+  {
+    path: 'publicaciones', component:PublicacionComponent,children:[
+      {path:'nuevo', component:PublicacionCreaeditaComponent},
     ],canActivate:[GuardService]
   },
   {

@@ -21,22 +21,9 @@
 
       <br>
 
-      <mat-form-field appearance="fill">
-        <mat-label>idComunidad</mat-label>
-        <mat-select formControlName="idComunidad" [(value)]="idComunidadSeleccionado" required>
-          <mat-option *ngFor="let c of lista" [value]="c.idComunidad">
-            {{c.nombreComunidad}}
-        </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
+      <mat-form-field class="example-full-width">
         <mat-label>idApoderado</mat-label>
-        <mat-select formControlName="pet" [(value)]="idApoderadoSeleccionado" required>
-        <mat-option *ngFor="let a of lista" [value]="a.idApoderado">
-            {{a.nombre}}
-        </mat-option>
-        </mat-select>
+        <input matInput placeholder="Id" formControlName="idApoderado">
       </mat-form-field>
 
             <mat-form-field class="example-full-width">

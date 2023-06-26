@@ -27,18 +27,18 @@ export class ComunidadCreaeditaComponent implements OnInit {
     })
     this.form=new FormGroup({
       idComunidad:new FormControl(),
-      NombreComunidad: new FormControl(),
+      nameComunidad: new FormControl(),
         Contenido: new FormControl(),
         FechaInicio: new FormControl(),
     })
   }
   aceptar(): void{
     this.comunidad.idComunidad=this.form.value['idComunidad'];
-    this.comunidad.NombreComunidad=this.form.value['NombreComunidad'];
+    this.comunidad.nameComunidad=this.form.value['nameComunidad'];
     this.comunidad.Contenido=this.form.value['Contenido'];
     this.comunidad.FechaInicio=this.form.value['FechaInicio'];
 
-    if(this.form.value['NombreComunidad'].length>0 && this.form.value['FechaInicio'].length>0){
+    if(this.form.value['nameComunidad'].length>0 && this.form.value['FechaInicio'].length>0){
       if (this.edicion){
         this.cS.update(this.comunidad).subscribe(() => {
           this.cS.list().subscribe(data => {
@@ -62,7 +62,7 @@ export class ComunidadCreaeditaComponent implements OnInit {
       this.cS.listId(this.idComunidad).subscribe((data) => {
         this.form = new FormGroup({
           idComunidad: new FormControl(data.idComunidad),
-          NombreComunidad: new FormControl(data.NombreComunidad),
+          nameComunidad: new FormControl(data.nameComunidad),
           Contenido: new FormControl(data.Contenido),
           FechaInicio: new FormControl(data.FechaInicio),
         });

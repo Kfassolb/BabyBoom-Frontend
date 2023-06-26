@@ -13,7 +13,7 @@ import { PublicacionService } from 'src/app/service/publicacion.service';
 export class PublicacionListarComponent implements OnInit{
   lista:Publicacion[] = [];
   dataSource:MatTableDataSource<Publicacion> = new MatTableDataSource();
-  displayedColumns:string[] = ['id', 'tituloPublicacion', 'comentarioPublicacion','accion01'];
+  displayedColumns:string[] = ['idPublicacion','idApoderado','idComunidad', 'tituloPublicacion', 'comentarioPublicacion'];
   private idMayor: number = 0;
 
   constructor(private pS:PublicacionService,private dialog:MatDialog ){}

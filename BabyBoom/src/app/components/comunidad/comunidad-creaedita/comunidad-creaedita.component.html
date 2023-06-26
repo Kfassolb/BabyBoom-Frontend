@@ -19,18 +19,26 @@
         <form [formGroup]="form" (submit)="aceptar()">
             <mat-form-field class="example-full-width">
                 <mat-label>Id</mat-label>
-                <input matInput placeholder="IdComunidad" formControlName="idComunidad">
+                <input matInput placeholder="idComunidad" formControlName="idComunidad">
             </mat-form-field>
             <br>
             <mat-form-field class="example-full-width">
                 <mat-label>Comunidad</mat-label>
-                <input matInput placeholder="NombreComunidad" formControlName="NombreComunidad" required>
+                <input matInput placeholder="nameComunidad" formControlName="nameComunidad" required>
             </mat-form-field>
             <br>
             <mat-form-field class="example-full-width">
               <mat-label>Contenido</mat-label>
               <input matInput placeholder="Contenido" formControlName="Contenido" required>
           </mat-form-field>
+          <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Fecha</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="FechaInicio" [max]="maxFecha">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
           <br>
             <!-- <button mat-raised-button color="primary" class="m-3"><mat-icon>done_all</mat-icon>Aceptar</button> -->
         <div class="d-flex justify-content-center">

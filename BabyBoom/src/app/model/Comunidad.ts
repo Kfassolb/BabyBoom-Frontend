@@ -1,6 +1,6 @@
 export class Comunidad{
         idComunidad: number=0
-        NombreComunidad: string=""
+        nameComunidad: string=""
         Contenido: string=""
         FechaInicio:Date=new Date(Date.now())
 }
