@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import {environment} from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Problema } from '../model/Problema';
-import { Subject } from 'rxjs';
+import {Observable, Subject } from 'rxjs';
+
 const base_url = environment.base
 @Injectable({
   providedIn: 'root'
@@ -40,5 +41,7 @@ export class ProblemaService {
   setConfirmarEliminacion(estado: Boolean){
     this.confirmarEliminacion.next(estado);
   }
+  getProblemasPorApoderado(apoderadoId: number): Observable<Problema[]> {
+    return this.http.get<Problema[]>(`${this.url}/problema-count`);
+  }
 }
-

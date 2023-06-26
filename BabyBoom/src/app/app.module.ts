@@ -56,6 +56,8 @@ import { SoportetecnicoListarComponent } from './components/soportetecnico/sopor
 import { ProblemaDialogoComponent } from './components/problema/problema-listar/problema-dialogo/problema-dialogo.component';
 import { SoportetecnicoDialogoComponent } from './components/soportetecnico/soportetecnico-listar/soportetecnico-dialogo/soportetecnico-dialogo.component';
 import { CompraproductoDialogoComponent } from './components/compraproducto/compraproducto-listar/compraproducto-dialogo/compraproducto-dialogo.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
+import { ReporteproblemaComponent } from './components/reportes/reporteproblema/reporteproblema.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +102,8 @@ import { CompraproductoDialogoComponent } from './components/compraproducto/comp
     ProblemaDialogoComponent,
     SoportetecnicoDialogoComponent,
     CompraproductoDialogoComponent,
+    ReportesComponent,
+    ReporteproblemaComponent,
 
 
   ],

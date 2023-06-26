@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte</title>
+  </head>
+
+<body>
+<div class="container">
+  <div style=" text-align: center;">
+    <h1>Problemas por Apoderado</h1>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Columna ID -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let problema">{{ problema.id }}</td>
+    </ng-container>
+
+    <!-- Columna Título -->
+    <ng-container matColumnDef="titulo">
+      <th mat-header-cell *matHeaderCellDef>Título</th>
+      <td mat-cell *matCellDef="let problema">{{ problema.titulo }}</td>
+    </ng-container>
+
+    <!-- Columna Descripción -->
+    <ng-container matColumnDef="descripcion">
+      <th mat-header-cell *matHeaderCellDef>Descripción</th>
+      <td mat-cell *matCellDef="let problema">{{ problema.descripcion }}</td>
+    </ng-container>
+
+    <!-- Columna Fecha de Inicio -->
+    <ng-container matColumnDef="fechaInicio">
+      <th mat-header-cell *matHeaderCellDef>Fecha de Inicio</th>
+      <td mat-cell *matCellDef="let problema">{{ problema.fechaInicio }}</td>
+    </ng-container>
+
+    <!-- Columna Fecha de Fin -->
+    <ng-container matColumnDef="fechaFin">
+      <th mat-header-cell *matHeaderCellDef>Fecha de Fin</th>
+      <td mat-cell *matCellDef="let problema">{{ problema.fechaFin }}</td>
+    </ng-container>
+
+    <!-- Definición de las columnas a mostrar -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
