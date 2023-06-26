@@ -108,6 +108,7 @@ import { CitamedicaDialogoComponent } from './citamedica/citamedica-listar/citam
 import { ControlvacunacionDialogoComponent } from './controlvacunacion/controlvacunacion-listar/controlvacunacion-dialogo/controlvacunacion-dialogo.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { Reportellb1Component } from './reportes/reportellb1/reportellb1.component';
+import { Reportellb2Component } from './reportes/reportellb2/reportellb2.component';
 
 
 
@@ -203,6 +204,7 @@ import { Reportellb1Component } from './reportes/reportellb1/reportellb1.compone
     CitamedicaDialogoComponent,
     ReportesComponent,
     Reportellb1Component,
+    Reportellb2Component,
     //ToolbarComponent
 
   ],
