@@ -9,13 +9,13 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container mt-4">
     <div style=" text-align: center;">
-      <h1>Cantidad de mascotas por vacuna</h1>
+      <h1>Lista ordenada descendentemente de lugares con mayor atención (cita medica)</h1>
     </div>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table table-striped table-hover mt-4">
       <ng-container matColumnDef="lugar">
-        <th mat-header-cell *matHeaderCellDef> Vacuna </th>
+        <th mat-header-cell *matHeaderCellDef> Lugar </th>
         <td mat-cell *matCellDef="let element"> {{element.place}} </td>
       </ng-container>
 

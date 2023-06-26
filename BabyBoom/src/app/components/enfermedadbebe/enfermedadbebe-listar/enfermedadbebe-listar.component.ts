@@ -5,19 +5,21 @@ import { BebeService } from 'src/app/service/bebe.service'
 import { MatDialog } from '@angular/material/dialog';
 import { EnfermedadbebeDialogoComponent } from './enfermedadbebe-dialogo/enfermedadbebe-dialogo.component';
 import { MatPaginator } from '@angular/material/paginator';
+import { EnfermedadbebeService } from 'src/app/service/enfermedadbebe.service';
+import { Enfermedadbebe } from 'src/app/model/Enfermedadbebe';
 @Component({
   selector: 'app-enfermedadbebe-listar',
   templateUrl: './enfermedadbebe-listar.component.html',
   styleUrls: ['./enfermedadbebe-listar.component.css']
 })
 export class EnfermedadbebeListarComponent implements OnInit{
-  lista:Bebe[] = [];
-  dataSource:MatTableDataSource<Bebe> = new MatTableDataSource();
-  displayedColumns:string[] = ['id', 'sintomasEnfermedad_bebe','accion01'];
+  lista:Enfermedadbebe[] = [];
+  dataSource:MatTableDataSource<Enfermedadbebe> = new MatTableDataSource();
+  displayedColumns:string[] = ['id','tipoenfermedad','bebe','sintonmas','accion01'];
   @ViewChild(MatPaginator) paginator!: MatPaginator; //THIS
   private idMayor: number = 0;
 
-  constructor(private tcS:BebeService,private dialog:MatDialog ){}
+  constructor(private tcS:EnfermedadbebeService,private dialog:MatDialog ){}
   ngOnInit(): void {
       this.tcS.list().subscribe((data)=>{
         this.dataSource = new MatTableDataSource(data);

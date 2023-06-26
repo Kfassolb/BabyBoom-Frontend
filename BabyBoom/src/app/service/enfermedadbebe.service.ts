@@ -9,7 +9,7 @@ const base_url = environment.base
   providedIn: 'root',
 })
 export class EnfermedadbebeService {
-  private url = `${base_url}/enfermedades_bebes`;
+  private url = `${base_url}/enfermedad-bebes`;
   private listCambio = new Subject<Enfermedadbebe[]>();
   private confirmaEliminacion = new Subject<Boolean>()
 

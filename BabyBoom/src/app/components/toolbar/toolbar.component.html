@@ -30,15 +30,17 @@
           <!-- logo -->
           <div class="logo">Baby Boom</div>
           <!--btn for reports-->
-          <div class="DropDown-reportes">
-            <li>
-              <a href="#">Reportes</a>
-              <ul>
-                <li><a href="#">Themes</a></li>
-                <li><a href="#">Plugins</a></li>
-                <li><a href="#">Tutorials</a></li>
-              </ul>
-            </li>
+          <div class="dropdown">
+            <button class="dropdown-btn" aria-haspopup="menu">
+              <span>Reportes</span>
+              <span class="arrow"></span>
+            </button>
+            <ul class="dropdown-content" role="menu">
+              <li style="--delay: 1;"><a href="/pages/reportes/reportellb1">ReporteLimber1</a></li>
+              <li style="--delay: 2;"><a href="/pages/reportes/reportellb1">ReporteLimber2</a></li>
+              <li style="--delay: 3;"><a href="#">Vue</a></li>
+              <li style="--delay: 4;"><a href="#">Svelte</a></li>
+            </ul>
           </div>
           <!--logo - leave-->
           <a
@@ -123,27 +125,27 @@
                 </a>
               </li>
               <li>
-                <a routerLink="/pages/Enfermedad">
+                <a routerLink="/pages/Sintomas">
                   <span class="icon"><i class="bi bi-list-columns"></i></span>
-                  <span class="text">Enfermedades</span>
+                  <span class="text">Sintomas</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/pages/guarderias">
+                  <span class="icon"><i class="bi bi-diagram-3"></i></span>
+                  <span class="text">Guarderia</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/pages/compras">
+                  <span class="icon"><i class="bi bi-basket2-fill"></i></span>
+                  <span class="text">Compra</span>
                 </a>
               </li>
               <li>
                 <a routerLink="/pages/Bebe">
                   <span class="icon"><i class="fa fa-id-card"></i></span>
-                  <span class="text">Bebe</span>
-                </a>
-              </li>
-              <li>
-                <a routerLink="/pages/Bebe">
-                  <span class="icon"><i class="fa fa-id-card"></i></span>
-                  <span class="text">Bebe</span>
-                </a>
-              </li>
-              <li>
-                <a routerLink="/pages/Bebe">
-                  <span class="icon"><i class="fa fa-id-card"></i></span>
-                  <span class="text">Bebe</span>
+                  <span class="text">----</span>
                 </a>
               </li>
               <li>
