@@ -5,6 +5,7 @@ import { Citamedica } from '../model/Citamedica';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Reportellb1 } from '../model/Reportellb1';
+import { Reportellb2 } from '../model/Reportellb2';
 const base_url = environment.base
 @Injectable({
   providedIn: 'root'
@@ -60,9 +61,17 @@ export class CitamedicaService {
     return this.confirmDeletion.next(estado);
   }
 
+  // Queries
+
   getCountByplace(): Observable<Reportellb1[]> {
     let token = sessionStorage.getItem("token");
     return this.http.get<Reportellb1[]>(`${this.url}/place-count`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    } );
+  }
+  getCountMedicalAppointment(nombre:String): Observable<Reportellb2[]> {
+    let token = sessionStorage.getItem("token");
+    return this.http.post<Reportellb2[]>(`${this.url}/med-appointment-count`,nombre,{
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
     } );
   }
