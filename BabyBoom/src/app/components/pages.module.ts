@@ -83,6 +83,8 @@ import { ComunidadComponent } from './comunidad/comunidad.component';
 import { ComunidadCreaeditaComponent } from './comunidad/comunidad-creaedita/comunidad-creaedita.component';
 import { ComunidadDialogoComponent } from './comunidad/comunidad-listar/comunidad-dialogo/comunidad-dialogo.component';
 import { ComunidadListarComponent } from './comunidad/comunidad-listar/comunidad-listar.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { Reportes01Component } from './reportes/reportes01/reportes01.component';
 
 
 @NgModule({
@@ -147,6 +149,8 @@ import { ComunidadListarComponent } from './comunidad/comunidad-listar/comunidad
     ComunidadCreaeditaComponent,
     ComunidadDialogoComponent,
     ComunidadListarComponent,
+    ReportesComponent,
+    Reportes01Component,
     //ToolbarComponent
 
   ],

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Publicacion } from '../model/Publicacion';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { PublicacionComunidadDTO } from '../model/PublicacionComunidadDTO';
 
 const base_url = environment.base
 
@@ -35,6 +36,10 @@ export class PublicacionService {
 
   getList() {
     return this.listCambio.asObservable();
+  }
+  getcomunidadCountBytitulo(): Observable<PublicacionComunidadDTO[]> {
+    return this.http.get<PublicacionComunidadDTO[]>(`${this.url}/public-count`);
+
   }
 
 }

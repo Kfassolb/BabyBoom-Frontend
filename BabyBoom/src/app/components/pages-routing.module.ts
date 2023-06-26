@@ -32,6 +32,8 @@ import { PublicacionComponent } from './publicacion/publicacion.component';
 import { PublicacionCreaeditaComponent } from './publicacion/publicacion-creaedita/publicacion-creaedita.component';
 import { ComunidadComponent } from './comunidad/comunidad.component';
 import { ComunidadCreaeditaComponent } from './comunidad/comunidad-creaedita/comunidad-creaedita.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { Reportes01Component } from './reportes/reportes01/reportes01.component';
 
 const routes: Routes = [
   {
@@ -123,6 +125,12 @@ const routes: Routes = [
       {path:'editar/:id', component:GuarderiaCreaeditaComponent}
     ],canActivate:[GuardService]
   },
+  {
+    path:'reportes',component:ReportesComponent,children:[
+
+    { path: 'count', component: Reportes01Component },
+  ]
+  }
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -15,12 +15,14 @@ import { MatInputModule } from '@angular/material/input'
 import { LoginComponent } from './components/login/login.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { Publicacion } from './model/Publicacion';
+import { ReportesComponent } from './reportes/reportes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ToolbarComponent,
+    ReportesComponent,
   ],
   imports: [
     BrowserModule,
