@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {environment} from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Producto } from '../model/Producto';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 const base_url = environment.base
 @Injectable({
   providedIn: 'root'
@@ -41,7 +41,6 @@ export class ProductoService {
     this.confirmarEliminacion.next(estado);
   }
   getProductosByPriceRange(precioMinimo: number, precioMaximo: number) {
-    const queryUrl = `${this.url}?precioMinimo=${precioMinimo}&precioMaximo=${precioMaximo}`;
-    return this.http.get<Producto[]>(queryUrl);
+    return this.http.get<Producto[]>(`${this.url}?precioMinimo=${precioMinimo}&precioMaximo=${precioMaximo}`);
   }
 }
