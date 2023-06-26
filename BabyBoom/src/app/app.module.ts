@@ -58,6 +58,7 @@ import { SoportetecnicoDialogoComponent } from './components/soportetecnico/sopo
 import { CompraproductoDialogoComponent } from './components/compraproducto/compraproducto-listar/compraproducto-dialogo/compraproducto-dialogo.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
 import { ReporteproblemaComponent } from './components/reportes/reporteproblema/reporteproblema.component';
+import { ReporteproductoComponent } from './components/reportes/reporteproducto/reporteproducto.component';
 
 @NgModule({
   declarations: [
@@ -104,6 +105,7 @@ import { ReporteproblemaComponent } from './components/reportes/reporteproblema/
     CompraproductoDialogoComponent,
     ReportesComponent,
     ReporteproblemaComponent,
+    ReporteproductoComponent,
 
 
   ],

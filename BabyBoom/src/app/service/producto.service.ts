@@ -40,4 +40,8 @@ export class ProductoService {
   setConfirmarEliminacion(estado: Boolean){
     this.confirmarEliminacion.next(estado);
   }
+  getProductosByPriceRange(precioMinimo: number, precioMaximo: number) {
+    const queryUrl = `${this.url}?precioMinimo=${precioMinimo}&precioMaximo=${precioMaximo}`;
+    return this.http.get<Producto[]>(queryUrl);
+  }
 }
