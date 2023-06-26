@@ -37,9 +37,19 @@
 
     <!-- Name Column -->
 
-    <ng-container matColumnDef="sintomasEnfermedad_bebe">
+    <ng-container matColumnDef="tipoenfermedad">
       <th mat-header-cell *matHeaderCellDef> Sintomas </th>
-      <td mat-cell *matCellDef="let element"> {{element.sintomasEnfermedad_bebe}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.tipoEnfermedad.nombreTipoEnfermedad}} </td>
+    </ng-container>
+    <br>
+    <ng-container matColumnDef="bebe">
+      <th mat-header-cell *matHeaderCellDef> Sintomas </th>
+      <td mat-cell *matCellDef="let element"> {{element.bebe.nombreBebe}} </td>
+    </ng-container>
+    <br>
+    <ng-container matColumnDef="sintonmas">
+      <th mat-header-cell *matHeaderCellDef> Sintomas </th>
+      <td mat-cell *matCellDef="let element"> {{element.sintonmas}} </td>
     </ng-container>
 
     <ng-container matColumnDef="accion01">

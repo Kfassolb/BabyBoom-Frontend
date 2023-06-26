@@ -22,29 +22,38 @@
         <br />
         <mat-form-field class="example-full-width">
           <mat-label>Sintomas</mat-label>
-          <input matInput placeholder="nombreBebe" formControlName="nombreBebe" required />
+          <input matInput placeholder="nombreBebe" formControlName="sintomasEnfermedad_bebe" required />
         </mat-form-field>
 
 
         <br>
 
             <mat-form-field appearance="fill">
-                <mat-label> Bebes </mat-label>
-                <mat-select formControlName="modelo" [(value)]="idBebe" required>
-                  <mat-option *ngFor="let enty of listaBebe" [value]="enty.idBebe">
-                    {{enty.nombreBebe}}
+                <mat-label> Sintomas </mat-label>
+                <mat-select formControlName="enfermedad" [(value)]="idEnfermedad" required>
+                  <mat-option *ngFor="let enty of listaEnfermedad" [value]="enty.idTipoEnfermedad">
+                    {{enty.nombreTipoEnfermedad}}
                 </mat-option>
                 </mat-select>
             </mat-form-field>
 
             <br>
 
+            <mat-form-field appearance="fill">
+              <mat-label> Bebe </mat-label>
+              <mat-select formControlName="bebe" [(value)]="idBebe" required>
+                <mat-option *ngFor="let enty of listaBebe" [value]="enty.idBebe">
+                  {{enty.nombreBebe}}
+              </mat-option>
+              </mat-select>
+          </mat-form-field>
+
 
 
 
         <div class="d-flex justify-content-center">
           <button class="btn-accept"><mat-icon>check_circle</mat-icon></button>
-          <mat-icon routerLink="/Sintomas" class="ms-4">cancel</mat-icon>
+          <mat-icon routerLink="/pages/Sintomas" class="ms-4">cancel</mat-icon>
         </div>
       </form>
     </div>
