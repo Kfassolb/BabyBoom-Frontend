@@ -137,22 +137,19 @@ module.exports = function(){
      publicaciones: [
       {
         idPublicacion: 1,
-        comunidad: new Comunidad,
-        apoderado:new Apoderado,
+
         tituloPublicacion: "LLeve Casero",
         comentarioPublicacion: "Todos se salvaran",
       },
       {
         idPublicacion: 2,
-        comunidad: new Comunidad,
-        apoderado:new Apoderado,
+
         tituloPublicacion: "Caos Animal",
         comentarioPublicacion: "Animales se vuelven locos",
       },
       {
         idPublicacion: 3,
-        comunidad: new Comunidad,
-        apoderado:new Apoderado,
+
         tituloPublicacion: "Salvemos a todos",
         comentarioPublicacion: "Adopten y vacunen",
       },
