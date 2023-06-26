@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { GuarderiaSideDTO } from 'src/app/model/guarderiaSideDTO';
+import { GuarderiaSideDTO } from 'src/app/model/GuarderiaSideDTO';
 import { GuarderiaService } from 'src/app/service/guarderia.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class Reportergr1Component implements OnInit{
   gcount: GuarderiaSideDTO[] = [];
   dataSource: MatTableDataSource<GuarderiaSideDTO> = new MatTableDataSource();
 
-  displayedColumns: string[] = ['lugar','cantidad']
+  displayedColumns: string[] = ['side1','cantidad']
 
   constructor(private gS: GuarderiaService) { }
 

@@ -1,4 +1,4 @@
 export interface GuarderiaSideDTO {
-  Side: string;
+  side: string;
   sideCount: number;
 }

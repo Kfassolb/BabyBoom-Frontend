@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GuarderiaSideDTO } from '../model/guarderiaSideDTO';
+import { GuarderiaSideDTO } from '../model/GuarderiaSideDTO';
 const base_url = environment.base
 
 @Injectable({

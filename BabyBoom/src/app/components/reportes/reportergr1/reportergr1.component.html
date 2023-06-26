@@ -14,9 +14,9 @@
       <h1>Lista ordenada descendentemente de lugares con mayor recurrencia (guarderia)</h1>
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table table-striped table-hover mt-4">
-      <ng-container matColumnDef="lugar">
-        <th mat-header-cell *matHeaderCellDef> Lugar </th>
-        <td mat-cell *matCellDef="let element"> {{element.Side}} </td>
+      <ng-container matColumnDef="side1">
+        <th mat-header-cell *matHeaderCellDef> Sitio </th>
+        <td mat-cell *matCellDef="let element"> {{element.side}} </td>
       </ng-container>
 
       <!-- Name Column -->
