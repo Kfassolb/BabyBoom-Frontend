@@ -184,12 +184,8 @@ const routes: Routes = [
   {
     path:'reportes',component:ReportesComponent,children:[
     { path: 'reportellb1', component: Reportellb1Component },
+    { path: 'reportergr1', component: Reportergr1Component },
   ]
-  },
-  {
-    path:'reportes',component:ReportesComponent,children:[
-      { path: 'reportergr1', component: Reportergr1Component },
-    ]
   }
 
 ];
