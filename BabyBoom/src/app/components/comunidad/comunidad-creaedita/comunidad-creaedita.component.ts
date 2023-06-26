@@ -52,7 +52,7 @@ export class ComunidadCreaeditaComponent implements OnInit {
         });
       });
     }
-      this.router.navigate(['Comunidad']);
+      this.router.navigate(['/pages/Comunidades']);
     }else{
       this.mensaje="Ingrese Comunidad";
     }

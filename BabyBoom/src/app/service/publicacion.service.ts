@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Publicacion } from '../model/Publicacion';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -17,10 +17,16 @@ export class PublicacionService {
 
   constructor(private http:HttpClient) { }
   list(){
-    return this.http.get<Publicacion[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Publicacion[]>(this.url,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(publicacion:Publicacion) {
-    return this.http.post(this.url,publicacion);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url,publicacion,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   setList(listaNueva: Publicacion[]) {

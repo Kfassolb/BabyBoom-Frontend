@@ -47,7 +47,7 @@ const routes: Routes = [
     ],canActivate:[GuardService]
   },
   {
-    path: 'Comunidad', component:ComunidadComponent, children: [
+    path: 'Comunidades', component:ComunidadComponent, children: [
       {path:'agregar', component:ComunidadCreaeditaComponent},
       {path:'editar/:id', component:ComunidadCreaeditaComponent}
     ],canActivate:[GuardService]

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Comunidad } from '../model/Comunidad';
 import { Subject } from 'rxjs';
@@ -9,15 +9,22 @@ const base_url = environment.base;
   providedIn: 'root'
 })
 export class ComunidadService {
-  private url = `${base_url}/Comunidad`;
+  private url = `${base_url}/Comunidades`;
   private listCambio = new Subject<Comunidad[]>();
   private confirmarEliminacion =new Subject<Boolean>()
   constructor(private http:HttpClient) { }
   list(){
-    return this.http.get<Comunidad[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Comunidad[]>(this.url,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json'
+      )});
+
   }
   insert(comunidad:Comunidad) {
-    return this.http.post(this.url,comunidad);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url,comunidad,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   setList(listaNueva: Comunidad[]) {
@@ -28,13 +35,22 @@ export class ComunidadService {
     return this.listCambio.asObservable();
   }
   listId(idComunidad: number) {
-    return this.http.get<Comunidad>(`${this.url}/${idComunidad}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Comunidad>(`${this.url}/${idComunidad}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   update(comunidad: Comunidad) {
-    return this.http.put(this.url + '/' + comunidad.idComunidad, comunidad);
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url, comunidad, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   eliminar(idComunidad:number){
-    return this.http.delete(`${this.url}/${idComunidad}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${idComunidad}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   getConfirmarEliminar(){
     return this.confirmarEliminacion.asObservable();
