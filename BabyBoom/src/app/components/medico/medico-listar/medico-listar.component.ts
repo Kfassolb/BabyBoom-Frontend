@@ -14,7 +14,7 @@ import { MedicoDialogoComponent } from './medico-dialogo/medico-dialogo.componen
 export class MedicoListarComponent implements OnInit{
   lista: Medico[]=[];
   dataSource: MatTableDataSource<Medico>=new MatTableDataSource();
-  displayedColumns: string[]=['id', 'nombre', 'apellido','especialidad','email','usuario','acciones'];
+  displayedColumns: string[]=['idmedico', 'nombre1', 'apellido1','especialidad1','email1','usuario1','acciones'];
   @ViewChild(MatPaginator) paginator!: MatPaginator; //THIS
   private idHigh:number=0;
 

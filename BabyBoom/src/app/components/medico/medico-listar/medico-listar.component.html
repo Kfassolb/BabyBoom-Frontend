@@ -27,32 +27,32 @@
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table table-striped table-hover">
 
-        <ng-container matColumnDef="id">
+        <ng-container matColumnDef="idmedico">
           <th mat-header-cell *matHeaderCellDef>No.</th>
           <td mat-cell *matCellDef="let element"> {{ element.idMedico }} </td>
         </ng-container>
 
-        <ng-container matColumnDef="nombre">
+        <ng-container matColumnDef="nombre1">
           <th mat-header-cell *matHeaderCellDef>Nombre</th>
           <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
         </ng-container>
 
-        <ng-container matColumnDef="apellido">
+        <ng-container matColumnDef="apellido1">
           <th mat-header-cell *matHeaderCellDef>Apellidos</th>
           <td mat-cell *matCellDef="let element">{{ element.apellido }}</td>
         </ng-container>
 
-        <ng-container matColumnDef="especialidad">
+        <ng-container matColumnDef="especialidad1">
           <th mat-header-cell *matHeaderCellDef>Especialidad</th>
           <td mat-cell *matCellDef="let element">{{ element.especialidad }}</td>
         </ng-container>
 
-        <ng-container matColumnDef="email">
+        <ng-container matColumnDef="email1">
           <th mat-header-cell *matHeaderCellDef>Correo electrónico</th>
           <td mat-cell *matCellDef="let element">{{ element.email }}</td>
         </ng-container>
 
-        <ng-container matColumnDef="usuario">
+        <ng-container matColumnDef="usuario1">
           <th mat-header-cell *matHeaderCellDef> Usuario </th>
           <td mat-cell *matCellDef="let element"> {{element.user.username}} </td>
         </ng-container>

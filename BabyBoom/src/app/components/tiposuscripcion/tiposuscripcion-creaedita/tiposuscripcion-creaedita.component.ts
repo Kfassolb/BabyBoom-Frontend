@@ -30,7 +30,7 @@ export class TiposuscripcionCreaeditaComponent implements OnInit {
     })
   }
   aceptar(): void{
-    this.tiposuscripcion.idTiposuscrip=this.form.value['id'];
+    this.tiposuscripcion.idTiposuscrip=this.form.value['idTiposuscrip'];
     this.tiposuscripcion.nombresuscripcion=this.form.value['nombreSuscripcion'];
 
     if(this.form.value['nombreSuscripcion'].length>0){
@@ -41,7 +41,7 @@ export class TiposuscripcionCreaeditaComponent implements OnInit {
           });
       });
     }else{
-      this.tcS.insert(this.tiposuscripcion).subscribe(data=>{
+      this.tcS.insert(this.tiposuscripcion).subscribe(()=>{
         this.tcS.list().subscribe(data=>{
           this.tcS.setList(data);
         });
@@ -59,9 +59,7 @@ export class TiposuscripcionCreaeditaComponent implements OnInit {
           idTiposuscrip: new FormControl(data.idTiposuscrip),
           nombreSuscripcion: new FormControl(data.nombresuscripcion),
         });
-
       });
     }
   }
-
 }

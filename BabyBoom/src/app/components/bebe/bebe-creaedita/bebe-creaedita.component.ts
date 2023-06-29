@@ -19,15 +19,12 @@ export class BebeCreaeditaComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   bebe: Bebe = new Bebe();
   listaEnfermedad: Tipoenfermedad[] = [];
-  mensaje: string = '';
+  mensaje:String = "";
   idEnfermedadSeleccionado:number = 0;
   maxFecha: Date = moment().add(-1, 'days').toDate();
-  constructor(
-    private pS: BebeService,
-    private router: Router,
-    private route: ActivatedRoute,
-    private teS:TipoEnfermedadService
-  ) {}
+  constructor(private pS: BebeService,private router: Router,private route: ActivatedRoute,
+    private teS:TipoEnfermedadService) {}
+
   ngOnInit(): void {
     this.teS.list().subscribe(data => { this.listaEnfermedad = data });
     this.route.params.subscribe((data:Params) => {
@@ -51,14 +48,17 @@ export class BebeCreaeditaComponent implements OnInit {
     if (this.idEnfermedadSeleccionado> 0) {
       if (this.edicion) {
         let e = new Tipoenfermedad();
-        e.idTipoEnfermedad = this.idEnfermedadSeleccionado
+        e.idTipoEnfermedad = this.idEnfermedadSeleccionado;
         this.bebe.tipoEnfermedad = e;
         this.pS.update(this.bebe).subscribe(() => {
-          this.pS.list().subscribe((data) => {
+          this.pS.list().subscribe(data => {
             this.pS.setList(data);
           });
         });
       } else {
+        let e = new Tipoenfermedad();
+        e.idTipoEnfermedad = this.idEnfermedadSeleccionado;
+        this.bebe.tipoEnfermedad = e;
         this.pS.insert(this.bebe).subscribe(() => {
           this.pS.list().subscribe((data) => {
             this.pS.setList(data);
