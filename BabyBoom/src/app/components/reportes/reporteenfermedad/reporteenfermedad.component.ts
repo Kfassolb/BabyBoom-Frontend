@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReporteEnfermedad } from '../../../model/reporteenfermedad';
 import { MatTableDataSource } from '@angular/material/table';
-import { TipoEnfermedadeService } from 'src/app/service/tipoenfermedad.service';
+import { TipoEnfermedadService } from 'src/app/service/tipoenfermedad.service';
 
 
 
@@ -16,7 +16,7 @@ export class ReporteenfermedadComponent implements OnInit{
 
    displayedColumns: string[] = ['nombre','tipo']
 
-   constructor(private tpS: TipoEnfermedadeService){}
+   constructor(private tpS: TipoEnfermedadService){}
 
    ngOnInit(): void {
        this.tpS.getEnefermedadbyTipo().subscribe(data => {

@@ -10,7 +10,7 @@ const base_url = environment.base
 @Injectable({
   providedIn: 'root',
 })
-export class TipoEnfermedadeService {
+export class TipoEnfermedadService {
   private url = `${base_url}/tipoenfermedads`;
   private listCambio = new Subject<Tipoenfermedad[]>();
   private confirmaEliminacion = new Subject<Boolean>()

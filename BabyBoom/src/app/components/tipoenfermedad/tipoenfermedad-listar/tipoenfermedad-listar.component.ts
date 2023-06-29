@@ -1,7 +1,7 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Tipoenfermedad } from 'src/app/model/Tipoenfermedad';
-import { TipoEnfermedadeService } from 'src/app/service/tipoenfermedad.service'
+import { TipoEnfermedadService } from 'src/app/service/tipoenfermedad.service'
 import { MatDialog } from '@angular/material/dialog';
 import { TipoenfermedadDialogoComponent } from './tipoenfermedad-dialogo/tipoenfermedad-dialogo.component';
 import { MatPaginator } from '@angular/material/paginator';
@@ -14,11 +14,11 @@ import { MatPaginator } from '@angular/material/paginator';
 export class TipoenfermedadListarComponent implements OnInit{
   lista:Tipoenfermedad[] = [];
   dataSource:MatTableDataSource<Tipoenfermedad> = new MatTableDataSource();
-  displayedColumns:string[] = ['id', 'nombreEnfermedad','tipoTipoEnfermedad','accion01'];
+  displayedColumns:string[] = ['id', 'nombreenfermedad','tipoenfermedad','accion01'];
   @ViewChild(MatPaginator) paginator!: MatPaginator; //THIS
   private idMayor: number = 0;
 
-  constructor(private tcS:TipoEnfermedadeService,private dialog:MatDialog ){}
+  constructor(private tcS:TipoEnfermedadService,private dialog:MatDialog ){}
   ngOnInit(): void {
       this.tcS.list().subscribe((data)=>{
         this.dataSource = new MatTableDataSource(data);

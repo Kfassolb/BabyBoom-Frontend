@@ -6,7 +6,7 @@ import { EnfermedadbebeService } from 'src/app/service/enfermedadbebe.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Tipoenfermedad } from 'src/app/model/Tipoenfermedad';
 import { Bebe } from 'src/app/model/Bebe';
-import { TipoEnfermedadeService } from 'src/app/service/tipoenfermedad.service';
+import { TipoEnfermedadService } from 'src/app/service/tipoenfermedad.service';
 import { Servicio } from '../../../model/Servicio';
 import { BebeService } from 'src/app/service/bebe.service';
 
@@ -33,7 +33,7 @@ export class EnfermedadbebeCreaeditaComponent  {
     private router: Router,
     private route: ActivatedRoute,
 
-    private ServicioEnfermedad: TipoEnfermedadeService,
+    private ServicioEnfermedad: TipoEnfermedadService,
     private ServicioBebe: BebeService,
 
   ) {}

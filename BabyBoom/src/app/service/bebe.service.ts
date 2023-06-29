@@ -20,9 +20,9 @@ export class BebeService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
     });
   }
-  insert(Bebe: Bebe) {
+  insert(bebe: Bebe) {
     let token = sessionStorage.getItem("token");
-    return this.http.post(this.url, Bebe,{
+    return this.http.post(this.url, bebe,{
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
     });
   }

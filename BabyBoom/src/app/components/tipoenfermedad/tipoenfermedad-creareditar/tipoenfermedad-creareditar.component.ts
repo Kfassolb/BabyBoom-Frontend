@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Tipoenfermedad } from 'src/app/model/Tipoenfermedad';
 import * as moment from 'moment';
-import { TipoEnfermedadeService } from 'src/app/service/tipoenfermedad.service';
+import { TipoEnfermedadService } from 'src/app/service/tipoenfermedad.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
@@ -19,7 +19,7 @@ export class TipoenfermedadCreareditarComponent implements OnInit {
   mensaje: string = '';
   maxFecha: Date = moment().add(-1, 'days').toDate();
   constructor(
-    private pS: TipoEnfermedadeService,
+    private pS: TipoEnfermedadService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
