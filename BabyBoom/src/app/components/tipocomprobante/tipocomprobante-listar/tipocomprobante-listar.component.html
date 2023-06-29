@@ -42,8 +42,8 @@
     <ng-container matColumnDef="accion1">
       <th mat-header-cell *matHeaderCellDef>Acción</th>
       <td mat-cell *matCellDef="let element">
-        <mat-icon [routerLink]="['edicion',element.id]">edit</mat-icon>
-        <mat-icon class="delete-icon" (click)="confirmar(element.id)" id="refresh" >delete_forever</mat-icon>
+        <mat-icon [routerLink]="['edicion',element.idTipocomprobante]">edit</mat-icon>
+        <mat-icon class="delete-icon" (click)="confirmar(element.idTipocomprobante)" id="refresh" >delete_forever</mat-icon>
       </td>
     </ng-container>
 

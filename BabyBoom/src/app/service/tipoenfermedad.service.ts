@@ -44,7 +44,7 @@ export class TipoEnfermedadeService {
 }
   update(Tipoenfermedad: Tipoenfermedad) {
     let token = sessionStorage.getItem("token");
-    return this.http.put(this.url + '/' + Tipoenfermedad.idTipoEnfermedad, Tipoenfermedad,{
+    return this.http.put(this.url + '/', Tipoenfermedad,{
     headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
   })
 }

@@ -34,7 +34,7 @@ getLista() {
 }
 modificar(servicio: Servicio) {
   let token = sessionStorage.getItem("token");
-  return this.http.put(this.url + "/" + servicio.idServicio, servicio,{
+  return this.http.put(this.url + "/", servicio,{
   headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
   })
 }
