@@ -36,7 +36,6 @@ export class BebeCreaeditaComponent implements OnInit {
       idBebe: new FormControl(),
       nombreBebe: new FormControl(),
       fechaBebe: new FormControl(),
-      tipoEnfermedad: new FormControl()
     });
   }
 
@@ -44,21 +43,14 @@ export class BebeCreaeditaComponent implements OnInit {
     this.bebe.idBebe = this.form.value['idBebe'];
     this.bebe.nombreBebe = this.form.value['nombreBebe'];
     this.bebe.fechaBebe = this.form.value['fechaBebe'];
-    this.bebe.tipoEnfermedad.nombreTipoEnfermedad = this.form.value['tipoEnfermedad.nombreTipoEnfermedad'];
-    if (this.idEnfermedadSeleccionado> 0) {
+    if (this.form.value['nombreBebe'].length>0) {
       if (this.edicion) {
-        let e = new Tipoenfermedad();
-        e.idTipoEnfermedad = this.idEnfermedadSeleccionado;
-        this.bebe.tipoEnfermedad = e;
         this.pS.update(this.bebe).subscribe(() => {
           this.pS.list().subscribe(data => {
             this.pS.setList(data);
           });
         });
       } else {
-        let e = new Tipoenfermedad();
-        e.idTipoEnfermedad = this.idEnfermedadSeleccionado;
-        this.bebe.tipoEnfermedad = e;
         this.pS.insert(this.bebe).subscribe(() => {
           this.pS.list().subscribe((data) => {
             this.pS.setList(data);
@@ -78,7 +70,6 @@ export class BebeCreaeditaComponent implements OnInit {
           idBebe: new FormControl(data.idBebe),
           nombreBebe: new FormControl(data.nombreBebe),
           fechaBebe: new FormControl(data.fechaBebe),
-          tipoEnfermedad:new FormControl(data.tipoEnfermedad)
         });
 
       });
