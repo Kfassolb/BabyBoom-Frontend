@@ -27,21 +27,21 @@ export class ProductoCreaeditaComponent implements OnInit{
     });
 
     this.form = new FormGroup({
-      id:new FormControl(),
-      Nombre:new FormControl(),
-      Tipo:new FormControl(),
-      Cantidad:new FormControl(),
-      PrecioU:new FormControl(),
+      idProducto:new FormControl(),
+      nombre:new FormControl(),
+      tipo:new FormControl(),
+      cantidad:new FormControl(),
+      precioU:new FormControl(),
 
     })
   }
   aceptar():void{
-    this.producto.id = this.form.value['id'];
-    this.producto.Nombre = this.form.value['Nombre'];
-    this.producto.Tipo = this.form.value['Tipo'];
-    this.producto.Cantidad = this.form.value['Cantidad'];
-    this.producto.PrecioU = this.form.value['PrecioU'];
-    if(this.form.value['Nombre'].length>0){
+    this.producto.idProducto = this.form.value['idProducto'];
+    this.producto.nombre = this.form.value['nombre'];
+    this.producto.tipo = this.form.value['tipo'];
+    this.producto.cantidad = this.form.value['cantidad'];
+    this.producto.precioU = this.form.value['precioU'];
+    if(this.form.value['nombre'].length>0){
       if(this.edicion){
         this.pS.update(this.producto).subscribe(()=>{
           this.pS.list().subscribe(data=>{
@@ -55,7 +55,7 @@ export class ProductoCreaeditaComponent implements OnInit{
           })
         })
       }
-      this.router.navigate(['Producto'])
+      this.router.navigate(['pages/productos'])
     }else{
       this.mensaje = "Ingrese el nombre!!";
     }
@@ -65,11 +65,11 @@ export class ProductoCreaeditaComponent implements OnInit{
     if(this.edicion){
       this.pS.listId(this.id).subscribe(data=>{
         this.form = new FormGroup({
-          id:new FormControl(data.id),
-          Nombre:new FormControl(data.Nombre),
-          Tipo:new FormControl(data.Tipo),
-          Cantidad:new FormControl(data.Cantidad),
-          PrecioU:new FormControl(data.PrecioU),
+          idProducto:new FormControl(data.idProducto),
+          nombre:new FormControl(data.nombre),
+          tipo:new FormControl(data.tipo),
+          cantidad:new FormControl(data.cantidad),
+          precioU:new FormControl(data.precioU),
 
         });
       });

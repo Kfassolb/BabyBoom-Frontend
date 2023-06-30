@@ -14,7 +14,7 @@ import { MatPaginator } from '@angular/material/paginator';
 export class ProductoListarComponent implements OnInit {
   lista: Producto[] = [];
   dataSource: MatTableDataSource<Producto> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'nombre', 'tipo', 'cantidad', 'preciounitario','accion1'];
+  displayedColumns: string[] = ['id', 'nombre1', 'tipo1', 'cantidad1', 'preciounitario1','accion1'];
   idMayor: number = 0;
   @ViewChild(MatPaginator) paginator!: MatPaginator; //THIS
   private idHigh:number=0;

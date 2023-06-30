@@ -14,14 +14,14 @@
 <body>
   <div class="container mt-4">
     <div class="text-center">
-      <h1 class="p-3 fw-bold" id="titleList">Lista Apoderados</h1>
+      <h1 class="p-3 fw-bold" id="titleList">Lista Problema</h1>
     </div>
     <div class="d-flex">
       <mat-form-field>
         <input  matInput (keyup)="filtrar($event)" placeholder="Buscar"/>
       </mat-form-field>
       <div class="ms-auto p-2">
-        <mat-icon routerLink="/pages/apoderados/agregar" class="btn-add">library_add</mat-icon>
+        <mat-icon routerLink="/pages/problemas/agregar" class="btn-add">library_add</mat-icon>
       </div>
     </div>
 
@@ -29,33 +29,47 @@
 
         <ng-container matColumnDef="idproblema">
           <th mat-header-cell *matHeaderCellDef>No. Problema</th>
-          <td mat-cell *matCellDef="let element"> {{ element.idApoderado }} </td>
+          <td mat-cell *matCellDef="let element"> {{ element.idProblema }} </td>
         </ng-container>
 
         <ng-container matColumnDef="idsoporte">
           <th mat-header-cell *matHeaderCellDef>No. Soporte</th>
-          <td mat-cell *matCellDef="let element">{{ element.soportetecnico.NombreSoporte }}</td>
+          <td mat-cell *matCellDef="let element">{{ element.soportetecnico.nombreSoporte }}</td>
         </ng-container>
 
         <ng-container matColumnDef="idapoderado">
           <th mat-header-cell *matHeaderCellDef>No. Apoderado</th>
-          <td mat-cell *matCellDef="let element">{{ element.apoderado.Nombre }}</td>
+          <td mat-cell *matCellDef="let element">{{ element.apoderado.nombre }}</td>
         </ng-container>
 
-        <ng-container matColumnDef="titulo">
+        <ng-container matColumnDef="titulo1">
           <th mat-header-cell *matHeaderCellDef> Titulo </th>
-          <td mat-cell *matCellDef="let element"> {{element.Titulo}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="apellido">
+        <ng-container matColumnDef="apellido1">
           <th mat-header-cell *matHeaderCellDef> Apellido </th>
           <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
         </ng-container>A
 
-        <ng-container matColumnDef="descripcion">
+        <ng-container matColumnDef="descripcion1">
           <th mat-header-cell *matHeaderCellDef> Correo Elec </th>
-          <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
         </ng-container>
+
+        <!-- Weight Column -->
+      <ng-container matColumnDef="fechainicio1">
+        <th mat-header-cell *matHeaderCellDef> Fecha de nacimiento </th>
+        <td mat-cell *matCellDef="let element"> {{element.fechaInicio|date:'dd/MM/yyyy'}} </td>
+      </ng-container>
+
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="fechafin1">
+        <th mat-header-cell *matHeaderCellDef> Fecha de nacimiento </th>
+        <td mat-cell *matCellDef="let element"> {{element.fechaFin|date:'dd/MM/yyyy'}} </td>
+      </ng-container>
+
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

@@ -117,7 +117,7 @@ const routes: Routes = [
   {
     path:'Sintomas', component:EnfermedadbebeComponent,children:[
       {path:'agregar', component:EnfermedadbebeCreaeditaComponent},
-      {path:'edicion/:id', component:EnfermedadbebeDialogoComponent},
+      {path:'edicion/:id', component:EnfermedadbebeCreaeditaComponent},
     ],canActivate:[GuardService]
   },
   {
@@ -126,9 +126,9 @@ const routes: Routes = [
     ],canActivate:[GuardService]
   },
   {
-    path: 'guarderias', component:GuarderiaComponent, children: [
+    path: 'guarderias', component:GuarderiaComponent, children:[
       {path:'agregar', component:GuarderiaCreaeditaComponent},
-      {path:'editar/:id', component:GuarderiaCreaeditaComponent}
+      {path:'edicion/:id', component:GuarderiaCreaeditaComponent},
     ],canActivate:[GuardService]
   },
   {
@@ -146,6 +146,7 @@ const routes: Routes = [
   {
     path: 'controlvacunas',component:ControlvacunacionComponent,children:[
       {path: 'agregar',component:ControlvacunacionCreaeditaComponent},
+      {path: 'edicion/:id',component:ControlvacunacionCreaeditaComponent},
     ],canActivate:[GuardService]
   },
   {
@@ -160,7 +161,7 @@ const routes: Routes = [
   {
     path: 'soportetecnicos',component:SoportetecnicoComponent,children:[
       {path: 'agregar', component:SoportetecnicoCreaeditaComponent},
-      {path: 'editar/:id', component:SoportetecnicoCreaeditaComponent},
+      {path: 'edicion/:id', component:SoportetecnicoCreaeditaComponent},
     ],canActivate:[GuardService]
   }
   ,
@@ -172,7 +173,7 @@ const routes: Routes = [
   {
     path: 'comunidades',component:ComunidadComponent,children:[
       {path: 'agregar', component:ComunidadCreaeditarComponent},
-      {path: 'editar/:id', component:ComunidadCreaeditarComponent},
+      {path: 'edicion/:id', component:ComunidadCreaeditarComponent},
     ],canActivate:[GuardService]
   },
   {

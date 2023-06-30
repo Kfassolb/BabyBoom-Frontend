@@ -11,7 +11,7 @@
     <div class="container text-center">
         <div style="text-align: center;">
           <div class="p-3">
-          <h1 id="titleRegister">Registro de Servicios</h1>
+          <h1 id="titleRegister">Registro de Bebe vacunas</h1>
         </div>
 
 
@@ -25,8 +25,8 @@
           <br>
       <mat-form-field appearance="fill">
         <mat-label>Nombre Vacunador</mat-label>
-        <mat-select formControlName="controlvacunacion" [(value)]="idcontrolvacunacionseleccionado" required>
-          <mat-option *ngFor="let cv of listaControlVacunacion" [value]="cv.id">
+        <mat-select formControlName="controlVacunacion" [(value)]="idcontrolvacunacionseleccionado" required>
+          <mat-option *ngFor="let cv of listaControlVacunacion" [value]="cv.idControlVacunacion">
             {{cv.nombreVacunador}}
         </mat-option>
         </mat-select>

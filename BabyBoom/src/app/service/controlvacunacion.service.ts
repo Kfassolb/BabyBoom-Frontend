@@ -32,7 +32,7 @@ getLista() {
 }
 modificar(controlvacunacion: ControlVacunacion) {
   let token = sessionStorage.getItem("token");
-  return this.http.put(this.url + "/" + controlvacunacion.id, controlvacunacion,{
+  return this.http.put(this.url + "/" , controlvacunacion,{
   headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
 })
 }

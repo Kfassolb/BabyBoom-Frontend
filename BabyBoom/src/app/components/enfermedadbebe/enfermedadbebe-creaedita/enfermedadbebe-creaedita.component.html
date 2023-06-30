@@ -20,17 +20,21 @@
           <input matInput placeholder="id" formControlName="id" required/>
         </mat-form-field>
         <br />
-        <mat-form-field class="example-full-width">
-          <mat-label>Sintomas</mat-label>
-          <input matInput placeholder="nombreBebe" formControlName="sintomasEnfermedad_bebe" required />
-        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label> Bebe </mat-label>
+          <mat-select formControlName="bebe" [(value)]="idBebeSeleccionado" required>
+            <mat-option *ngFor="let enty of listaBebe" [value]="enty.idBebe">
+              {{enty.nombreBebe}}
+          </mat-option>
+          </mat-select>
+      </mat-form-field>
 
 
         <br>
 
             <mat-form-field appearance="fill">
-                <mat-label> Sintomas </mat-label>
-                <mat-select formControlName="enfermedad" [(value)]="idEnfermedad" required>
+                <mat-label> Tipo enfermedad </mat-label>
+                <mat-select formControlName="tipoEnfermedad" [(value)]="idEnfermedadSeleccionado" required>
                   <mat-option *ngFor="let enty of listaEnfermedad" [value]="enty.idTipoEnfermedad">
                     {{enty.nombreTipoEnfermedad}}
                 </mat-option>
@@ -39,16 +43,12 @@
 
             <br>
 
-            <mat-form-field appearance="fill">
-              <mat-label> Bebe </mat-label>
-              <mat-select formControlName="bebe" [(value)]="idBebe" required>
-                <mat-option *ngFor="let enty of listaBebe" [value]="enty.idBebe">
-                  {{enty.nombreBebe}}
-              </mat-option>
-              </mat-select>
-          </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Sintomas</mat-label>
+              <input matInput required placeholder="sintomas" formControlName="sintonmas">
+            </mat-form-field>
 
-
+            <br>
 
 
         <div class="d-flex justify-content-center">

@@ -8,7 +8,7 @@ const base_url =environment.base;
   providedIn: 'root'
 })
 export class CompraproductoService {
-  private url = `${base_url}/compraproductos`;
+  private url = `${base_url}/compraproducto`;
   private listCambio = new Subject<Compraproducto[]>();
   private confirmDeletion = new Subject<Boolean>();
   constructor(private http: HttpClient) { }
@@ -26,7 +26,7 @@ export class CompraproductoService {
     });
   }
   setList(listaNueva:Compraproducto[]){
-    return this.listCambio.next(listaNueva);
+    this.listCambio.next(listaNueva);
   }
   getList(){
     return this.listCambio.asObservable();

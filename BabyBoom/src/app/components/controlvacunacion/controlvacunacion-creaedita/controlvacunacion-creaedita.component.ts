@@ -31,7 +31,7 @@ ngOnInit(): void {
     this.init();
   })
   this.form = new FormGroup({
-    id:new FormControl(),
+    idControlVacunacion:new FormControl(),
     fecha:new FormControl(),
     tipoVacuna:new FormControl(),
     estadoVacunacion:new FormControl(),
@@ -40,9 +40,9 @@ ngOnInit(): void {
   });
 }
 aceptar(): void {
-  this.controlvacunacion.id = this.form.value['id'];
+  this.controlvacunacion.idControlVacunacion = this.form.value['idControlVacunacion'];
   this.controlvacunacion.fecha = this.form.value['fecha'];
-  this.controlvacunacion.tipoVacuna=this.form.value['tipovacunacion'];
+  this.controlvacunacion.tipoVacuna=this.form.value['tipoVacuna'];
   this.controlvacunacion.estadoVacunacion=this.form.value['estadoVacunacion'];
   this.controlvacunacion.nombreVacunador=this.form.value['nombreVacunador'];
   this.controlvacunacion.lugar=this.form.value['lugar'];
@@ -60,7 +60,7 @@ aceptar(): void {
       })
     })
   }
-  this.router.navigate(['controlvacunacion']);
+  this.router.navigate(['pages/controlvacunas']);
  }else{
   this.mensaje="Complete los valores requeridos";
  }
@@ -69,8 +69,13 @@ init() {
   if (this.edicion) {
     this.CVs.listarId(this.id).subscribe(data => {
     this.form = new FormGroup({
-        id: new FormControl(data.id),
+        idControlVacunacion: new FormControl(data.idControlVacunacion),
         NombreServicio: new FormControl(data.nombreVacunador),
+        fecha: new FormControl(data.fecha),
+        tipoVacuna: new FormControl(data.tipoVacuna),
+        estadoVacunacion: new FormControl(data.estadoVacunacion),
+        nombreVacunador: new FormControl(data.nombreVacunador),
+        lugar: new FormControl(data.lugar),
       });
       console.log(data);
     });

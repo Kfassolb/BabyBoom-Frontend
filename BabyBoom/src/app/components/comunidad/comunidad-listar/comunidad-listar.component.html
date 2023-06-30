@@ -24,7 +24,7 @@
       </mat-form-field>
 
     <div class="ms-asuto p-2">
-      <mat-icon routerLink="/comunidades/agregar" class="btn-add">library_add</mat-icon>
+      <mat-icon routerLink="/pages/comunidades/agregar" class="btn-add">library_add</mat-icon>
     </div>
    </div>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table table-striped table-hover">
@@ -45,15 +45,15 @@
     </ng-container>
 
 <!-- Name Column -->
-    <ng-container matColumnDef="contenido">
+    <ng-container matColumnDef="contenido1">
       <th mat-header-cell *matHeaderCellDef> Servicio </th>
-      <td mat-cell *matCellDef="let element"> {{element.Contenido}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.contenido}} </td>
     </ng-container>
 
 <!-- Weight Column -->
-      <ng-container matColumnDef="fechainicio">
+      <ng-container matColumnDef="fechainicio1">
         <th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
-        <td mat-cell *matCellDef="let element"> {{element.FechaInicio|date:'dd/MM/yyyy'}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.fechaInicio|date:'dd/MM/yyyy'}} </td>
       </ng-container>
 
     <ng-container matColumnDef="acciones">

@@ -14,7 +14,7 @@ import { ControlvacunacionDialogoComponent } from './controlvacunacion-dialogo/c
 export class ControlvacunacionListarComponent implements OnInit{
   lista:ControlVacunacion[]=[];
   dataSource:MatTableDataSource<ControlVacunacion> = new MatTableDataSource();
-  displayedColumns:string[] = ['id', 'fecha','tipoVacuna','estadoVacunacion','nombreVacunador','lugar','acciones']
+  displayedColumns:string[] = ['id', 'fecha1','tipoVacuna1','estadoVacunacion1','nombreVacunador1','lugar1','acciones']
   private idMayor: number = 0;
   @ViewChild(MatPaginator) paginator! : MatPaginator;
 

@@ -13,7 +13,7 @@ import { BebevacunaService } from 'src/app/service/bebevacuna.service';
 export class BebevacunaListarComponent {
   lista: BebeVacuna[]=[];
   dataSource: MatTableDataSource<BebeVacuna>=new MatTableDataSource();
-  displayedColumns: string[]=['id', 'usuario', 'bebe', 'suscripcion','guarderia', 'nombre', 'apellido','email','acciones'];
+  displayedColumns: string[]=['idbebevacuna','bebe1','controlvacunacion'];
   @ViewChild(MatPaginator) paginator!: MatPaginator; //THIS
   private idHigh:number=0;
 

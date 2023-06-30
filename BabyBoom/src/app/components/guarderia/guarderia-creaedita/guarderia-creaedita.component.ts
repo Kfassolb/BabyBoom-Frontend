@@ -43,7 +43,7 @@ export class GuarderiaCreaeditaComponent implements OnInit{
     this.guarderia.fecha = this.form.value['fecha'];
     this.guarderia.nombreGuarderia = this.form.value['nombreGuarderia']
 
-    if(this.form.value['proceso'].length > 0 && this.form.value['nombreGuarderia'].length > 0){
+    if(this.form.value['nombreGuarderia'].length > 0){
       if(this.edicion){
         this.gS.modificar(this.guarderia).subscribe(()=>{
           this.gS.list().subscribe(data=>{
@@ -65,7 +65,7 @@ export class GuarderiaCreaeditaComponent implements OnInit{
   }
   init(){
     if(this.edicion){
-      this.gS.listarId(this.id).subscribe(data=>{
+      this.gS.listarId(this.id).subscribe((data)=>{
         this.form = new FormGroup({
           idGuarderia: new FormControl(data.idGuarderia),
           proceso: new FormControl(data.proceso),
@@ -73,7 +73,6 @@ export class GuarderiaCreaeditaComponent implements OnInit{
           fecha: new FormControl(data.fecha),
           nombreGuarderia: new FormControl(data.nombreGuarderia)
         });
-        console.log(data);
       })
     }
   }

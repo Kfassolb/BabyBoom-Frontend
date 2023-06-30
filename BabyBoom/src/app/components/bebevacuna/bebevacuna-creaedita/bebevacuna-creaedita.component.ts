@@ -35,19 +35,19 @@ export class BebevacunaCreaeditaComponent implements OnInit{
 
       this.form = new FormGroup({
       idBebeVacuna:new FormControl(),
-      controlvacunacion :new FormControl(),
+      controlVacunacion :new FormControl(),
       bebe:new FormControl()
       });
 
     }
     aceptar(): void {
       this.bebevacuna.idBebeVacuna=this.form.value['idBebeVacuna'];
-      this.bebevacuna.controlvacunacion.nombreVacunador=this.form.value['controlvacunacion.nombreVacunador'];
+      this.bebevacuna.controlVacunacion.nombreVacunador=this.form.value['controlVacunacion.nombreVacunador'];
       this.bebevacuna.bebe.nombreBebe=this.form.value['bebe.nombreBebe'];
       if (this.idcontrolvacunacionseleccionado>0 &&this.idbebeseleccionado>0) {
         let cv = new ControlVacunacion();
-        cv.id = this.idcontrolvacunacionseleccionado;
-        this.bebevacuna.controlvacunacion=cv;
+        cv.idControlVacunacion = this.idcontrolvacunacionseleccionado;
+        this.bebevacuna.controlVacunacion=cv;
 
         let b = new Bebe();
         b.idBebe = this.idbebeseleccionado;
@@ -59,7 +59,7 @@ export class BebevacunaCreaeditaComponent implements OnInit{
             })
           })
 
-        this.router.navigate(['bebevacunas']);
+        this.router.navigate(['pages/bebevacunas']);
 
     }
   }

@@ -29,7 +29,7 @@ export class MedicoCreaeditaComponent implements OnInit{
     this.init();
     })
     this.form = new FormGroup({
-      id: new FormControl(),
+      idMedico: new FormControl(),
       nombre: new FormControl(),
       apellido: new FormControl(),
       especialidad: new FormControl(),
@@ -38,7 +38,7 @@ export class MedicoCreaeditaComponent implements OnInit{
     })
   }
   aceptar():void {
-    this.medico.idMedico = this.form.value['id'];
+    this.medico.idMedico = this.form.value['idMedico'];
     this.medico.nombre = this.form.value['nombre'];
     this.medico.apellido = this.form.value['apellido'];
     this.medico.especialidad = this.form.value['especialidad'];
@@ -74,7 +74,7 @@ export class MedicoCreaeditaComponent implements OnInit{
     if(this.edicion){
       this.mS.listId(this.id).subscribe(data=>{
         this.form=new FormGroup({
-          id:new FormControl(data.idMedico),
+          idMedico:new FormControl(data.idMedico),
           nombre:new FormControl(data.nombre),
           apellido:new FormControl(data.apellido),
           especialidad:new FormControl(data.especialidad),

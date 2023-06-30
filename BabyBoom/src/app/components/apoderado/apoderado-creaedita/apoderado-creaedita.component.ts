@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Apoderado } from 'src/app/model/apoderado';
+import { Apoderado } from 'src/app/model/Apoderado';
 import { Users } from 'src/app/model/Users';
 import { Tiposuscripcion } from 'src/app/model/Tiposuscripcion';
 import { ApoderadoService } from 'src/app/service/apoderado.service';

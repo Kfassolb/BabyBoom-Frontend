@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Comunidad } from 'src/app/model/Comunidad';
 import { Publicacion } from 'src/app/model/Publicacion';
-import { Apoderado } from 'src/app/model/apoderado';
+import { Apoderado } from 'src/app/model/Apoderado';
 import { ApoderadoService } from 'src/app/service/apoderado.service';
 import { ComunidadService } from 'src/app/service/comunidad.service';
 import { PublicacionService } from 'src/app/service/publicacion.service';

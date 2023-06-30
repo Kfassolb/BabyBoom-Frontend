@@ -8,7 +8,7 @@ const base_url = environment.base
   providedIn: 'root'
 })
 export class ProductoService {
-  private url = `${base_url}/productos`
+  private url = `${base_url}/producto`
   private listCambio = new Subject<Producto[]>();
   private confirmarEliminacion = new Subject<Boolean>();
   constructor(private http:HttpClient) { }
@@ -39,7 +39,7 @@ export class ProductoService {
 }
   update(producto:Producto){
     let token = sessionStorage.getItem("token");
-    return this.http.put(this.url+"/"+producto.id,producto,{
+    return this.http.put(this.url+"/",producto,{
     headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
   })
 }

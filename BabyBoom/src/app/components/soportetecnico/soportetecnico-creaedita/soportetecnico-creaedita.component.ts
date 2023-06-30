@@ -28,13 +28,13 @@ export class SoportetecnicoCreaeditaComponent implements OnInit{
 
     this.form = new FormGroup({
       idSoporte:new FormControl(),
-      NombreSoporte:new FormControl(),
+      nombreSoporte:new FormControl(),
     })
   }
   aceptar():void{
     this.soporte.idSoporte = this.form.value['idSoporte'];
-    this.soporte.NombreSoporte = this.form.value['NombreSoporte']
-    if(this.form.value['NombreSoporte'].length>0){
+    this.soporte.nombreSoporte = this.form.value['nombreSoporte']
+    if(this.form.value['nombreSoporte'].length>0){
       if(this.edicion){
         this.stS.modificar(this.soporte).subscribe(()=>{
           this.stS.list().subscribe(data=>{
@@ -48,7 +48,7 @@ export class SoportetecnicoCreaeditaComponent implements OnInit{
           })
         })
       }
-        this.router.navigate(['soportetecnicos'])
+        this.router.navigate(['pages/soportetecnicos'])
     }else{
       this.mensaje = "Ingrese el nombre!!";
     }
@@ -59,7 +59,7 @@ export class SoportetecnicoCreaeditaComponent implements OnInit{
       this.stS.listarId(this.id).subscribe((data)=>{
         this.form = new FormGroup({
           idSoporte:new FormControl(data.idSoporte),
-          NombreSoporte:new FormControl(data.NombreSoporte)
+          nombreSoporte:new FormControl(data.nombreSoporte)
         });
       });
     }

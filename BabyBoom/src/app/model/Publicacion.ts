@@ -1,5 +1,5 @@
 import { Comunidad } from "./Comunidad";
-import { Apoderado } from "./apoderado";
+import { Apoderado } from "./Apoderado";
 
 export class Publicacion{
   idPublicacion: number=0

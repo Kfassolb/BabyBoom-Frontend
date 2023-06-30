@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GuarderiaSideDTO } from '../model/GuarderiaSideDTO';
+import { GuarderiaSideDTO } from '../model/guarderiaSideDTO';
 const base_url = environment.base
 
 @Injectable({
@@ -37,7 +37,7 @@ export class GuarderiaService {
   modificar(guarderia: Guarderia) {
     let token = sessionStorage.getItem("token");
     //return this.http.put(this.url + "/" + pet.idPet, pet);
-    return this.http.put(this.url, guarderia,{
+    return this.http.put(this.url+"/", guarderia,{
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
     });
   }

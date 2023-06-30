@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Apoderado } from '../model/apoderado';
+import { Apoderado } from '../model/Apoderado';
 import { Subject } from 'rxjs';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 const base_url = environment.base;

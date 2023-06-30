@@ -26,4 +26,10 @@ setList(listaNueva: GuarderiaServicio[]) {
 getLista() {
   return this.listaCambio.asObservable();
 }
+insert(citamedica:GuarderiaServicio){
+  let token = sessionStorage.getItem("token");
+  return this.http.post(this.url, citamedica,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+}
 }

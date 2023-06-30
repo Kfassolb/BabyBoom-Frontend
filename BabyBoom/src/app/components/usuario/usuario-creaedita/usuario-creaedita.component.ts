@@ -26,19 +26,19 @@ export class UsuarioCreaeditaComponent implements OnInit{
       this.init();
     })
     this.form = new FormGroup({
-      id: new FormControl(),
-      Username: new FormControl(),
-      Password: new FormControl(),
+      idUser: new FormControl(),
+      username: new FormControl(),
+      password: new FormControl(),
     })
   }
   aceptar():void {
-    this.usuario.idUser = this.form.value['id'];
-    this.usuario.username = this.form.value['Username'];
-    this.usuario.password = this.form.value['Password'];
+    this.usuario.idUser = this.form.value['idUser'];
+    this.usuario.username = this.form.value['username'];
+    this.usuario.password = this.form.value['password'];
 
     this.usuario.enabled = true;
 
-    if (this.form.value['Username'].length>0 && this.form.value['Password'].length>0) {
+    if (this.form.value['username'].length>0 && this.form.value['password'].length>0) {
       if (this.edicion) {
         this.uS.update(this.usuario).subscribe(()=>{
           this.uS.list().subscribe(data=>{
@@ -62,9 +62,9 @@ export class UsuarioCreaeditaComponent implements OnInit{
     if(this.edicion){
       this.uS.listId(this.id).subscribe(data=>{
         this.form=new FormGroup({
-          id:new FormControl(data.idUser),
-          Username:new FormControl(data.username),
-          Password:new FormControl(data.password),
+          idUser:new FormControl(data.idUser),
+          username:new FormControl(data.username),
+          password:new FormControl(data.password),
         });
       });
     }

@@ -12,7 +12,7 @@ import { CompraService } from 'src/app/service/compra.service';
 export class CompraListarComponent implements OnInit{
   lista: Compra[] = [];
   dataSource:MatTableDataSource<Compra> = new MatTableDataSource();
-  displayedColumns: string[] = ['idcompra','idapoderado','idtipocomprobante','fecha','ventatotal']
+  displayedColumns: string[] = ['idcompra','idapoderado','idtipocomprobante','fecha1','ventatotal']
 
   constructor(private cS:CompraService, private dialog:MatDialog){}
 

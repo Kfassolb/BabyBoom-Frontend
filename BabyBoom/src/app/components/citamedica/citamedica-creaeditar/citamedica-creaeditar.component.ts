@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment';
-import { Apoderado } from 'src/app/model/apoderado';
+import { Apoderado } from 'src/app/model/Apoderado';
 import { Medico } from 'src/app/model/medico';
 import { ApoderadoService } from 'src/app/service/apoderado.service';
 import { CitamedicaService } from 'src/app/service/citamedica.service';

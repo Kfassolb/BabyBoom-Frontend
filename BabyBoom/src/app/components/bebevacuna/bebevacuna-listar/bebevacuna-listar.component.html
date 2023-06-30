@@ -19,18 +19,24 @@
       <h1 class="p-3 fw-bold" id="titleList">Lista Bebe vacuna</h1>
     </div>
     <div class="ms-asuto p-2">
-      <mat-icon routerLink="/bebevacuna/agregar" class="btn-add">library_add</mat-icon>
+      <mat-icon routerLink="/pages/bebevacunas/agregar" class="btn-add">library_add</mat-icon>
     </div>
    </div>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table table-striped table-hover">
     <!-- Position Column -->
-    <ng-container matColumnDef="id">
+    <ng-container matColumnDef="idbebevacuna">
       <th mat-header-cell *matHeaderCellDef> Id</th>
       <td mat-cell *matCellDef="let element"> {{element.idBebeVacuna}} </td>
     </ng-container>
-    <ng-container matColumnDef="controlvacuna">
+
+    <ng-container matColumnDef="bebe1">
+      <th mat-header-cell *matHeaderCellDef> Bebe</th>
+      <td mat-cell *matCellDef="let element"> {{element.bebe.nombreBebe}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="controlvacunacion">
       <th mat-header-cell *matHeaderCellDef> No</th>
-      <td mat-cell *matCellDef="let element"> {{element.controlvacuna.id}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.controlVacunacion.nombreVacunador}} </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

@@ -8,7 +8,7 @@ const base_url = environment.base
   providedIn: 'root'
 })
 export class SoportetecnicoService {
-  private url=`${base_url}/soportetecnicos`
+  private url=`${base_url}/soportetecnico`
   private listaCambio=new Subject<Soportetecnico[]>()
   private confirmaEliminacion = new Subject<Boolean>()
 
@@ -21,7 +21,10 @@ export class SoportetecnicoService {
   })
 }
   insert(soportetecnico: Soportetecnico) {
-    return this.http.post(this.url, soportetecnico);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, soportetecnico,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    })
   }
   setList(listaNueva: Soportetecnico[]) {
     this.listaCambio.next(listaNueva);
@@ -31,7 +34,7 @@ export class SoportetecnicoService {
   }
   modificar(soportetecnico: Soportetecnico) {
     let token = sessionStorage.getItem("token");
-    return this.http.put(this.url + "/" + soportetecnico.idSoporte, soportetecnico,{
+    return this.http.put(this.url + "/", soportetecnico,{
     headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
     })}
   listarId(id: number) {

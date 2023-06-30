@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Compraproducto } from 'src/app/model/Compraproducto';
 import { Producto } from 'src/app/model/Producto';
-import { Apoderado } from 'src/app/model/apoderado';
+import { Apoderado } from 'src/app/model/Apoderado';
 import { ApoderadoService } from 'src/app/service/apoderado.service';
 import { CompraproductoService } from 'src/app/service/compraproducto.service';
 import { ProductoService } from 'src/app/service/producto.service';
@@ -34,25 +34,24 @@ export class CompraproductoCreaeditaComponent implements OnInit{
     this.pS.list().subscribe(data => { this.listaProducto = data });
 
     this.form = new FormGroup({
-      idCompraproducto: new FormControl(),
+      idCompraProducto: new FormControl(),
       apoderado: new FormControl(),
       producto: new FormControl(),
-      Cantidad: new FormControl(),
+      cantidad: new FormControl(),
     })
   }
   aceptar():void {
-    this.compraproducto.idCompraproducto = this.form.value['idCompraproducto'];
+    this.compraproducto.idCompraProducto = this.form.value['idCompraProducto'];
     this.compraproducto.apoderado.nombre = this.form.value['apoderado.nombre'];
-    this.compraproducto.producto.Nombre = this.form.value['producto.Nombre'];
-    this.compraproducto.Cantidad = this.form.value['Cantidad'];
+    this.compraproducto.producto.nombre = this.form.value['producto.nombre'];
+    this.compraproducto.cantidad = this.form.value['cantidad'];
 
-    if (this.idApoderadoseleccionado>0 && this.idProductoseleccionado>0) {
-      if (this.edicion) {
+    if (this.idApoderadoseleccionado>0 || this.idProductoseleccionado>0) {
         let a = new Apoderado();
         let p = new Producto();
 
         a.idApoderado = this.idApoderadoseleccionado;
-        p.id = this.idProductoseleccionado;
+        p.idProducto = this.idProductoseleccionado;
 
         this.compraproducto.apoderado=a;
         this.compraproducto.producto=p;
@@ -62,26 +61,10 @@ export class CompraproductoCreaeditaComponent implements OnInit{
             this.cpS.setList(data);
           })
         })
-      }else {
-        let a = new Apoderado();
-        let p = new Producto();
-
-        a.idApoderado = this.idApoderadoseleccionado;
-        p.id = this.idProductoseleccionado;
-
-        this.compraproducto.apoderado=a;
-        this.compraproducto.producto=p;
-
-        this.cpS.insert(this.compraproducto).subscribe(()=>{
-          this.cpS.list().subscribe (data=>{
-            this.cpS.setList(data);
-          });
-        });
+        this.router.navigate(['/pages/compraproductos']);
       }
-      this.router.navigate(['/compraproductos']);
-    }else{
-      this.mensaje = "Ingrese los valores solicitados!";
+
     }
   }
 
-}
+

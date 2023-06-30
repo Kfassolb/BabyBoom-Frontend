@@ -14,7 +14,7 @@ import { ProblemaService } from 'src/app/service/problema.service';
 export class ProblemaListarComponent implements OnInit{
 lista: Problema[] = [];
 dataSource:MatTableDataSource<Problema> =new MatTableDataSource();
-displayedColumns: string[] = ['idproblema','idsoporte','idapoderado','titulo','descripcion','fechainicio','fechafin','acciones']
+displayedColumns: string[] = ['idproblema','idsoporte','idapoderado','titulo1','descripcion1','fechainicio1','fechafin1']
 @ViewChild(MatPaginator) paginator!: MatPaginator; //THIS
   private idHigh:number=0;
 

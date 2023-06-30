@@ -33,15 +33,15 @@ ngOnInit(): void {
   this.form = new FormGroup({
     idComunidad:new FormControl(),
     nameComunidad:new FormControl(),
-    Contenido:new FormControl(),
-    FechaInicio:new FormControl(),
+    contenido:new FormControl(),
+    fechaInicio:new FormControl(),
   });
 }
 aceptar(): void {
   this.comunidad.idComunidad = this.form.value['idComunidad'];
   this.comunidad.nameComunidad = this.form.value['nameComunidad'];
-  this.comunidad.Contenido = this.form.value['Contenido'];
-  this.comunidad.FechaInicio = this.form.value['FechaInicio'];
+  this.comunidad.contenido = this.form.value['contenido'];
+  this.comunidad.fechaInicio = this.form.value['fechaInicio'];
  if (this.form.value['nameComunidad'].length>0){
   if(this.edicion){
     this.cS.modificar(this.comunidad).subscribe(()=>{
@@ -56,7 +56,7 @@ aceptar(): void {
       })
     })
   }
-  this.router.navigate(['comunidades']);
+  this.router.navigate(['pages/comunidades']);
  }else{
   this.mensaje="Complete los valores requeridos";
  }
@@ -67,8 +67,8 @@ init() {
     this.form = new FormGroup({
       idComunidad: new FormControl(data.idComunidad),
       nameComunidad: new FormControl(data.nameComunidad),
-      Contenido: new FormControl(data.Contenido),
-      FechaInicio: new FormControl(data.FechaInicio),
+      contenido: new FormControl(data.contenido),
+      fechaInicio: new FormControl(data.fechaInicio),
       });
       console.log(data);
     });

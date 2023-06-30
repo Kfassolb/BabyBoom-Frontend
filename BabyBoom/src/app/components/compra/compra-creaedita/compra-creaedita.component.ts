@@ -8,7 +8,7 @@ import { TipocomprobanteComponent } from '../../tipocomprobante/tipocomprobante.
 import { Tipocomprobante } from 'src/app/model/TipoComprobante';
 import { TipocomprobanteService } from 'src/app/service/tipocomprobante.service';
 import { ApoderadoService } from 'src/app/service/apoderado.service';
-import { Apoderado } from 'src/app/model/apoderado';
+import { Apoderado } from 'src/app/model/Apoderado';
 
 @Component({
   selector: 'app-compra-creaedita',
@@ -49,8 +49,8 @@ export class CompraCreaeditaComponent implements OnInit{
   }
   aceptar():void{
     this.compra.idCompra = this.form.value['idCompra'];
-    this.compra.idApoderado.nombre = this.form.value['idApoderado.nombre']; // AQUI FALTA CAMBIAR
-    this.compra.idTipoComprobante.nombreComprobante = this.form.value['tipocomprobante.nombreComprobante'];
+    this.compra.apoderado.nombre = this.form.value['apoderado.nombre']; // AQUI FALTA CAMBIAR
+    this.compra.tipocomprobante.nombreComprobante = this.form.value['tipocomprobante.nombreComprobante'];
     this.compra.fecha = this.form.value['fecha'];
     this.compra.ventaTotal = this.form.value['ventaTotal'];
     if(this.idTipoComprobanteSeleccionado>0 && this.idApoderadoSeleccionado>0){
@@ -58,8 +58,8 @@ export class CompraCreaeditaComponent implements OnInit{
       let a = new Apoderado();
       c.idTipocomprobante = this.idTipoComprobanteSeleccionado;
       a.idApoderado = this.idApoderadoSeleccionado;
-      this.compra.idTipoComprobante = c;
-      this.compra.idApoderado= a;
+      this.compra.tipocomprobante = c;
+      this.compra.apoderado= a;
       this.cS.insert(this.compra).subscribe(()=>{
         this.cS.list().subscribe(data =>{
           this.cS.setList(data);
@@ -75,8 +75,8 @@ export class CompraCreaeditaComponent implements OnInit{
       this.cS.listId(this.id).subscribe(data=>{
         this.form=new FormGroup({
           id:new FormControl(data.idCompra),
-          apoderado:new FormControl(data.idApoderado),
-          tipocomprobante:new FormControl(data.idTipoComprobante),
+          apoderado:new FormControl(data.apoderado),
+          tipocomprobante:new FormControl(data.tipocomprobante),
           fecha:new FormControl(data.fecha),
           ventaTotal:new FormControl(data.ventaTotal)
         });

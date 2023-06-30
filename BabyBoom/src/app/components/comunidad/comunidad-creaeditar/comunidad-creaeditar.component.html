@@ -31,13 +31,13 @@
 
             <mat-form-field class="example-full-width">
               <mat-label>Contenido</mat-label>
-              <input matInput placeholder="contenido" formControlName="Contenido">
+              <input matInput placeholder="contenido" formControlName="contenido">
           </mat-form-field>
 
           <br>
       <mat-form-field appearance="fill">
         <mat-label>Fecha</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="FechaInicio" [max]="maxFecha">
+        <input matInput [matDatepicker]="picker" formControlName="fechaInicio" [max]="maxFecha">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>

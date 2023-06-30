@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { GuarderiaSideDTO } from 'src/app/model/GuarderiaSideDTO';
+import { GuarderiaSideDTO } from 'src/app/model/guarderiaSideDTO';
 import { GuarderiaService } from 'src/app/service/guarderia.service';
 
 @Component({

@@ -1,9 +1,9 @@
 import { Producto } from "./Producto";
-import { Apoderado } from "./apoderado";
+import { Apoderado } from "./Apoderado";
 
 export class Compraproducto{
-  idCompraproducto: number = 0
+  idCompraProducto: number = 0
   apoderado:Apoderado = new Apoderado()
   producto:Producto=new Producto();
-  Cantidad: number=0
+  cantidad: number=0
 }

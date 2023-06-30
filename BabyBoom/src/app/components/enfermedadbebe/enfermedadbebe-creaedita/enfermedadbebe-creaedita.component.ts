@@ -26,8 +26,8 @@ export class EnfermedadbebeCreaeditaComponent  {
   maxFecha: Date = moment().add(-1, 'days').toDate();
   listaEnfermedad:Tipoenfermedad[]=[]
   listaBebe:Bebe[]=[]
-  idEnfermedad:number=0;
-  idBebe:number=0;
+  idEnfermedadSeleccionado:number=0;
+  idBebeSeleccionado:number=0;
   constructor(
     private pS: EnfermedadbebeService,
     private router: Router,
@@ -48,9 +48,9 @@ export class EnfermedadbebeCreaeditaComponent  {
 
     this.form = new FormGroup({
       id: new FormControl(),
-      sintomasEnfermedad_bebe: new FormControl(),
-      enfermedad: new FormControl(),
+      tipoEnfermedad: new FormControl(),
       bebe: new FormControl(),
+      sintonmas: new FormControl(),
 
 
     });
@@ -59,24 +59,30 @@ export class EnfermedadbebeCreaeditaComponent  {
 
   aceptar(): void {
     this.Enfermedadbebe.id = this.form.value['id'];
-    this.Enfermedadbebe.sintonmas = this.form.value['sintomasEnfermedad_bebe'];
-    this.Enfermedadbebe.tipoEnfermedad.nombreTipoEnfermedad=this.form.value['enfermedad.nombreTipoEnfermedad'];
+    this.Enfermedadbebe.sintonmas = this.form.value['sintonmas'];
+    this.Enfermedadbebe.tipoEnfermedad.nombreTipoEnfermedad=this.form.value['tipoEnfermedad.nombreTipoEnfermedad'];
     this.Enfermedadbebe.bebe.nombreBebe=this.form.value['bebe.nombreBebe'];
-    let bebeinde= new Bebe();
-    bebeinde.idBebe = this.idBebe;
+
+    if (this.form.value['sintonmas'].length > 0) {
+      if (this.edicion) {
+        let bebeinde= new Bebe();
+    bebeinde.idBebe = this.idBebeSeleccionado;
     this.Enfermedadbebe.bebe= bebeinde;
     let enfermedadinde= new Tipoenfermedad();
-    enfermedadinde.idTipoEnfermedad = this.idEnfermedad;
+    enfermedadinde.idTipoEnfermedad = this.idEnfermedadSeleccionado;
     this.Enfermedadbebe.tipoEnfermedad= enfermedadinde;
-
-    if (this.form.value['sintomasEnfermedad_bebe'].length > 0) {
-      if (this.edicion) {
         this.pS.update(this.Enfermedadbebe).subscribe(() => {
           this.pS.list().subscribe((data) => {
             this.pS.setList(data);
           });
         });
       } else {
+        let bebeinde= new Bebe();
+    bebeinde.idBebe = this.idBebeSeleccionado;
+    this.Enfermedadbebe.bebe= bebeinde;
+    let enfermedadinde= new Tipoenfermedad();
+    enfermedadinde.idTipoEnfermedad = this.idEnfermedadSeleccionado;
+    this.Enfermedadbebe.tipoEnfermedad= enfermedadinde;
         this.pS.insert(this.Enfermedadbebe).subscribe((data) => {
           this.pS.list().subscribe((data) => {
             this.pS.setList(data);
@@ -94,8 +100,8 @@ export class EnfermedadbebeCreaeditaComponent  {
       this.pS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
           id: new FormControl(data.id),
-          sintomasEnfermedad_bebe: new FormControl(data.sintonmas),
-          enfermedad: new FormControl(data.tipoEnfermedad),
+          tipoEnfermedad: new FormControl(data.tipoEnfermedad),
+          sintonmas: new FormControl(data.sintonmas),
           bebe: new FormControl(data.bebe),
 
 

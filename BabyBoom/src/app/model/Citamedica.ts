@@ -1,4 +1,5 @@
-import { Apoderado } from './apoderado';
+
+import { Apoderado } from './Apoderado';
 import { Medico } from './medico';
 export class Citamedica {
   idCitaMedica: number = 0;

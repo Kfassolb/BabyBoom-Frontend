@@ -9,7 +9,7 @@ const base_url = environment.base
 })
 export class ProblemaService {
 
-  private url = `${base_url}/problemas`
+  private url = `${base_url}/problema`
   private listaCambio = new Subject<Problema[]>()
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http:HttpClient) { }

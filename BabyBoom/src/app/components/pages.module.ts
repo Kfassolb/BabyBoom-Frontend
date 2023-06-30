@@ -111,6 +111,7 @@ import { Reportellb1Component } from './reportes/reportellb1/reportellb1.compone
 import { ReporteenfermedadComponent } from './reportes/reporteenfermedad/reporteenfermedad.component';
 import { ReporteenfermedadbebeComponent } from './reportes/reporteenfermedadbebe/reporteenfermedadbebe.component';
 import { Reportergr1Component } from './reportes/reportergr1/reportergr1.component';
+import { GuarderiaservicioCreaeditarComponent } from './guarderiaservicio/guarderiaservicio-creaeditar/guarderiaservicio-creaeditar.component';
 
 
 
@@ -209,6 +210,7 @@ import { Reportergr1Component } from './reportes/reportergr1/reportergr1.compone
     Reportergr1Component,
     ReporteenfermedadComponent,
     ReporteenfermedadbebeComponent,
+    GuarderiaservicioCreaeditarComponent,
     //ToolbarComponent
 
   ],

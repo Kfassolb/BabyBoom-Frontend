@@ -13,7 +13,7 @@ export class CompraproductoListarComponent implements OnInit{
 
   lista: Compraproducto[] = [];
   dataSource:MatTableDataSource<Compraproducto> = new MatTableDataSource();
-  displayedColumns: string[] = ['idcompraproducto','apoderado','producto','cantidad']
+  displayedColumns: string[] = ['idcompraproducto','apoderado1','producto1','cantidad1']
 
   constructor(private cS:CompraproductoService, private dialog:MatDialog){}
 

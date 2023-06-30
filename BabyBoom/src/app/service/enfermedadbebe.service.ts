@@ -41,7 +41,7 @@ export class EnfermedadbebeService {
   })}
   update(Bebe: Enfermedadbebe) {
     let token = sessionStorage.getItem("token");
-    return this.http.put(this.url + '/' + Bebe.id, Bebe,{
+    return this.http.put(this.url + "/", Bebe,{
     headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
   })
 }

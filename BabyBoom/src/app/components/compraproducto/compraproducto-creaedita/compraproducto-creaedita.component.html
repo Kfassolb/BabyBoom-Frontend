@@ -16,7 +16,7 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Compra Producto</mat-label>
-          <input matInput placeholder="Id" formControlName="idCompraproducto" />
+          <input matInput placeholder="Id" formControlName="idCompraProducto" />
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" >
@@ -31,9 +31,9 @@
 
         <mat-form-field appearance="fill" >
           <mat-label>Producto</mat-label>
-          <mat-select formControlName="producto" [(value)]="idApoderadoseleccionado" required>
-            <mat-option *ngFor="let p of listaProducto" [value]="p.id">
-              {{p.Nombre}}
+          <mat-select formControlName="producto" [(value)]="idProductoseleccionado" required>
+            <mat-option *ngFor="let p of listaProducto" [value]="p.idProducto">
+              {{p.nombre}}
           </mat-option>
           </mat-select>
         </mat-form-field>
@@ -41,7 +41,7 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Cantidad</mat-label>
-          <input matInput placeholder="Ingrese una cantidad" formControlName="Cantidad" required/>
+          <input matInput placeholder="Ingrese una cantidad" formControlName="cantidad" required/>
         </mat-form-field>
         <br>
 

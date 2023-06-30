@@ -21,7 +21,10 @@ export class ComunidadService {
     });
   }
   insert(comunidad: Comunidad) {
-    return this.http.post(this.url, comunidad);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, comunidad,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   setList(listaNueva: Comunidad[]) {
     this.listaCambio.next(listaNueva);
@@ -30,10 +33,16 @@ export class ComunidadService {
     return this.listaCambio.asObservable();
   }
   modificar(comunidad: Comunidad) {
-    return this.http.put(this.url + "/" + comunidad.idComunidad, comunidad);
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url + "/", comunidad,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   listarId(id: number) {
-    return this.http.get<Comunidad>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Comunidad>(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   eliminar(id: number) {
     let token = sessionStorage.getItem("token");

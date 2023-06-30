@@ -1,5 +1,5 @@
 import { Component,OnInit, ViewChild } from '@angular/core';
-import { Apoderado } from 'src/app/model/apoderado';
+import { Apoderado } from 'src/app/model/Apoderado';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { ApoderadoService } from 'src/app/service/apoderado.service';

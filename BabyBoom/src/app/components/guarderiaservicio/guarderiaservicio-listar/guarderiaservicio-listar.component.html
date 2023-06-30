@@ -14,7 +14,7 @@
 <body>
   <div class="container mt-4">
     <div class="text-center">
-      <h1 class="p-3 fw-bold" id="titleList">Lista Apoderados</h1>
+      <h1 class="p-3 fw-bold" id="titleList">Lista Guarderia Servicios</h1>
     </div>
     <div class="d-flex">
       <mat-form-field>
@@ -31,12 +31,12 @@
 
         <ng-container matColumnDef="servicio">
           <th mat-header-cell *matHeaderCellDef>Servicio</th>
-          <td mat-cell *matCellDef="let element">{{ element.servicio.NombreServicio}}</td>
+          <td mat-cell *matCellDef="let element">{{ element.servicio.nameServicio}}</td>
         </ng-container>
 
         <ng-container matColumnDef="guarderia">
           <th mat-header-cell *matHeaderCellDef>Guarderia</th>
-          <td mat-cell *matCellDef="let element">{{ element.guarderia.NombreGuarderia }}</td>
+          <td mat-cell *matCellDef="let element">{{ element.guarderia.nombreGuarderia }}</td>
         </ng-container>
 
 
